@@ -11,7 +11,7 @@ const MyComponent = props => <div>{renderMarkup(props.arbitraryHtml)}</div>;
 
 ## Node.js
 
-The [default HTML parser](https://www.npmjs.com/package/dom-parse) used only runs in Browser environments. To run in Node.js you'll need to replace the HTML parser:
+The [default HTML parser](https://www.npmjs.com/package/dom-parse) used only runs in browser environments. To run in Node.js you'll need to replace the HTML parser:
 
 ```js
 import { parseFragment } from 'parse5';
