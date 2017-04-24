@@ -1,9 +1,10 @@
 {
   "name": "react-render-markup",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Parse HTML into React elements.",
   "main": "index.js",
   "dependencies": {
+    "css-to-style": "^1.0.0",
     "dom-parse": "0.0.3",
     "html-tag-names": "^1.1.0",
     "html-void-elements": "^1.0.1",
@@ -19,7 +20,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react", "html", "markup", "render"],
+  "keywords": [
+    "react",
+    "html",
+    "markup",
+    "render"
+  ],
   "author": "Jacob Buck <buck.jacob@gmail.com>",
   "license": "MIT",
   "bugs": {
