@@ -1,10 +1,10 @@
 {
   "name": "react-render-markup",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Parse HTML into React elements.",
   "main": "index.js",
   "dependencies": {
-    "css-to-style": "^1.0.0",
+    "css-to-style": "^1.0.2",
     "dom-parse": "0.0.3",
     "html-tag-names": "^1.1.0",
     "html-void-elements": "^1.0.1",
