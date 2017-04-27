@@ -1,6 +1,6 @@
 {
   "name": "react-render-markup",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Parse HTML into React elements.",
   "main": "index.js",
   "dependencies": {
