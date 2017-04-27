@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "css-to-style": "^1.0.2",
-    "dom-parse": "0.0.3",
+    "dom-parse": "^1.0.0",
     "html-tag-names": "^1.1.0",
     "html-void-elements": "^1.0.1",
     "to-array": "^0.1.4"
