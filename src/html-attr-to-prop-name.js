@@ -1,23 +1,21 @@
-'use strict'
+import htmlProps form './html-props';
 
-var htmlProps = require('./html-props');
-
-var specialAttrToPropMap = {
+const specialAttrToPropMap = {
   'class': 'className',
   'for': 'htmlFor',
 };
 
-module.exports = function attrToPropName(attrName) {
-  attrName = attrName.toLowerCase().replace(/[^a-z]/g, '');
-  var propName;
+const attrToPropName = attr => {
+  const attrName = attr.toLowerCase().replace(/[^a-z]/g, '');
+  let propName;
 
   if (specialAttrToPropMap.hasOwnProperty(attrName)) {
     propName = specialAttrToPropMap[attrName];
   }
 
-  propName = htmlProps.find(function(value) {
-    return attrName === value.toLowerCase();
-  });
+  propName = htmlProps.find(value => attrName === value.toLowerCase());
 
-  return propName ? propName : false;
+  return propName || false;
 };
+
+export default attrToPropName;

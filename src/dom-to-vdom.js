@@ -1,21 +1,18 @@
-'use strict';
+import htmlTagNames from "html-tag-names";
+import htmlVoidElements from "html-void-elements";
+import React from "react";
+import htmlAttrsToProps from "./html-attrs-to-props";
+import htmlTagBlacklist from "./html-tag-blacklist";
 
-var htmlTagNames = require('html-tag-names');
-var htmlVoidElements = require('html-void-elements');
-var React = require('react');
-var toArray = require('to-array');
-var htmlAttrsToProps = require('./html-attrs-to-props')
-var htmlTagBlacklist = require('./html-tag-blacklist');
-
-module.exports = function domToVDom(dom) {
+const domToVDom = dom => {
   if (!dom || !dom.length) {
     return null;
   }
 
-  var vdom = toArray(dom)
-    .map(function(node, i) {
-      var nodeName = String(node.nodeName).toLowerCase();
-      var nodeType = node.nodeType;
+  var vdom = [...dom]
+    .map((node, i) => {
+      const nodeName = String(node.nodeName).toLowerCase();
+      const nodeType = node.nodeType;
 
       // Return text nodes as string
       if (nodeType === 3) {
@@ -40,9 +37,11 @@ module.exports = function domToVDom(dom) {
         htmlVoidElements.includes(nodeName) ? null : domToVDom(node.childNodes)
       );
     })
-    .filter(function (node) {
-      return node != null;
-    });
+    .filter(node => node != null);
 
-  return vdom.length ? vdom : null;
+  if (!vdom.length) {
+    return null;
+  }
+
+  return vdom;
 };
