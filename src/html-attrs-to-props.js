@@ -4,7 +4,7 @@ import attrToPropName from "./html-attr-to-prop-name";
 const attrsToProps = attrs =>
   [...attrs].reduce((props, attr) => {
     const name = attr.name;
-    const value = attr.value;
+    let value = attr.value;
 
     // Disallow event attributes
     if (name.substr(0, 2) === "on") {
