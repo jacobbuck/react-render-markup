@@ -1,4 +1,4 @@
-[
+export default [
   "accept",
   "acceptCharset",
   "accessKey",
@@ -144,4 +144,4 @@
   "unselectable",
   "results",
   "autoSave"
-]
+];

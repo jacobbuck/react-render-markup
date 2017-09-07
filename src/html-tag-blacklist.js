@@ -1,4 +1,4 @@
-[
+export default [
   "html",
   "body",
   "base",
@@ -10,4 +10,4 @@
   "canvas",
   "noscript",
   "script"
-]
+];
