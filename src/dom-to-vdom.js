@@ -9,7 +9,7 @@ const domToVDom = dom => {
     return null;
   }
 
-  var vdom = [...dom]
+  const vdom = [...dom]
     .map((node, i) => {
       const nodeName = String(node.nodeName).toLowerCase();
       const nodeType = node.nodeType;
@@ -28,7 +28,7 @@ const domToVDom = dom => {
         return null;
       }
 
-      var props = htmlAttrsToProps(node.attributes);
+      const props = htmlAttrsToProps(node.attributes);
       props.key = i;
 
       return React.createElement(
