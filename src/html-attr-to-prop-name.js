@@ -11,9 +11,9 @@ const attrToPropName = attr => {
 
   if (specialAttrToPropMap.hasOwnProperty(attrName)) {
     propName = specialAttrToPropMap[attrName];
+  } else {
+    propName = htmlProps.find(value => attrName === value.toLowerCase());
   }
-
-  propName = htmlProps.find(value => attrName === value.toLowerCase());
 
   return propName || false;
 };
