@@ -1,12 +1,12 @@
-import htmlProps form './html-props';
+import htmlProps from "./html-props";
 
 const specialAttrToPropMap = {
-  'class': 'className',
-  'for': 'htmlFor',
+  class: "className",
+  for: "htmlFor",
 };
 
 const attrToPropName = attr => {
-  const attrName = attr.toLowerCase().replace(/[^a-z]/g, '');
+  const attrName = attr.toLowerCase().replace(/[^a-z]/g, "");
   let propName;
 
   if (specialAttrToPropMap.hasOwnProperty(attrName)) {
