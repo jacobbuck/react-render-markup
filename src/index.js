@@ -1,7 +1,7 @@
 'use strict';
 
 var domParse = require('dom-parse');
-var domToVdom = require('./lib/dom-to-vdom');
+var domToVdom = require('./dom-to-vdom');
 
 module.exports = function(html, options) {
   options = options || {};
