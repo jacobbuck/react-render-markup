@@ -143,5 +143,5 @@ export default [
   "security",
   "unselectable",
   "results",
-  "autoSave"
+  "autoSave",
 ];

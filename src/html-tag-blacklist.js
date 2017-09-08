@@ -9,5 +9,5 @@ export default [
   "title",
   "canvas",
   "noscript",
-  "script"
+  "script",
 ];
