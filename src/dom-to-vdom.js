@@ -45,3 +45,5 @@ const domToVDom = dom => {
 
   return vdom;
 };
+
+export default domToVDom;
