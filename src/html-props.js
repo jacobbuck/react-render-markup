@@ -1,10 +1,11 @@
 export default [
+  // HTML Standard
   "accept",
   "acceptCharset",
   "accessKey",
   "action",
   "allowFullScreen",
-  "allowTransparen",
+  "allowTransparency",
   "alt",
   "async",
   "autoComplete",
@@ -123,6 +124,7 @@ export default [
   "wmode",
   "wrap",
 
+  // HTML RDFa
   "about",
   "datatype",
   "inlist",
@@ -132,6 +134,7 @@ export default [
   "typeof",
   "vocab",
 
+  // HTML Non-Standard
   "autoCapitalize",
   "autoCorrect",
   "color",

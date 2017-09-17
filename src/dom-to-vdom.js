@@ -1,8 +1,9 @@
 import htmlTagNames from "html-tag-names";
 import htmlVoidElements from "html-void-elements";
 import React from "react";
-import htmlAttrsToProps from "./html-attrs-to-props";
-import htmlTagBlacklist from "./html-tag-blacklist";
+import attrsToProps from "./attrs-to-props";
+import tagBlacklist from "./tag-blacklist";
+import nodeTypes from "./node-types";
 
 const domToVDom = dom => {
   if (!dom || !dom.length) {
@@ -11,20 +12,23 @@ const domToVDom = dom => {
 
   const vdom = [...dom]
     .map((node, i) => {
-      const nodeName = String(node.nodeName).toLowerCase();
-      const nodeType = node.nodeType;
+      const { nodeName, nodeType } = node;
+
+      // Only allow elements and text.
+      if (
+        nodeType !== nodeTypes.ELEMENT_NODE ||
+        nodeType !== nodeTypes.TEXT_NODE
+      ) {
+        return null;
+      }
 
       // Return text nodes as string
-      if (nodeType === 3) {
+      if (nodeType === nodeTypes.TEXT_NODE) {
         return node.textContent;
       }
 
-      // Only allow valid html elements. Disallow blacklisted html elements.
-      if (
-        nodeType !== 1 ||
-        !htmlTagNames.includes(nodeName) ||
-        htmlTagBlacklist.includes(nodeName)
-      ) {
+      // Disallow scripts
+      if (nodeName === "SCRIPT") {
         return null;
       }
 
@@ -32,18 +36,14 @@ const domToVDom = dom => {
       props.key = i;
 
       return React.createElement(
-        nodeName,
+        nodeName.toLowerCase(),
         props,
-        htmlVoidElements.includes(nodeName) ? null : domToVDom(node.childNodes)
+        domToVDom(node.childNodes)
       );
     })
     .filter(node => node != null);
 
-  if (!vdom.length) {
-    return null;
-  }
-
-  return vdom;
+  return vdom.length ? vdom : null;
 };
 
 export default domToVDom;
