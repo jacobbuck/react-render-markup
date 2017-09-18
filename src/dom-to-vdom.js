@@ -7,6 +7,8 @@ import nodeTypes from "./node-types";
 const htmlAndSvgTagNames = [...htmlTagNames, ...svgTagNames];
 
 const domToVDom = (dom, options = {}) => {
+  const { replace } = options;
+
   if (!dom || !dom.length) {
     return null;
   }
@@ -17,15 +19,10 @@ const domToVDom = (dom, options = {}) => {
 
       // Only allow element and text nodes.
       if (
-        nodeType !== nodeTypes.ELEMENT_NODE ||
+        nodeType !== nodeTypes.ELEMENT_NODE &&
         nodeType !== nodeTypes.TEXT_NODE
       ) {
         return null;
-      }
-
-      // Return text nodes as string
-      if (nodeType === nodeTypes.TEXT_NODE) {
-        return node.textContent;
       }
 
       const lowerNodeName = nodeName.toLowerCase();
@@ -38,16 +35,34 @@ const domToVDom = (dom, options = {}) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      // Render HTML and SVG element nodes
-      if (!htmlAndSvgTagNames.includes(lowerNodeName)) {
+      if (replace && replace.hasOwnProperty(nodeName)) {
+        if (replace[nodeName]) {
+          return React.createElement(
+            replace[nodeName],
+            props,
+            domToVDom(node.childNodes)
+          );
+        }
+
+        // If replacement node is falsey, return null
         return null;
       }
 
-      return React.createElement(
-        lowerNodeName,
-        props,
-        domToVDom(node.childNodes)
-      );
+      // Render text nodes as string
+      if (nodeType === nodeTypes.TEXT_NODE) {
+        return node.textContent;
+      }
+
+      // Render HTML and SVG element nodes
+      if (htmlAndSvgTagNames.includes(lowerNodeName)) {
+        return React.createElement(
+          lowerNodeName,
+          props,
+          domToVDom(node.childNodes)
+        );
+      }
+
+      return null;
     })
     .filter(node => node != null);
 
