@@ -1,7 +1,7 @@
 import htmlProps from "./html-props";
 import svgProps from "./svg-props";
 
-const htmlAndSvgProps = [...htmlProps, svgProps];
+const htmlAndSvgProps = [...htmlProps, ...svgProps];
 
 const specialAttrToPropMap = {
   class: "className",
