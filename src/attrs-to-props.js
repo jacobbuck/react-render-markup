@@ -1,5 +1,5 @@
 import cssToStyle from "css-to-style";
-import attrToPropName from "./html-attr-to-prop-name";
+import attrToPropName from "./attr-to-prop-name";
 
 const attrsToProps = attrs =>
   [...attrs].reduce((props, attr) => {
@@ -18,12 +18,10 @@ const attrsToProps = attrs =>
       propName = "style";
       value = cssToStyle(value);
     } else {
-      propName = attrToPropName(name);
+      propName = attrToPropName(name) || name;
     }
 
-    if (propName) {
-      props[propName] = value === "" ? true : value;
-    }
+    props[propName] = value === "" ? true : value;
 
     return props;
   }, {});
