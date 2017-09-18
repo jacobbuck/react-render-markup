@@ -40,17 +40,19 @@ const domToVDom = (dom, options = {}) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (replace && replace.hasOwnProperty(nodeName)) {
-        if (replace[nodeName]) {
-          return React.createElement(
-            replace[nodeName],
-            props,
-            domToVDom(node.childNodes)
-          );
+      if (typeof replace === "object" && replace.hasOwnProperty(nodeName)) {
+        let replaceNodeType = replace[nodeName];
+
+        // Don't render falsey replacements
+        if (!replaceNodeType) {
+          return null;
         }
 
-        // If replacement node is falsey, return null
-        return null;
+        return React.createElement(
+          replaceNodeType,
+          props,
+          domToVDom(node.childNodes)
+        );
       }
 
       // Render HTML and SVG element nodes
