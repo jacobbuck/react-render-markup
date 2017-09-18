@@ -51,7 +51,7 @@ const domToVDom = (dom, options = {}) => {
         return React.createElement(
           replaceNodeType,
           props,
-          domToVDom(node.childNodes)
+          domToVDom(node.childNodes, options)
         );
       }
 
@@ -60,7 +60,7 @@ const domToVDom = (dom, options = {}) => {
         return React.createElement(
           lowerNodeName,
           props,
-          domToVDom(node.childNodes)
+          domToVDom(node.childNodes, options)
         );
       }
 
