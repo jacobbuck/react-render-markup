@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/jacobbuck/react-render-markup.git"
   },
-  "keywords": ["react", "html", "markup", "render"],
+  "keywords": ["html", "markup", "react", "render", "xhtml"],
   "author": "Jacob Buck <buck.jacob@gmail.com>",
   "license": "MIT",
   "bugs": {
