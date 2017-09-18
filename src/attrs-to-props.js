@@ -11,15 +11,19 @@ const attrsToProps = attrs =>
       return props;
     }
 
-    let propName = name;
-    if ("style" === name) {
+    let propName;
+    if (["aria-", "data-"].includes(name.substr(0, 5))) {
+      propName = name;
+    } else if ("style" === name) {
       propName = "style";
       value = cssToStyle(value);
-    } else if (!["aria-", "data-"].includes(name.substr(0, 5))) {
+    } else {
       propName = attrToPropName(name);
     }
 
-    props[propName] = value === "" ? true : value;
+    if (propName) {
+      props[propName] = value === "" ? true : value;
+    }
 
     return props;
   }, {});
