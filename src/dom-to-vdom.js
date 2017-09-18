@@ -1,11 +1,12 @@
 import htmlTagNames from "html-tag-names";
-import htmlVoidElements from "html-void-elements";
+import svgTagNames from "html-tag-names";
 import React from "react";
 import attrsToProps from "./attrs-to-props";
-import tagBlacklist from "./tag-blacklist";
 import nodeTypes from "./node-types";
 
-const domToVDom = dom => {
+const htmlAndSvgTagNames = [...htmlTagNames, ...svgTagNames];
+
+const domToVDom = (dom, options = {}) => {
   if (!dom || !dom.length) {
     return null;
   }
@@ -14,7 +15,7 @@ const domToVDom = dom => {
     .map((node, i) => {
       const { nodeName, nodeType } = node;
 
-      // Only allow elements and text.
+      // Only allow element and text nodes.
       if (
         nodeType !== nodeTypes.ELEMENT_NODE ||
         nodeType !== nodeTypes.TEXT_NODE
@@ -27,16 +28,23 @@ const domToVDom = dom => {
         return node.textContent;
       }
 
-      // Disallow scripts
-      if (nodeName === "SCRIPT") {
+      const lowerNodeName = nodeName.toLowerCase();
+
+      // Disallow script element nodes
+      if (lowerNodeName === "script") {
         return null;
       }
 
-      const props = htmlAttrsToProps(node.attributes);
+      const props = attrsToProps(node.attributes);
       props.key = i;
 
+      // Render HTML and SVG element nodes
+      if (!htmlAndSvgTagNames.includes(lowerNodeName)) {
+        return null;
+      }
+
       return React.createElement(
-        nodeName.toLowerCase(),
+        lowerNodeName,
         props,
         domToVDom(node.childNodes)
       );
