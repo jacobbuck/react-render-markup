@@ -32,6 +32,11 @@ const domToVDom = (dom, options = {}) => {
         return null;
       }
 
+      // Render text nodes as string
+      if (nodeType === nodeTypes.TEXT_NODE) {
+        return node.textContent;
+      }
+
       const props = attrsToProps(node.attributes);
       props.key = i;
 
@@ -46,11 +51,6 @@ const domToVDom = (dom, options = {}) => {
 
         // If replacement node is falsey, return null
         return null;
-      }
-
-      // Render text nodes as string
-      if (nodeType === nodeTypes.TEXT_NODE) {
-        return node.textContent;
       }
 
       // Render HTML and SVG element nodes
