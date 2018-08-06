@@ -8,7 +8,7 @@ import nodeTypes from './node-types';
 
 const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
 
-const domToVDom = (dom, options = {}) => {
+const domToVDom = (dom, options) => {
   const { replace = {} } = options;
 
   if (!dom || !dom.length) {
