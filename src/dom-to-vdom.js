@@ -6,14 +6,16 @@ import React from 'react';
 import attrsToProps from './attrs-to-props';
 import nodeTypes from './node-types';
 
+const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
+
 const domToVDom = (dom, options = {}) => {
-  const { replace } = options;
+  const { replace = {} } = options;
 
   if (!dom || !dom.length) {
     return null;
   }
 
-  const vdom = [...dom]
+  const vdom = Array.from(dom)
     .map((node, i) => {
       const { nodeName, nodeType } = node;
 
@@ -40,7 +42,7 @@ const domToVDom = (dom, options = {}) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (typeof replace === 'object' && replace.hasOwnProperty(nodeName)) {
+      if (replace.hasOwnProperty(nodeName)) {
         const replaceNodeType = replace[nodeName];
 
         // Don't render falsey replacements
@@ -56,11 +58,7 @@ const domToVDom = (dom, options = {}) => {
       }
 
       // Render HTML, MathML and SVG elements
-      if (
-        htmlTagNames.includes(lowerNodeName) ||
-        mathMLTagNames.includes(lowerNodeName) ||
-        svgTagNames.includes(lowerNodeName)
-      ) {
+      if (allTagNames.includes(lowerNodeName)) {
         return React.createElement(
           lowerNodeName,
           props,

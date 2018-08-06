@@ -2,7 +2,7 @@ import cssToStyle from 'css-to-style';
 import attrToPropName from './attr-to-prop-name';
 
 const attrsToProps = attrs =>
-  [...attrs].reduce((props, attr) => {
+  Array.from(attrs).reduce((props, attr) => {
     const name = attr.name;
     let value = attr.value;
 
