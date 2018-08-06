@@ -3,17 +3,26 @@
   "version": "0.0.9",
   "description": "Parse HTML into React elements.",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "babel --out-dir lib src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run build"
+    "precommit": "lint-staged",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacobbuck/react-render-markup.git"
   },
-  "keywords": ["html", "markup", "react", "render", "xhtml"],
+  "keywords": [
+    "html",
+    "markup",
+    "react",
+    "render",
+    "xhtml"
+  ],
   "author": "Jacob Buck <buck.jacob@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -27,8 +36,7 @@
     "svg-tag-names": "^1.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-cli": "^6.26.0"
   },
   "peerDependencies": {
     "react": ">=15.3.0"
