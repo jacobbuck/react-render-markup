@@ -1,8 +1,8 @@
-import htmlTagNames from "html-tag-names";
-import svgTagNames from "html-tag-names";
-import React from "react";
-import attrsToProps from "./attrs-to-props";
-import nodeTypes from "./node-types";
+import htmlTagNames from 'html-tag-names';
+import svgTagNames from 'html-tag-names';
+import React from 'react';
+import attrsToProps from './attrs-to-props';
+import nodeTypes from './node-types';
 
 const htmlAndSvgTagNames = [...htmlTagNames, ...svgTagNames];
 
@@ -28,7 +28,7 @@ const domToVDom = (dom, options = {}) => {
       const lowerNodeName = nodeName.toLowerCase();
 
       // Disallow script element nodes
-      if (lowerNodeName === "script") {
+      if (lowerNodeName === 'script') {
         return null;
       }
 
@@ -40,7 +40,7 @@ const domToVDom = (dom, options = {}) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (typeof replace === "object" && replace.hasOwnProperty(nodeName)) {
+      if (typeof replace === 'object' && replace.hasOwnProperty(nodeName)) {
         let replaceNodeType = replace[nodeName];
 
         // Don't render falsey replacements
