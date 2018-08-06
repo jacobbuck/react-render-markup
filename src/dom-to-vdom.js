@@ -1,10 +1,10 @@
 import htmlTagNames from 'html-tag-names';
-import svgTagNames from 'html-tag-names';
+import htmlVoidElements from 'html-void-elements';
+import mathMLTagNames from 'mathml-tag-names';
+import svgTagNames from 'svg-tag-names';
 import React from 'react';
 import attrsToProps from './attrs-to-props';
 import nodeTypes from './node-types';
-
-const htmlAndSvgTagNames = [...htmlTagNames, ...svgTagNames];
 
 const domToVDom = (dom, options = {}) => {
   const { replace } = options;
@@ -41,7 +41,7 @@ const domToVDom = (dom, options = {}) => {
       props.key = i;
 
       if (typeof replace === 'object' && replace.hasOwnProperty(nodeName)) {
-        let replaceNodeType = replace[nodeName];
+        const replaceNodeType = replace[nodeName];
 
         // Don't render falsey replacements
         if (!replaceNodeType) {
@@ -55,12 +55,19 @@ const domToVDom = (dom, options = {}) => {
         );
       }
 
-      // Render HTML and SVG element nodes
-      if (htmlAndSvgTagNames.includes(lowerNodeName)) {
+      // Render HTML, MathML and SVG elements
+      if (
+        htmlTagNames.includes(lowerNodeName) ||
+        mathMLTagNames.includes(lowerNodeName) ||
+        svgTagNames.includes(lowerNodeName)
+      ) {
         return React.createElement(
           lowerNodeName,
           props,
-          domToVDom(node.childNodes, options)
+          // Ignore children of HTML void elements
+          htmlVoidElements.includes(lowerNodeName)
+            ? null
+            : domToVDom(node.childNodes, options)
         );
       }
 
