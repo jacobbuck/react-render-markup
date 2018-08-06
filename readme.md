@@ -1,10 +1,10 @@
 # react-render-markup
 
-Parse HTML markup into React elements.
+Parse HTML, SVG and MathML into React elements.
 
 ## Example
 
-```js
+```jsx
 import renderMarkup from 'react-render-markup';
 const MyComponent = props => <div>{renderMarkup(props.arbitraryHtml)}</div>;
 ```
