@@ -1,7 +1,7 @@
 {
   "name": "react-render-markup",
   "version": "0.0.9",
-  "description": "Parse HTML into React elements.",
+  "description": "Parse HTML, SVG and MathML into React elements.",
   "main": "lib/index.js",
   "files": [
     "lib"
