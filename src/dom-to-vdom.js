@@ -4,7 +4,7 @@ import mathMLTagNames from 'mathml-tag-names';
 import svgTagNames from 'svg-tag-names';
 import React from 'react';
 import attrsToProps from './attrs-to-props';
-import nodeTypes from './node-types';
+import { ELEMENT_NODE, TEXT_NODE } from './node-types';
 
 const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
 
@@ -20,10 +20,7 @@ const domToVDom = (dom, options) => {
       const { nodeName, nodeType } = node;
 
       // Only allow element and text nodes.
-      if (
-        nodeType !== nodeTypes.ELEMENT_NODE &&
-        nodeType !== nodeTypes.TEXT_NODE
-      ) {
+      if (nodeType !== ELEMENT_NODE && nodeType !== TEXT_NODE) {
         return null;
       }
 
@@ -35,7 +32,7 @@ const domToVDom = (dom, options) => {
       }
 
       // Render text nodes as string
-      if (nodeType === nodeTypes.TEXT_NODE) {
+      if (nodeType === TEXT_NODE) {
         return node.textContent;
       }
 
