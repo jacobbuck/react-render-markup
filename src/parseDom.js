@@ -1,5 +1,5 @@
 let DOMParser;
-if (window && window.DOMParser) {
+if (typeof window !== 'undefined' && 'DOMParser' in window) {
   DOMParser = window.DOMParser;
 } else {
   DOMParser = require('xmldom').DOMParser;
