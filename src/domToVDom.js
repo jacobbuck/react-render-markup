@@ -1,7 +1,4 @@
-import htmlTagNames from 'html-tag-names';
 import htmlVoidElements from 'html-void-elements';
-import mathMLTagNames from 'mathml-tag-names';
-import svgTagNames from 'svg-tag-names';
 import React from 'react';
 import attrsToProps from './attrsToProps';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
@@ -44,20 +41,14 @@ const domToVDom = (dom, options) => {
         );
       }
 
-      // Render HTML, MathML and SVG elements
-      if (allTagNames.includes(tagName)) {
-        return React.createElement(
-          tagName,
-          props,
-          // Ignore children of HTML void elements
-          htmlVoidElements.includes(tagName)
-            ? null
-            : domToVDom(node.childNodes, options)
-        );
-      }
-
-      // If all else fails...
-      return null;
+      return React.createElement(
+        tagName,
+        props,
+        // Ignore children of HTML void elements
+        htmlVoidElements.includes(tagName)
+          ? null
+          : domToVDom(node.childNodes, options)
+      );
     })
     .filter(node => node != null);
 
