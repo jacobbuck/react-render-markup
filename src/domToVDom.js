@@ -16,7 +16,7 @@ const domToVDom = (dom, options) => {
   const vdom = Array.from(dom)
     .filter(
       // Only allow element and text nodes
-      node => node.nodeType !== ELEMENT_NODE && node.nodeType !== TEXT_NODE
+      node => node.nodeType === ELEMENT_NODE || node.nodeType === TEXT_NODE
     )
     .filter(
       // Disallow script element nodes
