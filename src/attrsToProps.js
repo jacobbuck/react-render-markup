@@ -1,10 +1,15 @@
 import cssToStyle from 'css-to-style';
 import attrToPropName from './attrToPropName';
+import reactProps from './reactProps';
 
 const attrsToProps = attrs =>
   Array.from(attrs)
     .filter(
-      // Disallow script element nodes
+      // Disallow react props
+      attr => !reactProps.includes(attr.name)
+    )
+    .filter(
+      // Disallow event attributes
       attr => attr.name.substr(0, 2) !== 'on'
     )
     .reduce((props, attr) => {
