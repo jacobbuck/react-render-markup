@@ -9,16 +9,13 @@ const specialAttrToPropMap = {
 };
 
 const attrToPropName = attr => {
-  const attrName = attr.toLowerCase().replace(/[^a-z]/g, '');
-  let propName;
+  const attrName = attr.toLowerCase().replace(/[^a-z0-9]/g, '');
 
   if (specialAttrToPropMap.hasOwnProperty(attrName)) {
-    propName = specialAttrToPropMap[attrName];
-  } else {
-    propName = htmlAndSvgProps.find(value => attrName === value.toLowerCase());
+    return specialAttrToPropMap[attrName];
   }
 
-  return propName || false;
+  return htmlAndSvgProps.find(value => attrName === value.toLowerCase());
 };
 
 export default attrToPropName;

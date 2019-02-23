@@ -16,36 +16,28 @@ const domToVDom = (dom, options) => {
   }
 
   const vdom = Array.from(dom)
-    .map((node, i) => {
-      const { nodeName, nodeType } = node;
-
-      // Only allow element and text nodes.
-      if (nodeType !== ELEMENT_NODE && nodeType !== TEXT_NODE) {
-        return null;
-      }
-
-      const lowerNodeName = nodeName.toLowerCase();
-
+    .filter(
+      // Only allow element and text nodes
+      node => node.nodeType !== ELEMENT_NODE && node.nodeType !== TEXT_NODE
+    )
+    .filter(
       // Disallow script element nodes
-      if (lowerNodeName === 'script') {
-        return null;
-      }
-
+      node => node.nodeName.toLowerCase() !== 'script'
+    )
+    .map((node, i) => {
       // Render text nodes as string
-      if (nodeType === TEXT_NODE) {
-        return node.textContent;
-      }
+      if (node.nodeType === TEXT_NODE) return node.textContent;
+
+      const tagName = node.nodeName.toLowerCase();
 
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (replace.hasOwnProperty(nodeName)) {
-        const replaceNodeType = replace[nodeName];
+      if (replace.hasOwnProperty(tagName)) {
+        const replaceNodeType = replace[tagName];
 
         // Don't render falsey replacements
-        if (!replaceNodeType) {
-          return null;
-        }
+        if (!replaceNodeType) return null;
 
         return React.createElement(
           replaceNodeType,
@@ -55,17 +47,18 @@ const domToVDom = (dom, options) => {
       }
 
       // Render HTML, MathML and SVG elements
-      if (allTagNames.includes(lowerNodeName)) {
+      if (allTagNames.includes(tagName)) {
         return React.createElement(
-          lowerNodeName,
+          tagName,
           props,
           // Ignore children of HTML void elements
-          htmlVoidElements.includes(lowerNodeName)
+          htmlVoidElements.includes(tagName)
             ? null
             : domToVDom(node.childNodes, options)
         );
       }
 
+      // If all else fails...
       return null;
     })
     .filter(node => node != null);
