@@ -3,8 +3,6 @@ import React from 'react';
 import attrsToProps from './attrsToProps';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
-const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
-
 const domToVDom = (dom, options) => {
   const { replace = {} } = options;
 
