@@ -11,9 +11,7 @@ const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
 const domToVDom = (dom, options) => {
   const { replace = {} } = options;
 
-  if (!dom || !dom.length) {
-    return null;
-  }
+  if (!dom || !dom.length) return null;
 
   const vdom = Array.from(dom)
     .filter(

@@ -6,9 +6,7 @@ const attrsToProps = attrs =>
     let { name, value } = attr;
 
     // Disallow event attributes
-    if (name.substr(0, 2) === 'on') {
-      return props;
-    }
+    if (name.substr(0, 2) === 'on') return props;
 
     let propName;
     if (['aria-', 'data-'].includes(name.substr(0, 5))) {
