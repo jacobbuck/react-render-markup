@@ -1,4 +1,9 @@
-import { DOMParser } from 'xmldom';
+let DOMParser;
+if (window && window.DOMParser) {
+  DOMParser = window.DOMParser;
+} else {
+  DOMParser = require('xmldom').DOMParser;
+}
 
 const parser = new DOMParser();
 
