@@ -6,14 +6,6 @@ export default {
     file: 'lib/index.js',
     format: 'cjs',
   },
-  external: [
-    'css-to-style',
-    'html-tag-names',
-    'html-void-elements',
-    'jsdom',
-    'mathml-tag-names',
-    'react',
-    'svg-tag-names',
-  ],
+  external: ['css-to-style', 'html-void-elements', 'react'],
   plugins: [babel()],
 };
