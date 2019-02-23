@@ -2,7 +2,9 @@ let DOMParser;
 if (typeof window !== 'undefined' && 'DOMParser' in window) {
   DOMParser = window.DOMParser;
 } else {
-  DOMParser = require('xmldom').DOMParser;
+  const { JSDOM } = require('jsdom');
+  const { window } = new JSDOM('');
+  DOMParser = window.DOMParser;
 }
 
 const parser = new DOMParser();
