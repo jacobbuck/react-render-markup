@@ -3,8 +3,8 @@ import htmlVoidElements from 'html-void-elements';
 import mathMLTagNames from 'mathml-tag-names';
 import svgTagNames from 'svg-tag-names';
 import React from 'react';
-import attrsToProps from './attrs-to-props';
-import { ELEMENT_NODE, TEXT_NODE } from './node-types';
+import attrsToProps from './attrsToProps';
+import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
 const allTagNames = [].concat(htmlTagNames, mathMLTagNames, svgTagNames);
 

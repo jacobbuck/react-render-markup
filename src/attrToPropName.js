@@ -1,5 +1,5 @@
-import htmlProps from './html-props';
-import svgProps from './svg-props';
+import htmlProps from './htmlProps';
+import svgProps from './svgProps';
 
 const htmlAndSvgProps = [].concat(htmlProps, svgProps);
 
