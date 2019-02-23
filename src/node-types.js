@@ -1,5 +1,5 @@
 // See https://dom.spec.whatwg.org/#dom-node-nodetype
-export default {
-  ELEMENT_NODE: 1,
-  TEXT_NODE: 3,
-};
+const ELEMENT_NODE = 1;
+const TEXT_NODE = 3;
+
+export { ELEMENT_NODE, TEXT_NODE };
