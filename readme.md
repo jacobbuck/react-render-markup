@@ -1,6 +1,6 @@
 # react-render-markup
 
-Parse HTML, SVG and MathML into React elements.
+Safely parse HTML, SVG and MathML into React elements.
 
 ## Example
 
