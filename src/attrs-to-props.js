@@ -3,8 +3,7 @@ import attrToPropName from './attr-to-prop-name';
 
 const attrsToProps = attrs =>
   Array.from(attrs).reduce((props, attr) => {
-    const name = attr.name;
-    let value = attr.value;
+    let { name, value } = attr;
 
     // Disallow event attributes
     if (name.substr(0, 2) === 'on') {
