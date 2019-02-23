@@ -1,5 +1,5 @@
 import cssToStyle from 'css-to-style';
-import attrToPropName from './attr-to-prop-name';
+import attrToPropName from './attrToPropName';
 
 const attrsToProps = attrs =>
   Array.from(attrs).reduce((props, attr) => {
