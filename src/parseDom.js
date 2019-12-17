@@ -1,12 +1,27 @@
-const parser = new window.DOMParser();
+let parseDom;
 
-const parseDom = markup => {
-  const doc = parser.parseFromString(
-    `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
-    'text/html'
-  );
+if (process.env.BROWSER) {
+  let parser = null;
 
-  return doc.getElementsByTagName('body')[0].childNodes;
-};
+  parseDom = markup => {
+    if (parser === null) {
+      parser = new window.DOMParser();
+    }
+  
+    const doc = parser.parseFromString(
+      `<!DOCTYPE html>\n<html><body>${markup}</body></html>`,
+      'text/html'
+    );
+  
+    return doc.getElementsByTagName('body')[0].childNodes;
+  };
+} else {
+  const { JSDOM } = require('jsdom');
+  
+  parseDom = markup => {
+    const frag = JSDOM.fragment(markup);
+    return frag.childNodes;
+  };
+}
 
 export default parseDom;

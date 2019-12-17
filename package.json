@@ -2,14 +2,18 @@
   "name": "react-render-markup",
   "version": "1.0.4",
   "description": "Safely parse HTML, SVG and MathML into React elements.",
-  "main": "lib/index.js",
+  "browser": "lib/browser.js",
+  "main": "lib/server.js",
+  "module": "lib/server.js",
   "files": [
     "lib"
   ],
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "npm-run-all -p test:*",
+    "test:browser": "BROWSER=true jest --browser",
+    "test:server": "jest --testEnvironment=node"
   },
   "repository": {
     "type": "git",
@@ -30,22 +34,23 @@
   "homepage": "https://github.com/jacobbuck/react-render-markup#readme",
   "dependencies": {
     "css-to-style": "^1.2.1",
-    "html-void-elements": "^1.0.4"
+    "html-void-elements": "^1.0.4",
+    "jsdom": "^15.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "html-tag-names": "^1.1.4",
+    "@rollup/plugin-replace": "^2.2.1",
+    "babel-jest": "^24.8.0",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
     "lint-staged": "^8.2.1",
-    "mathml-tag-names": "^2.1.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-test-renderer": "^16.8.6",
     "rollup": "^1.15.5",
-    "rollup-plugin-babel": "^4.3.2",
-    "svg-tag-names": "^2.0.0"
+    "rollup-plugin-babel": "^4.3.2"
   },
   "peerDependencies": {
     "react": ">=15.3.0"
