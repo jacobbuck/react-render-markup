@@ -1,6 +1,6 @@
 {
   "name": "react-render-markup",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Safely parse HTML, SVG and MathML into React elements.",
   "browser": "lib/browser.js",
   "main": "lib/browser.js",
