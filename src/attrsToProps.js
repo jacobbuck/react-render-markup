@@ -2,15 +2,15 @@ import cssToStyle from 'css-to-style';
 import attrToPropName from './attrToPropName';
 import reactProps from './reactProps';
 
-const attrsToProps = attrs =>
+const attrsToProps = (attrs) =>
   Array.from(attrs)
     .filter(
       // Disallow react props
-      attr => !reactProps.includes(attr.name)
+      (attr) => !reactProps.includes(attr.name)
     )
     .filter(
       // Disallow event attributes
-      attr => attr.name.substr(0, 2) !== 'on'
+      (attr) => attr.name.substr(0, 2) !== 'on'
     )
     .reduce((props, attr) => {
       let { name, value } = attr;

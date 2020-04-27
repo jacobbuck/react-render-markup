@@ -11,11 +11,11 @@ const domToVDom = (dom, options) => {
   const vdom = Array.from(dom)
     .filter(
       // Only allow element and text nodes
-      node => node.nodeType === ELEMENT_NODE || node.nodeType === TEXT_NODE
+      (node) => node.nodeType === ELEMENT_NODE || node.nodeType === TEXT_NODE
     )
     .filter(
       // Disallow script element nodes
-      node => node.nodeName.toLowerCase() !== 'script'
+      (node) => node.nodeName.toLowerCase() !== 'script'
     )
     .map((node, i) => {
       // Render text nodes as string
@@ -48,7 +48,7 @@ const domToVDom = (dom, options) => {
           : domToVDom(node.childNodes, options)
       );
     })
-    .filter(node => node != null);
+    .filter((node) => node != null);
 
   return vdom.length ? vdom : null;
 };
