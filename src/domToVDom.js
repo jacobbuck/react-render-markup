@@ -2,12 +2,10 @@ import React from 'react';
 import attrsToProps from './attrsToProps';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
-const domToVDom = (dom, options) => {
+const domToVDom = (nodeList, options) => {
   const { replace = {} } = options;
 
-  if (!dom || !dom.length) return null;
-
-  const vdom = Array.from(dom)
+  return Array.from(nodeList)
     .filter(
       // Only allow element and text nodes
       (node) => node.nodeType === ELEMENT_NODE || node.nodeType === TEXT_NODE
@@ -45,8 +43,6 @@ const domToVDom = (dom, options) => {
       );
     })
     .filter((node) => node != null);
-
-  return vdom.length ? vdom : null;
 };
 
 export default domToVDom;
