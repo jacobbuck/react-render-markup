@@ -1,4 +1,4 @@
-import parseDom from './parseDom';
+import parseDom from 'dom-parse';
 import domToVDom from './domToVDom';
 
 const renderMarkup = (markup = '', options = {}) => {
