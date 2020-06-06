@@ -6,6 +6,6 @@ export default {
     file: 'lib/index.js',
     format: 'es',
   },
-  external: ['css-to-style', 'dom-parse', 'html-void-elements', 'react'],
+  external: ['css-to-style', 'dom-parse', 'react'],
   plugins: [babel()],
 };

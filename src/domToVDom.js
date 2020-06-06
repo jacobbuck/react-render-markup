@@ -1,4 +1,3 @@
-import htmlVoidElements from 'html-void-elements';
 import React from 'react';
 import attrsToProps from './attrsToProps';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
@@ -42,10 +41,7 @@ const domToVDom = (dom, options) => {
       return React.createElement(
         tagName,
         props,
-        // Ignore children of HTML void elements
-        htmlVoidElements.includes(tagName)
-          ? null
-          : domToVDom(node.childNodes, options)
+        domToVDom(node.childNodes, options)
       );
     })
     .filter((node) => node != null);
