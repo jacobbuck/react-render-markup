@@ -1,5 +1,6 @@
 import React from 'react';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
+import always from './utilities/always';
 import cond from './utilities/cond';
 import has from './utilities/has';
 import isNil from './utilities/isNil';
@@ -11,10 +12,10 @@ const nodeToElement = cond([
   [(node) => node.nodeType === TEXT_NODE, (node) => node.textContent],
 
   // Only allow element node types
-  [(node) => node.nodeType !== ELEMENT_NODE, () => null],
+  [(node) => node.nodeType !== ELEMENT_NODE, always(null)],
 
   // Disallow script element nodes
-  [(node) => node.nodeName.toLowerCase() !== 'script', () => null],
+  [(node) => node.nodeName.toLowerCase() !== 'script', always(null)],
 
   // Handle replace option
   [
@@ -40,7 +41,7 @@ const nodeToElement = cond([
 
   // Render all other elements
   [
-    () => true,
+    always(true),
     (node, i, options) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
