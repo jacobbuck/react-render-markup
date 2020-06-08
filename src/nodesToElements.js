@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import always from './utilities/always';
 import cond from './utilities/cond';
@@ -6,7 +6,23 @@ import has from './utilities/has';
 import isNil from './utilities/isNil';
 import attrsToProps from './attrsToProps';
 
-const nodeToElement = cond([
+const createElement = (
+  node,
+  i,
+  options,
+  type = node.nodeName.toLowerCase()
+) => {
+  const props = attrsToProps(node.attributes);
+  props.key = i;
+
+  return React.createElement(
+    type,
+    props,
+    nodesToElements(node.childNodes, options)
+  );
+};
+
+const processNode = cond([
   // Render text nodes as string
   [(node) => node.nodeType === TEXT_NODE, (node) => node.textContent],
 
@@ -37,36 +53,17 @@ const nodeToElement = cond([
         return null;
       }
 
-      const props = attrsToProps(node.attributes);
-      props.key = i;
-
-      return React.createElement(
-        replaceNodeType,
-        props,
-        nodesToElements(node.childNodes, options)
-      );
+      return createElement(node, i, options, replaceNodeType);
     },
   ],
 
   // Render all other elements
-  [
-    always(true),
-    (node, i, options) => {
-      const props = attrsToProps(node.attributes);
-      props.key = i;
-
-      return React.createElement(
-        node.nodeName.toLowerCase(),
-        props,
-        nodesToElements(node.childNodes, options)
-      );
-    },
-  ],
+  [always(true), createElement],
 ]);
 
 const nodesToElements = (nodeList, options) =>
   Array.from(nodeList)
-    .map((node, i) => nodeToElement(node, i, options))
+    .map((node, i) => processNode(node, i, options))
     .filter((node) => !isNil(node));
 
 export default nodesToElements;
