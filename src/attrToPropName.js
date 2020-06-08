@@ -1,6 +1,6 @@
+import htmlProps from './constants/htmlProps';
+import svgProps from './constants/svgProps';
 import has from '../utils/has';
-import htmlProps from './htmlProps';
-import svgProps from './svgProps';
 
 const htmlAndSvgProps = [].concat(htmlProps, svgProps);
 

@@ -1,8 +1,8 @@
 import React from 'react';
+import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import has from './utils/has';
 import isNil from './utils/isNil';
 import attrsToProps from './attrsToProps';
-import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
 const domToVDom = (nodeList, options) => {
   const { replace } = options;
