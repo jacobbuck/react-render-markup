@@ -34,7 +34,9 @@ const nodeToElement = cond([
       const replaceNodeType = options.replace[node.nodeName.toLowerCase()];
 
       // Don't render falsey replacements
-      if (!replaceNodeType) return null;
+      if (!replaceNodeType) {
+        return null;
+      }
 
       const props = attrsToProps(node.attributes);
       props.key = i;
