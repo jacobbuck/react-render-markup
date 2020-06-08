@@ -1,7 +1,11 @@
 import parseDom from 'dom-parse';
+import isNil from './utilities/isNil';
 import nodesToElements from './nodesToElements';
 
-const renderMarkup = (markup = '', options = {}) => {
+const renderMarkup = (markup, options = {}) => {
+  if (isNil(markup)) {
+    return null;
+  }
   if (typeof markup !== 'string') {
     throw new TypeError('Expected parameter "markup" to be a string.');
   }
