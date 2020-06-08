@@ -17,6 +17,14 @@ const nodeToElement = cond([
   // Disallow script element nodes
   [(node) => node.nodeName.toLowerCase() !== 'script', always(null)],
 
+  // Handle whitelist option
+  [
+    (node, i, options) =>
+      !isNil(options.whitelist) &&
+      options.whitelist.includes(node.nodeName.toLowerCase()),
+    always(null),
+  ],
+
   // Handle replace option
   [
     (node, i, options) =>
