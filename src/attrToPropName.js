@@ -1,6 +1,6 @@
 import htmlProps from './constants/htmlProps';
 import svgProps from './constants/svgProps';
-import has from '../utilities/has';
+import has from './utilities/has';
 
 const htmlAndSvgProps = [].concat(htmlProps, svgProps);
 
@@ -16,7 +16,7 @@ const attrToPropName = (attr) => {
     return specialAttrToPropMap[attrName];
   }
 
-  return htmlAndSvgProps.find((value) => attrName === value.toLowerCase());
+  return htmlAndSvgProps.find((value) => value.toLowerCase() === attrName);
 };
 
 export default attrToPropName;
