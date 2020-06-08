@@ -4,7 +4,7 @@ import has from './utilities/has';
 import isNil from './utilities/isNil';
 import attrsToProps from './attrsToProps';
 
-const domToVDom = (nodeList, options) => {
+const nodesToElements = (nodeList, options) => {
   const { replace } = options;
 
   return Array.from(nodeList)
@@ -34,17 +34,17 @@ const domToVDom = (nodeList, options) => {
         return React.createElement(
           replaceNodeType,
           props,
-          domToVDom(node.childNodes, options)
+          nodesToElements(node.childNodes, options)
         );
       }
 
       return React.createElement(
         tagName,
         props,
-        domToVDom(node.childNodes, options)
+        nodesToElements(node.childNodes, options)
       );
     })
     .filter((node) => !isNil(node));
 };
 
-export default domToVDom;
+export default nodesToElements;
