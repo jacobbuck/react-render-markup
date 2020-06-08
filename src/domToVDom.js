@@ -1,7 +1,7 @@
 import React from 'react';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
-import has from './utils/has';
-import isNil from './utils/isNil';
+import has from './utilities/has';
+import isNil from './utilities/isNil';
 import attrsToProps from './attrsToProps';
 
 const domToVDom = (nodeList, options) => {
