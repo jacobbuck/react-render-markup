@@ -1,5 +1,5 @@
 import parseDom from 'dom-parse';
-import domToVDom from './domToVDom';
+import nodesToElements from './nodesToElements';
 
 const renderMarkup = (markup = '', options = {}) => {
   if (typeof markup !== 'string') {
@@ -8,7 +8,7 @@ const renderMarkup = (markup = '', options = {}) => {
   if (typeof options !== 'object') {
     throw new TypeError('Expected parameter "options" to be an object.');
   }
-  return domToVDom(parseDom(markup), options);
+  return nodesToElements(parseDom(markup), options);
 };
 
 export default renderMarkup;
