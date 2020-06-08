@@ -14,7 +14,7 @@ const nodeToElement = cond([
   [(node) => node.nodeType !== ELEMENT_NODE, always(null)],
 
   // Disallow script element nodes
-  [(node) => node.nodeName.toLowerCase() !== 'script', always(null)],
+  [(node) => node.nodeName.toLowerCase() === 'script', always(null)],
 
   // Handle whitelist option
   [
