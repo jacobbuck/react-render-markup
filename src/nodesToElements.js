@@ -5,7 +5,6 @@ import cond from './utilities/cond';
 import has from './utilities/has';
 import isNil from './utilities/isNil';
 import attrsToProps from './attrsToProps';
-import nodesToElements from './nodesToElements';
 
 const nodeToElement = cond([
   // Render text nodes as string
