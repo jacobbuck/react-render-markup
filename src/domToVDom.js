@@ -1,9 +1,11 @@
 import React from 'react';
 import attrsToProps from './attrsToProps';
+import has from './utils/has';
+import isNil from './utils/isNil';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
 const domToVDom = (nodeList, options) => {
-  const { replace = {} } = options;
+  const { replace } = options;
 
   return Array.from(nodeList)
     .filter(
@@ -23,7 +25,7 @@ const domToVDom = (nodeList, options) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (replace.hasOwnProperty(tagName)) {
+      if (isNil(replace) && replace.hasOwnProperty(tagName)) {
         const replaceNodeType = replace[tagName];
 
         // Don't render falsey replacements
