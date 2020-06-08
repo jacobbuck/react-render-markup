@@ -32,11 +32,11 @@ const processNode = cond([
   // Disallow script element nodes
   [(node) => node.nodeName.toLowerCase() === 'script', always(null)],
 
-  // Handle whitelist option
+  // Handle allowed option
   [
     (node, i, options) =>
-      !isNil(options.whitelist) &&
-      options.whitelist.includes(node.nodeName.toLowerCase()),
+      !isNil(options.allowed) &&
+      options.allowed.includes(node.nodeName.toLowerCase()),
     always(null),
   ],
 
