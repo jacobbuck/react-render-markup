@@ -1,7 +1,7 @@
 import React from 'react';
-import attrsToProps from './attrsToProps';
 import has from './utils/has';
 import isNil from './utils/isNil';
+import attrsToProps from './attrsToProps';
 import { ELEMENT_NODE, TEXT_NODE } from './nodeTypes';
 
 const domToVDom = (nodeList, options) => {
@@ -25,7 +25,7 @@ const domToVDom = (nodeList, options) => {
       const props = attrsToProps(node.attributes);
       props.key = i;
 
-      if (isNil(replace) && replace.hasOwnProperty(tagName)) {
+      if (isNil(replace) && has(tagName, replace)) {
         const replaceNodeType = replace[tagName];
 
         // Don't render falsey replacements
@@ -44,7 +44,7 @@ const domToVDom = (nodeList, options) => {
         domToVDom(node.childNodes, options)
       );
     })
-    .filter((node) => node != null);
+    .filter((node) => !isNil(node));
 };
 
 export default domToVDom;

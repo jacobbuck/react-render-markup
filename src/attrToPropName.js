@@ -1,3 +1,4 @@
+import has from '../utils/has';
 import htmlProps from './htmlProps';
 import svgProps from './svgProps';
 
@@ -11,7 +12,7 @@ const specialAttrToPropMap = {
 const attrToPropName = (attr) => {
   const attrName = attr.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  if (specialAttrToPropMap.hasOwnProperty(attrName)) {
+  if (has(attrName, specialAttrToPropMap)) {
     return specialAttrToPropMap[attrName];
   }
 
