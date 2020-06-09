@@ -4,6 +4,7 @@ import always from './utilities/always';
 import cond from './utilities/cond';
 import has from './utilities/has';
 import isNil from './utilities/isNil';
+import toArray from './utilities/toArray';
 import attrsToProps from './attrsToProps';
 
 const createElement = (
@@ -62,7 +63,7 @@ const processNode = cond([
 ]);
 
 const nodesToElements = (nodeList, options) =>
-  Array.from(nodeList)
+  toArray(nodeList)
     .map((node, i) => processNode(node, i, options))
     .filter((node) => !isNil(node));
 
