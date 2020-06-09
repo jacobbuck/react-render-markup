@@ -1,9 +1,10 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
+import toArray from './utilities/toArray';
 import attrToPropName from './attrToPropName';
 
 const attrsToProps = (attrs) =>
-  Array.from(attrs)
+  toArray(attrs)
     .filter(
       // Disallow react props
       (attr) => !reactProps.includes(attr.name)
