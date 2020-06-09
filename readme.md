@@ -27,6 +27,8 @@ renderMarkup(markup[, options])
 
 ### Return value
 
+An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
+
 ## XSS
 
 By default, `<script>` tags and event attributes (i.e. `onClick`) are disallowed and stripped from output.
