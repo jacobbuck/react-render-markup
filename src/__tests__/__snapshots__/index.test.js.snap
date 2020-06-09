@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders html from a string 1`] = `
+exports[`renders HTML from a string 1`] = `
 Array [
   "
-  ",
+",
   <header
     role="banner"
   >
     
-    
+  
     <h1>
       HTML5 Kitchen Sink
     </h1>
     
-    
+  
     <small>
       Jump to: 
       <a
@@ -63,7 +63,7 @@ Array [
     <br />
     <br />
     
-    
+  
     <p>
       This section seves as the 
       <code>
@@ -72,21 +72,21 @@ Array [
       .
     </p>
     
-  
+
   </header>,
   "
-  ",
+",
   <hr />,
   "
-  ",
+",
   <main>
     
-    
+  
     <section
       id="headings"
     >
       
-      
+    
       <h3>
         <a
           href="#headings"
@@ -96,7 +96,7 @@ Array [
          Headings 
       </h3>
       
-      
+    
       <p>
         Elements 
         <code>
@@ -115,7 +115,7 @@ Array [
           h4
         </code>
         ,
-        
+      
         <code>
           h5
         </code>
@@ -128,18 +128,18 @@ Array [
           heading content
         </em>
          category.
-      
+    
       </p>
       
-      
+    
       <hgroup>
         
-        
+      
         <h1>
           h1 I am most important.
         </h1>
         
-        
+      
         <h2>
           h2 Back in my quaint 
           <a
@@ -149,7 +149,7 @@ Array [
           </a>
         </h2>
         
-        
+      
         <h3>
           h3 Jaunty 
           <a
@@ -160,28 +160,28 @@ Array [
            vie with flaunting phlox.
         </h3>
         
-        
+      
         <h4>
           h4 Five or six big jet planes zoomed quickly by the new tower.
         </h4>
         
-        
+      
         <h5>
           h5 Expect skilled signwriters to use many jazzy, quaint old alphabets effectively.
         </h5>
         
-        
+      
         <h6>
           h6 Pack my box with five dozen liquor jugs.
         </h6>
         
-      
+    
       </hgroup>
       
-      
+    
       <footer>
         
-        
+      
         <p>
           See the 
           <a
@@ -192,34 +192,34 @@ Array [
           </a>
         </p>
         
-        
+      
         <p>
           Note: these two paragraphs are contained in a 
           <code>
             footer
           </code>
            element.
-        
+      
         </p>
         
-      
+    
       </footer>
       
-    
+  
     </section>
     
-    
+  
     <hr />
     
-    
+  
     <section
       id="sections"
     >
       
-      
+    
       <header>
         
-        
+      
         <h3>
           <a
             href="#sections"
@@ -229,7 +229,7 @@ Array [
            Sections
         </h3>
         
-        
+      
         <p>
           Elements 
           <code>
@@ -244,7 +244,7 @@ Array [
             nav
           </code>
           ,
-          
+        
           <code>
             section
           </code>
@@ -253,13 +253,13 @@ Array [
             sectioning content
           </em>
            category.
-        
+      
         </p>
         
-        
+      
         <nav>
           
-          
+        
           <p>
             These links are contained in a 
             <code>
@@ -268,10 +268,10 @@ Array [
              element.
           </p>
           
-          
+        
           <ul>
             
-            
+          
             <li>
               <a
                 href="#"
@@ -280,7 +280,7 @@ Array [
               </a>
             </li>
             
-            
+          
             <li>
               <a
                 href="#"
@@ -289,7 +289,7 @@ Array [
               </a>
             </li>
             
-            
+          
             <li>
               <a
                 href="#"
@@ -298,19 +298,19 @@ Array [
               </a>
             </li>
             
-          
+        
           </ul>
           
-        
+      
         </nav>
         
-      
+    
       </header>
       
-      
+    
       <article>
         
-        
+      
         <p>
           This paragraph is nested inside an 
           <code>
@@ -331,7 +331,7 @@ Array [
             strong
           </strong>
           ,
-          and 
+        and 
           <small>
             small
           </small>
@@ -352,7 +352,7 @@ Array [
                     text.
         </p>
         
-        
+      
         <p>
           You can also use 
           <kbd>
@@ -371,7 +371,7 @@ Array [
             variables
           </var>
           . Not to be mistaken with block
-          quotes below, the quote element lets you denote something as 
+        quotes below, the quote element lets you denote something as 
           <q>
             quoted text
           </q>
@@ -386,10 +386,10 @@ Array [
           ) elements.
         </p>
         
-        
+      
         <section>
           
-          
+        
           <p>
             This paragraph is contained in a 
             <code>
@@ -402,7 +402,7 @@ Array [
              element.
           </p>
           
-          
+        
           <p>
             ↓ The following paragraph has the 
             <code>
@@ -411,28 +411,28 @@ Array [
              attribute and should not be displayed. ↓
           </p>
           
-          
+        
           <p
             hidden={true}
           >
             → You should not see this paragraph. ←
           </p>
           
-          
+        
           <p>
             ↑ The previous paragraph should not be displayed. ↑
           </p>
           
-        
+      
         </section>
         
-      
+    
       </article>
       
-      
+    
       <aside>
         
-        
+      
         <p>
           This is contained in an 
           <code>
@@ -441,13 +441,13 @@ Array [
            element.
         </p>
         
-      
+    
       </aside>
       
-      
+    
       <footer>
         
-        
+      
         <p>
           See the 
           <a
@@ -459,24 +459,24 @@ Content spec.
           </a>
         </p>
         
-      
+    
       </footer>
       
-    
+  
     </section>
     
-    
+  
     <hr />
     
-    
+  
     <section
       id="phrasing"
     >
       
-      
+    
       <header>
         
-        
+      
         <h3>
           <a
             href="#phrasing"
@@ -486,7 +486,7 @@ Content spec.
            Phrasing
         </h3>
         
-        
+      
         <p>
           Elements 
           <code>
@@ -501,7 +501,7 @@ Content spec.
             bdi
           </code>
           ,
-          
+        
           <code>
             bdo
           </code>
@@ -518,7 +518,7 @@ Content spec.
             code
           </code>
           ,
-          
+        
           <code>
             data
           </code>
@@ -535,7 +535,7 @@ Content spec.
             em
           </code>
           ,
-          
+        
           <code>
             i
           </code>
@@ -552,7 +552,7 @@ Content spec.
             mark
           </code>
           ,
-          
+        
           <code>
             meter
           </code>
@@ -569,7 +569,7 @@ Content spec.
             s
           </code>
           ,
-          
+        
           <code>
             samp
           </code>
@@ -586,7 +586,7 @@ Content spec.
             strong
           </code>
           ,
-          
+        
           <code>
             sub
           </code>
@@ -603,7 +603,7 @@ Content spec.
             u
           </code>
           ,
-          
+        
           <code>
             var
           </code>
@@ -616,19 +616,19 @@ Content spec.
             phrasing content
           </em>
            category.
-        
+      
         </p>
         
-      
+    
       </header>
       
-      
+    
       <p>
         <code>
           abbr
         </code>
         : Some vehicles meet the
-        
+      
         <abbr
           title="Super Ultra Low Emission Vehicle"
         >
@@ -637,14 +637,14 @@ Content spec.
          standard.
         <br />
         
-        
+      
         <code>
           br
         </code>
          was used to make this sentence start on a new line.
       </p>
       
-      
+    
       <p>
         <code>
           bdi
@@ -656,7 +656,7 @@ Content spec.
           مرحبا
         </bdi>
         .
-        
+      
         <code>
           bdo
         </code>
@@ -669,7 +669,7 @@ overridden.
         </bdo>
       </p>
       
-      
+    
       <p>
         <code>
           em
@@ -705,7 +705,7 @@ overridden.
          without the semantic meaning of  importance.
       </p>
       
-      
+    
       <p>
         <code>
           cite
@@ -720,7 +720,7 @@ overridden.
         </q>
       </p>
       
-      
+    
       <p>
         <code>
           data
@@ -742,10 +742,10 @@ overridden.
           5 A.M.
         </time>
          in a machine-readable format.
-      
+    
       </p>
       
-      
+    
       <p>
         <code>
           del
@@ -799,14 +799,14 @@ overridden.
           span
         </code>
         : a
-        
+      
         <span>
           generic element
         </span>
          with no meaning by itself.
       </p>
       
-      
+    
       <p>
         <code>
           dfn
@@ -819,10 +819,10 @@ overridden.
           je ne sais quoi
         </dfn>
          to one's prose.
-      
+    
       </p>
       
-      
+    
       <p>
         <code>
           q
@@ -840,7 +840,7 @@ overridden.
         .
       </p>
       
-      
+    
       <p>
         <code>
           kbd
@@ -852,7 +852,7 @@ overridden.
         : I did this:
       </p>
       
-      
+    
       <pre>
         <samp>
           c:&gt;
@@ -862,7 +862,7 @@ overridden.
         </samp>
       </pre>
       
-      
+    
       <p>
         Is that bad? Press 
         <kbd>
@@ -879,7 +879,7 @@ overridden.
          for a hard reload.
       </p>
       
-      
+    
       <p>
         <code>
           var
@@ -899,7 +899,7 @@ overridden.
          is your user ID.
       </p>
       
-      
+    
       <p>
         <code>
           meter
@@ -909,7 +909,7 @@ overridden.
           progress
         </code>
         : Storage space usage:
-        
+      
         <meter
           max="8"
           value="6"
@@ -917,7 +917,7 @@ overridden.
           6 blocks used (out of 8 total)
         </meter>
          Progress:
-        
+      
         <progress
           max="100"
           value="37"
@@ -926,7 +926,7 @@ overridden.
         </progress>
       </p>
       
-      
+    
       <p>
         <code>
           sub
@@ -973,10 +973,10 @@ overridden.
         cious.
       </p>
       
-      
+    
       <footer>
         
-        
+      
         <p>
           See the 
           <a
@@ -987,24 +987,24 @@ overridden.
           </a>
         </p>
         
-      
+    
       </footer>
       
-    
+  
     </section>
     
-    
+  
     <hr />
     
-    
+  
     <section
       id="palpable"
     >
       
-      
+    
       <header>
         
-        
+      
         <h3>
           <a
             href="#palpable"
@@ -1014,7 +1014,7 @@ overridden.
            Palpable Content
         </h3>
         
-        
+      
         <p>
           Elements 
           <code>
@@ -1029,7 +1029,7 @@ overridden.
             blockquote
           </code>
           ,
-          
+        
           <code>
             button
           </code>
@@ -1046,7 +1046,7 @@ overridden.
             fieldset
           </code>
           ,
-          
+        
           <code>
             figure
           </code>
@@ -1063,7 +1063,7 @@ overridden.
             label
           </code>
           ,
-          
+        
           <code>
             map
           </code>
@@ -1080,7 +1080,7 @@ overridden.
             pre
           </code>
           ,
-          
+        
           <code>
             select
           </code>
@@ -1093,7 +1093,7 @@ overridden.
             textarea
           </code>
           ,
-          
+        
           <code>
             ul
           </code>
@@ -1102,13 +1102,13 @@ overridden.
             palpable content
           </em>
            category.
-        
+      
         </p>
         
-      
+    
       </header>
       
-      
+    
       <p>
         <code>
           a
@@ -1122,7 +1122,7 @@ overridden.
         .
       </p>
       
-      
+    
       <p>
         <code>
           address
@@ -1130,7 +1130,7 @@ overridden.
         :
       </p>
       
-      
+    
       <address>
         1 Infinite Loop
         <br />
@@ -1142,7 +1142,7 @@ United States
 
       </address>
       
-      
+    
       <p>
         <code>
           blockquote
@@ -1150,27 +1150,27 @@ United States
         :
       </p>
       
-      
+    
       <blockquote>
         
-        
+      
         <p>
           I quickly explained that many big jobs involve few hazards
         </p>
         
-      
+    
       </blockquote>
       
-      
+    
       <blockquote>
         
-        
+      
         <p>
           This is a mult-line blockquote with a cite reference. People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to
-          pick carefully. I’m actually as proud of the things we haven’tdone as the things I have done. Innovation is saying no to 1,000 things.
+        pick carefully. I’m actually as proud of the things we haven’tdone as the things I have done. Innovation is saying no to 1,000 things.
         </p>
         
-        
+      
         <footer>
           Steve Jobs, 
           <cite>
@@ -1178,10 +1178,10 @@ United States
           </cite>
         </footer>
         
-      
+    
       </blockquote>
       
-      
+    
       <p>
         <code>
           details
@@ -1193,10 +1193,10 @@ United States
         :
       </p>
       
-      
+    
       <details>
         
-        
+      
         <summary>
           Copying... 
           <progress
@@ -1204,59 +1204,59 @@ United States
             value="97543282"
           />
            25%
-        
+      
         </summary>
         
-        
+      
         <dl>
           
-          
+        
           <dt>
             Transfer rate:
           </dt>
           
-          
+        
           <dd>
             452KB/s
           </dd>
           
-          
+        
           <dt>
             Duration:
           </dt>
           
-          
+        
           <dd>
             01:16:27
           </dd>
           
-          
+        
           <dt>
             Color profile:
           </dt>
           
-          
+        
           <dd>
             SD (6-1-6)
           </dd>
           
-          
+        
           <dt>
             Dimensions:
           </dt>
           
-          
+        
           <dd>
             320×240
           </dd>
           
-        
+      
         </dl>
         
-      
+    
       </details>
       
-      
+    
       <p>
         <code>
           dl
@@ -1264,53 +1264,53 @@ United States
         :
       </p>
       
-      
+    
       <dl>
         
-        
+      
         <dt>
           Definition List Title
         </dt>
         
-        
+      
         <dd>
           Definition list division.
         </dd>
         
-        
+      
         <dt>
           Kitchen Sink
         </dt>
         
-        
+      
         <dd>
           Used in expressions to describe work in which all conceivable (and some inconceivable) sources have been mined. In this case, a bunch of markup.
         </dd>
         
-        
+      
         <dt>
           aside
         </dt>
         
-        
+      
         <dd>
           Defines content aside from the page content
         </dd>
         
-        
+      
         <dt>
           blockquote
         </dt>
         
-        
+      
         <dd>
           Defines a section that is quoted from another source
         </dd>
         
-      
+    
       </dl>
       
-      
+    
       <p>
         <code>
           figure
@@ -1318,15 +1318,15 @@ United States
         :
       </p>
       
-      
+    
       <figure>
         
-        
+      
         <img
           src="https://www.fillmurray.com/402/295"
         />
         
-        
+      
         <figcaption>
           Figure 1: A picture of Bill Murray from 
           <a
@@ -1335,17 +1335,17 @@ United States
             fillmurray.com
           </a>
           
-        
+      
         </figcaption>
         
-      
+    
       </figure>
       
-      
+    
       <br />
       <br />
       
-      
+    
       <h4
         id="forms"
       >
@@ -1357,348 +1357,348 @@ United States
          Forms
       </h4>
       
-      
+    
       <hr />
       
-      
+    
       <form>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-email"
           >
             Email address
           </label>
           
-          
+        
           <input
             id="example-input-email"
             type="email"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-number"
           >
             Number
           </label>
           
-          
+        
           <input
             id="example-input-number"
             type="number"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-password"
           >
             Password
           </label>
           
-          
+        
           <input
             id="example-input-password"
             type="password"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-search"
           >
             Search
           </label>
           
-          
+        
           <input
             id="example-input-search"
             type="search"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-tel"
           >
             Telephone number
           </label>
           
-          
+        
           <input
             id="example-input-tel"
             type="tel"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-text"
           >
             Text
           </label>
           
-          
+        
           <input
             id="example-input-text"
             type="text"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-readonly"
           >
             Read-only
           </label>
           
-          
+        
           <input
             readOnly={true}
             type="text"
             value="Can't touch this!"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-disabled"
           >
             Disabled
           </label>
           
-          
+        
           <input
             disabled={true}
             type="text"
             value="Not available"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-url"
           >
             URL
           </label>
           
-          
+        
           <input
             id="example-input-url"
             type="url"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-color"
           >
             Color
           </label>
           
-          
+        
           <input
             id="example-input-color"
             type="color"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-date"
           >
             Date
           </label>
           
-          
+        
           <input
             id="example-input-date"
             type="date"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-date-time"
           >
             Date / Time
           </label>
           
-          
+        
           <input
             id="example-input-date-time"
             type="datetime"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-date-time-local"
           >
             Date / Time local
           </label>
           
-          
+        
           <input
             id="example-input-date-time-local"
             type="datetime-local"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-month"
           >
             Month
           </label>
           
-          
+        
           <input
             id="example-input-month"
             type="month"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-week"
           >
             Week
           </label>
           
-          
+        
           <input
             id="example-input-week"
             type="week"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-time"
           >
             Time
           </label>
           
-          
+        
           <input
             id="example-input-time"
             type="time"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-file"
           >
             File input
           </label>
           
-          
+        
           <input
             id="example-input-file"
             type="file"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-input-range"
           >
             Range input
           </label>
           
-          
+        
           <input
             id="example-input-range"
             max="4"
@@ -1707,371 +1707,371 @@ United States
             value="3"
           />
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-select1"
           >
             Select
           </label>
           
-          
+        
           <select
             id="example-select1"
           >
             
-            
+          
             <option>
               1
             </option>
             
-            
+          
             <option>
               2
             </option>
             
-            
+          
             <option>
               3
             </option>
             
-            
+          
             <option>
               4
             </option>
             
-            
+          
             <option>
               5
             </option>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-select1a"
           >
             Select with size
           </label>
           
-          
+        
           <select
             id="example-select1a"
             size="2"
           >
             
-            
+          
             <option>
               1
             </option>
             
-            
+          
             <option>
               2
             </option>
             
-            
+          
             <option>
               3
             </option>
             
-            
+          
             <option>
               4
             </option>
             
-            
+          
             <option>
               5
             </option>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-select2"
           >
             Multiple select
           </label>
           
-          
+        
           <select
             id="example-select2"
             multiple={true}
           >
             
-            
+          
             <option>
               1
             </option>
             
-            
+          
             <option>
               2
             </option>
             
-            
+          
             <option>
               3
             </option>
             
-            
+          
             <option>
               4
             </option>
             
-            
+          
             <option>
               5
             </option>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-optgroup"
           >
             Select with optgroup: Favorite Car
           </label>
           
-          
+        
           <select
             id="example-optgroup"
           >
             
-            
+          
             <optgroup
               label="Swedish Cars"
             >
               
-              
+            
               <option>
                 Volvo
               </option>
               
-              
+            
               <option>
                 Saab
               </option>
               
-            
+          
             </optgroup>
             
-            
+          
             <optgroup
               label="German Cars"
             >
               
-              
+            
               <option>
                 Mercedes
               </option>
               
-              
+            
               <option>
                 Audi
               </option>
               
-            
+          
             </optgroup>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-optgroup2"
           >
             Select with optgroup and size:Favorite Dish
           </label>
           
-          
+        
           <select
             id="example-optgroup2"
             size="2"
           >
             
-            
+          
             <optgroup
               label="Vegetarian"
             >
               
-              
+            
               <option>
                 Green Salad
               </option>
               
-              
+            
               <option>
                 French Fries
               </option>
               
-            
+          
             </optgroup>
             
-            
+          
             <optgroup
               label="Carnivorous"
             >
               
-              
+            
               <option>
                 Big Mac
               </option>
               
-              
+            
               <option>
                 Roast Beef
               </option>
               
-            
+          
             </optgroup>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-optgroup3"
           >
             Multiple select with optgroup: Public transport
           </label>
           
-          
+        
           <select
             id="example-optgroup3"
             multiple={true}
           >
             
-            
+          
             <optgroup
               label="Ground"
             >
               
-              
+            
               <option>
                 Train
               </option>
               
-              
+            
               <option>
                 Bus
               </option>
               
-            
+          
             </optgroup>
             
-            
+          
             <optgroup
               label="Water"
             >
               
-              
+            
               <option>
                 Ship
               </option>
               
-              
+            
               <option>
                 Submarine
               </option>
               
-            
+          
             </optgroup>
             
-            
+          
             <optgroup
               label="Air"
             >
               
-              
+            
               <option>
                 Plane
               </option>
               
-              
+            
               <option>
                 Balloon
               </option>
               
-            
+          
             </optgroup>
             
-          
+        
           </select>
           
-        
+      
         </p>
         
-        
+      
         <p>
           
-          
+        
           <label
             htmlFor="example-textarea"
           >
             Textarea
           </label>
           
-          
+        
           <textarea
             id="example-textarea"
             rows="3"
           />
           
-        
+      
         </p>
         
-        
+      
         <fieldset>
           
-          
+        
           <legend>
             I am legend
           </legend>
           
-          
+        
           <div>
             
-            
+          
             <input
               checked={true}
               id="option-radio1"
@@ -2080,20 +2080,20 @@ United States
               value="option1"
             />
             
-            
+          
             <label
               htmlFor="option-radio1"
             >
               Option one is this and that—be sure to include why it's great
             </label>
             
-          
+        
           </div>
           
-          
+        
           <div>
             
-            
+          
             <input
               id="option-radio2"
               name="option-radio"
@@ -2101,18 +2101,18 @@ United States
               value="option2"
             />
             
-            
+          
             <label>
               Option two can be something else and selecting it will deselect option one
             </label>
             
-          
+        
           </div>
           
-          
+        
           <div>
             
-            
+          
             <input
               disabled={true}
               id="option-radio3"
@@ -2121,58 +2121,58 @@ United States
               value="option3"
             />
             
-            
+          
             <label>
               Option three is disabled
             </label>
             
-          
+        
           </div>
           
-        
+      
         </fieldset>
         
-        
+      
         <fieldset>
           
-          
+        
           <legend>
             I am also legend
           </legend>
           
-          
+        
           <input
             id="checkbox1"
             type="checkbox"
           />
           
-          
+        
           <label
             htmlFor="checkbox1"
           >
             Check me out
           </label>
           
-          
+        
           <input
             id="checkbox2"
             type="checkbox"
           />
           
-          
+        
           <label
             htmlFor="checkbox2"
           >
             and/or check me out
           </label>
           
-        
+      
         </fieldset>
         
-        
+      
         <p>
           
-          
+        
           <button
             name="button"
             type="button"
@@ -2180,21 +2180,21 @@ United States
             Button
           </button>
           
-          
+        
           <input
             name="input"
             type="button"
             value="Input Button"
           />
           
-          
+        
           <input
             name="submit"
             type="submit"
             value="Input Submit"
           />
           
-          
+        
           <button
             name="submit2"
             type="submit"
@@ -2202,14 +2202,14 @@ United States
             Submit
           </button>
           
-          
+        
           <input
             name="reset"
             type="reset"
             value="Input Reset"
           />
           
-          
+        
           <button
             name="reset2"
             type="reset"
@@ -2217,20 +2217,20 @@ United States
             Reset
           </button>
           
-          
+        
           <button
             disabled={true}
           >
             Cancel
           </button>
           
-        
+      
         </p>
         
-      
+    
       </form>
       
-      
+    
       <p>
         <code>
           ul
@@ -2242,167 +2242,167 @@ United States
         :
       </p>
       
-      
+    
       <ul>
         
-        
+      
         <li>
           Unordered List item one
-          
+        
           <ul>
             
-            
+          
             <li>
               Nested list item
-              
+            
               <ul>
                 
-                
+              
                 <li>
                   Level 3, item one
                 </li>
                 
-                
+              
                 <li>
                   Level 3, item two
                 </li>
                 
-                
+              
                 <li>
                   Level 3, item three
                 </li>
                 
-                
+              
                 <li>
                   Level 3, item four
                 </li>
                 
-              
+            
               </ul>
               
-            
+          
             </li>
             
-            
+          
             <li>
               List item two
             </li>
             
-            
+          
             <li>
               List item three
             </li>
             
-            
+          
             <li>
               List item four
             </li>
             
-          
+        
           </ul>
           
-        
+      
         </li>
         
-        
+      
         <li>
           List item two
         </li>
         
-        
+      
         <li>
           List item three
         </li>
         
-        
+      
         <li>
           List item four
         </li>
         
-      
+    
       </ul>
       
-      
+    
       <ol>
         
-        
+      
         <li>
           List item one
-          
+        
           <ol>
             
-            
+          
             <li>
               List item one
-              
+            
               <ol>
                 
-                
+              
                 <li>
                   List item one
                 </li>
                 
-                
+              
                 <li>
                   List item two
                 </li>
                 
-                
+              
                 <li>
                   List item three
                 </li>
                 
-                
+              
                 <li>
                   List item four
                 </li>
                 
-              
+            
               </ol>
               
-            
+          
             </li>
             
-            
+          
             <li>
               List item two
             </li>
             
-            
+          
             <li>
               List item three
             </li>
             
-            
+          
             <li>
               List item four
             </li>
             
-          
+        
           </ol>
           
-        
+      
         </li>
         
-        
+      
         <li>
           List item two
         </li>
         
-        
+      
         <li>
           List item three
         </li>
         
-        
+      
         <li>
           List item four
         </li>
         
-      
+    
       </ol>
       
-      
+    
       <p>
         <code>
           output
@@ -2410,33 +2410,33 @@ United States
         :
       </p>
       
-      
+    
       <form>
         
-        
+      
         <input
           name="a"
           step="any"
           type="number"
         />
          +
-        
+      
         <input
           name="b"
           step="any"
           type="number"
         />
          =
-        
+      
         <output
           htmlFor="a b"
           name="o"
         />
         
-      
+    
       </form>
       
-      
+    
       <p>
         <code>
           pre
@@ -2444,7 +2444,7 @@ United States
         :
       </p>
       
-      
+    
       <pre>
         pre {
 display: block;
@@ -2459,7 +2459,7 @@ line-height: 160%;
 }
       </pre>
       
-      
+    
       <pre>
         <samp>
           You are in an open field west of a big white house with a boarded
@@ -2485,7 +2485,7 @@ A leaflet.
       <br />
       <br />
       
-      
+    
       <h4
         id="tables"
       >
@@ -2497,66 +2497,66 @@ A leaflet.
          Tables
       </h4>
       
-      
+    
       <hr />
       
-      
+    
       <table>
         
-        
+      
         <caption>
           Tables can have captions now.
         </caption>
         
-        
+      
         <tbody>
           
-          
+        
           <tr>
             
-            
+          
             <th>
               Person
             </th>
             
-            
+          
             <th>
               Number
             </th>
             
-            
+          
             <th>
               Third Column
             </th>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <td>
               Someone Lastname
             </td>
             
-            
+          
             <td>
               900
             </td>
             
-            
+          
             <td>
               Nullam quis risus eget urna mollis ornare vel eu leo.
             </td>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <td>
               <a
                 href="#"
@@ -2565,182 +2565,182 @@ A leaflet.
               </a>
             </td>
             
-            
+          
             <td>
               1200
             </td>
             
-            
+          
             <td>
               Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.
             </td>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <td>
               Another Person
             </td>
             
-            
+          
             <td>
               1500
             </td>
             
-            
+          
             <td>
               Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam id dolor id nibh ultricies vehicula ut id elit.
             </td>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <td>
               Last One
             </td>
             
-            
+          
             <td>
               2800
             </td>
             
-            
+          
             <td>
               Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
             </td>
             
-          
+        
           </tr>
           
-        
+      
         </tbody>
         
-      
+    
       </table>
       
-      
+    
       <p
         id="table-summary"
       >
         In the following table, characteristics are given in the second column, with the negative side in the left column and the positive side in the right column.
       </p>
       
-      
+    
       <table
         aria-describedby="table-summary"
       >
         
-        
+      
         <caption>
           Characteristics with positive and negative sides
         </caption>
         
-        
+      
         <thead>
           
-          
+        
           <tr>
             
-            
+          
             <th
               id="n"
             >
               Negative
             </th>
             
-            
+          
             <th>
               Characteristic
             </th>
             
-            
+          
             <th
               id="p"
             >
               Positive
             </th>
             
-          
+        
           </tr>
           
-        
+      
         </thead>
         
-        
+      
         <tbody>
           
-          
+        
           <tr>
             
-            
+          
             <td
               headers="n r1"
             >
               Sad
             </td>
             
-            
+          
             <th
               id="r1"
             >
               Mood
             </th>
             
-            
+          
             <td
               headers="p r1"
             >
               Happy
             </td>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <td
               headers="n r2"
             >
               Failing
             </td>
             
-            
+          
             <th
               id="r2"
             >
               Grade
             </th>
             
-            
+          
             <td
               headers="p r2"
             >
               Passing
             </td>
             
-          
+        
           </tr>
           
-        
+      
         </tbody>
         
-      
+    
       </table>
       
-      
+    
       <table>
         
-        
+      
         <caption>
           Complex table with a 
           <code>
@@ -2757,165 +2757,165 @@ A leaflet.
           .
         </caption>
         
-        
+      
         <thead>
           
-          
+        
           <tr>
             
-            
+          
             <th />
             
-            
+          
             <th>
               2008
             </th>
             
-            
+          
             <th>
               2007
             </th>
             
-            
+          
             <th>
               2006
             </th>
             
-          
+        
           </tr>
           
-        
+      
         </thead>
         
-        
+      
         <tbody>
           
-          
+        
           <tr>
             
-            
+          
             <th>
               Net sales
             </th>
             
-            
+          
             <td>
               $32,479
             </td>
             
-            
+          
             <td>
               $24,006
             </td>
             
-            
+          
             <td>
               $19,315
             </td>
             
-          
+        
           </tr>
           
-          
+        
           <tr>
             
-            
+          
             <th>
               Cost of sales
             </th>
             
-            
+          
             <td>
               21,334
             </td>
             
-            
+          
             <td>
               15,852
             </td>
             
-            
+          
             <td>
               13,717
             </td>
             
-          
+        
           </tr>
           
-        
+      
         </tbody>
         
-        
+      
         <tbody>
           
-          
+        
           <tr>
             
-            
+          
             <th>
               Gross margin
             </th>
             
-            
+          
             <td>
               $11,145
             </td>
             
-            
+          
             <td>
               $8,154
             </td>
             
-            
+          
             <td>
               $5,598
             </td>
             
-          
+        
           </tr>
           
-        
+      
         </tbody>
         
-        
+      
         <tfoot>
           
-          
+        
           <tr>
             
-            
+          
             <th>
               Gross margin percentage
             </th>
             
-            
+          
             <td>
               34.3%
             </td>
             
-            
+          
             <td>
               34.0%
             </td>
             
-            
+          
             <td>
               29.0%
             </td>
             
-          
+        
           </tr>
           
-        
+      
         </tfoot>
         
-      
+    
       </table>
       
-      
+    
       <footer>
         
-        
+      
         <p>
           See the 
           <a
@@ -2927,24 +2927,24 @@ Content spec.
           </a>
         </p>
         
-      
+    
       </footer>
       
-    
+  
     </section>
     
-    
+  
     <hr />
     
-    
+  
     <section
       id="embeds"
     >
       
-      
+    
       <header>
         
-        
+      
         <h3>
           <a
             href="#embeds"
@@ -2954,7 +2954,7 @@ Content spec.
            Embeds
         </h3>
         
-        
+      
         <p>
           Elements 
           <code>
@@ -2969,7 +2969,7 @@ Content spec.
             embed
           </code>
           ,
-          
+        
           <code>
             iframe
           </code>
@@ -2986,7 +2986,7 @@ Content spec.
             object
           </code>
           ,
-          
+        
           <code>
             picture
           </code>
@@ -3005,10 +3005,10 @@ Content spec.
            category.
         </p>
         
-      
+    
       </header>
       
-      
+    
       <p>
         <code>
           audio
@@ -3033,7 +3033,7 @@ Content spec.
         .
       </p>
       
-      
+    
       <p>
         <code>
           iframe
@@ -3046,7 +3046,7 @@ is a sample content.</p>"
         />
       </p>
       
-      
+    
       <p>
         <code>
           img
@@ -3058,7 +3058,7 @@ is a sample content.</p>"
         />
       </p>
       
-      
+    
       <p>
         <code>
           math
@@ -3066,7 +3066,7 @@ is a sample content.</p>"
         :
       </p>
       
-      
+    
       <math
         xmlns="http://www.w3.org/1998/Math/MathML"
       >
@@ -3094,108 +3094,108 @@ is a sample content.</p>"
 
               <mrow>
                 
-  
+
                 <mi>
                   x
                 </mi>
                 
-  
+
                 <mo>
                   =
                 </mo>
                 
-  
+
                 <mfrac>
                   
-    
+  
                   <mrow>
                     
-      
+    
                     <mo>
                       -
                     </mo>
                     
-      
+    
                     <mi>
                       b
                     </mi>
                     
-      
+    
                     <mo>
                       ±
                     </mo>
                     
-      
+    
                     <msqrt>
                       
-        
+      
                       <mrow>
                         
-          
+        
                         <msubsup>
                           
-            
+          
                           <mi>
                             b
                           </mi>
                           
-            
+          
                           <mrow />
                           
-            
+          
                           <mn>
                             2
                           </mn>
                           
-          
+        
                         </msubsup>
                         
-          
+        
                         <mo>
                           -
                         </mo>
                         
-          
+        
                         <mn>
                           4
                         </mn>
                         
-          
+        
                         <mi>
                           a
                         </mi>
                         
-          
+        
                         <mi>
                           c
                         </mi>
                         
-        
+      
                       </mrow>
                       
-      
+    
                     </msqrt>
                     
-    
+  
                   </mrow>
                   
-    
+  
                   <mrow>
                     
-      
+    
                     <mn>
                       2
                     </mn>
                     
-      
+    
                     <mi>
                       a
                     </mi>
                     
-    
+  
                   </mrow>
                   
-  
+
                 </mfrac>
                 
 
@@ -3213,34 +3213,34 @@ is a sample content.</p>"
 
       </math>
       
-      
+    
       <p>
         <code>
           picture
         </code>
         :
-        
+      
         <picture>
           
-          
+        
           <source
             srcSet="https://www.fillmurray.com/240/300 2x,
 https://www.fillmurray.com/120/150 1x"
           />
           
-          
+        
           <img
             alt="Bill Murray"
             src="https://www.fillmurray.com/120/150"
           />
           
-        
+      
         </picture>
         
-      
+    
       </p>
       
-      
+    
       <p>
         <code>
           svg
@@ -3264,7 +3264,7 @@ https://www.fillmurray.com/120/150 1x"
         </svg>
       </p>
       
-      
+    
       <p>
         <code>
           video
@@ -3276,10 +3276,10 @@ https://www.fillmurray.com/120/150 1x"
         />
       </p>
       
-      
+    
       <footer>
         
-        
+      
         <p>
           See the 
           <a
@@ -3290,25 +3290,25 @@ https://www.fillmurray.com/120/150 1x"
           </a>
         </p>
         
-      
+    
       </footer>
       
-    
+  
     </section>
     
-    
+  
     <hr />
     
 
-  
+
   </main>,
   "
-  ",
+",
   <footer
     role="contentinfo"
   >
     
-    
+  
     <p>
       Find this document on 
       <a
@@ -3319,9 +3319,9 @@ https://www.fillmurray.com/120/150 1x"
       .
     </p>
     
-  
+
   </footer>,
   "
-    ",
+",
 ]
 `;
