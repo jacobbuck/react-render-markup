@@ -1,7 +1,11 @@
 const cond = (pairs) => (...args) => {
-  const matchedPair = pairs.find((pair) => pair[0](...args));
-  if (typeof matchedPair !== 'undefined') {
-    return matchedPair[1](...args);
+  let i = 0;
+  while (i < pairs.length) {
+    const [predicate, transformer] = pairs[i];
+    if (predicate(...args)) {
+      return transformer(...args);
+    }
+    i += 1;
   }
 };
 
