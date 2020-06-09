@@ -1,4 +1,5 @@
 module.exports = {
-  transformIgnorePatterns: [],
+  coveragePathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
   testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
+  transformIgnorePatterns: [],
 };
