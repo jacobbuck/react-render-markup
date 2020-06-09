@@ -10,7 +10,9 @@
     "build": "rollup -c",
     "prepare": "npm run build",
     "prepublishOnly": "npm run test",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
