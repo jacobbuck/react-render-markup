@@ -2,6 +2,11 @@
 
 Safely parse HTML, SVG and MathML into React elements.
 
+- :gift: Lightweight—[3 KB minified + gzipped](https://bundlephobia.com/result?p=react-render-markup)
+- :smile: Easy to use with simple API
+- :printer: Server-side rendering out of the box
+- :dolphin: Runs on Internet Explorer
+
 ## Usage
 
 ```js
@@ -64,7 +69,7 @@ const MyComponent = (props) => (
 );
 ```
 
-## XSS
+## Cross Site Scripting (XSS)
 
 By default, `<script>` tags and event attributes (i.e. `onClick`) are disallowed and stripped from output.
 
