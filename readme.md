@@ -22,10 +22,8 @@ renderMarkup(markup[, options])
 - `options` optional object of the following options:
   - `allowed` optional array of tag names to allow rendering.
 
-    :warning: Setting this option will strip all other elements from output.
-  - `replace` optional object of elements to replace.
-
-    Keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
+    > :warning: Setting this option will strip all other elements from output.
+  - `replace` optional object of elements to replace, the keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
 
 ### Return value
 
