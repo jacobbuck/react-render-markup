@@ -1,6 +1,6 @@
 import parseDom from 'dom-parse';
-import isNil from './utilities/isNil';
 import nodesToElements from './nodesToElements';
+import { isNil } from './utilities';
 
 const renderMarkup = (markup, options = {}) => {
   if (process.env.NODE_ENV !== 'production') {

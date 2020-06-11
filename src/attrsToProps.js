@@ -1,7 +1,7 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
-import toArray from './utilities/toArray';
 import attrToPropName from './attrToPropName';
+import { toArray } from './utilities';
 
 const attrsToProps = (attrs) =>
   toArray(attrs)

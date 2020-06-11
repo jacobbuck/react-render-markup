@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
-import always from './utilities/always';
-import cond from './utilities/cond';
-import has from './utilities/has';
-import isNil from './utilities/isNil';
-import toArray from './utilities/toArray';
 import attrsToProps from './attrsToProps';
+import { always, cond, has, isNil, toArray } from './utilities';
 
 const createElement = (
   node,
@@ -45,7 +41,7 @@ const processNode = cond([
   [
     (node, i, options) =>
       !isNil(options.replace) &&
-      has(node.nodeName.toLowerCase(), options.replace),
+      has(node.nodeName.toLowerCase())(options.replace),
     (node, i, options) => {
       const replaceNodeType = options.replace[node.nodeName.toLowerCase()];
 
