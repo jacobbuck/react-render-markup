@@ -1,13 +1,13 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
 import attrToPropName from './attrToPropName';
-import { startsWith, toArray } from './utilities';
+import { includes, startsWith, toArray } from './utilities';
 
 const attrsToProps = (attrs) =>
   toArray(attrs)
     .filter(
       // Disallow event attributes and react props
-      ({ name }) => startsWith(name, 'on') || !reactProps.includes(name)
+      ({ name }) => !startsWith(name, 'on') && !includes(reactProps, name)
     )
     .map(({ name, value }) => {
       // Don't modify aria-* or data-* attributes
