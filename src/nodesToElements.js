@@ -17,7 +17,7 @@ const nodesToElements = (nodeList, options) =>
 
       let type = node.nodeName.toLowerCase();
 
-      if (!isNil(options.allowed) && includes(options.allowed, type)) {
+      if (!isNil(options.allowed) && !includes(options.allowed, type)) {
         return null;
       }
 
