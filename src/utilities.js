@@ -13,7 +13,7 @@ export const cond = (pairs) => (...args) => {
 };
 
 // Checks if an object has an own property with the specified name
-export const has = (name) => (obj) =>
+export const has = (obj, name) =>
   Object.prototype.hasOwnProperty.call(obj, name);
 
 // Checks if the input value is null or undefined.
