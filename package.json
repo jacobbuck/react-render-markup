@@ -1,6 +1,6 @@
 {
   "name": "react-render-markup",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Safely parse HTML, SVG and MathML into React elements.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
