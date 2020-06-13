@@ -6,18 +6,22 @@ import { has, isNil, toArray } from './utilities';
 const nodesToElements = (nodeList, options) =>
   toArray(nodeList)
     .filter(
+      // Only render element and text nodes, except script elements
       ({ nodeName, nodeType }) =>
         (nodeType === ELEMENT_NODE && !nodeName.toLowerCase() !== 'script') ||
         nodeType === TEXT_NODE
     )
     .map((node, i) => {
+      // Handle text nodes
       if (node.nodeType === TEXT_NODE) {
         return node.textContent;
       }
 
       let type = node.nodeName.toLowerCase();
 
+      // Handle allowed option.
       if (!isNil(options.allowed) && !includes(options.allowed, type)) {
+        // Don't render elements that aren't allowed
         return null;
       }
 
