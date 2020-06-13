@@ -1,66 +1,45 @@
 import * as React from 'react';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
-import { always, cond, has, isNil, toArray } from './utilities';
-
-const createElement = (
-  node,
-  i,
-  options,
-  type = node.nodeName.toLowerCase()
-) => {
-  const props = attrsToProps(node.attributes);
-  props.key = i;
-
-  return React.createElement(
-    type,
-    props,
-    nodesToElements(node.childNodes, options)
-  );
-};
-
-const processNode = cond([
-  // Render text nodes as string
-  [(node) => node.nodeType === TEXT_NODE, (node) => node.textContent],
-
-  // Only allow element node types
-  [(node) => node.nodeType !== ELEMENT_NODE, always(null)],
-
-  // Disallow script element nodes
-  [(node) => node.nodeName.toLowerCase() === 'script', always(null)],
-
-  // Handle allowed option
-  [
-    (node, i, options) =>
-      !isNil(options.allowed) &&
-      options.allowed.includes(node.nodeName.toLowerCase()),
-    always(null),
-  ],
-
-  // Handle replace option
-  [
-    (node, i, options) =>
-      !isNil(options.replace) &&
-      has(node.nodeName.toLowerCase())(options.replace),
-    (node, i, options) => {
-      const replaceNodeType = options.replace[node.nodeName.toLowerCase()];
-
-      // Don't render falsey replacements
-      if (!replaceNodeType) {
-        return null;
-      }
-
-      return createElement(node, i, options, replaceNodeType);
-    },
-  ],
-
-  // Render all other elements
-  [always(true), createElement],
-]);
+import { has, isNil, toArray } from './utilities';
 
 const nodesToElements = (nodeList, options) =>
   toArray(nodeList)
-    .map((node, i) => processNode(node, i, options))
+    .filter(
+      ({ nodeName, nodeType }) =>
+        (nodeType === ELEMENT_NODE && !nodeName.toLowerCase() !== 'script') ||
+        nodeType === TEXT_NODE
+    )
+    .map((node, i) => {
+      if (node.nodeType === TEXT_NODE) {
+        return node.textContent;
+      }
+
+      let type = node.nodeName.toLowerCase();
+
+      if (!isNil(options.allowed) && includes(options.allowed, type)) {
+        return null;
+      }
+
+      // Handle replace option
+      if (!isNil(options.replace) && has(options.replace, type)) {
+        type = options.replace[type];
+
+        // Don't render falsey replacements
+        if (!type) {
+          return null;
+        }
+      }
+
+      const props = attrsToProps(node.attributes);
+      props.key = i;
+
+      return React.createElement(
+        type,
+        props,
+        nodesToElements(node.childNodes, options)
+      );
+    })
     .filter((node) => !isNil(node));
 
 export default nodesToElements;
