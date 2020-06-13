@@ -1,34 +1,31 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
 import attrToPropName from './attrToPropName';
-import { toArray } from './utilities';
+import { startsWith, toArray } from './utilities';
 
 const attrsToProps = (attrs) =>
   toArray(attrs)
     .filter(
-      // Disallow react props
-      (attr) => !reactProps.includes(attr.name)
+      // Disallow event attributes and react props
+      ({ name }) => startsWith(name, 'on') || !reactProps.includes(name)
     )
-    .filter(
-      // Disallow event attributes
-      (attr) => attr.name.substr(0, 2) !== 'on'
-    )
-    .reduce((props, attr) => {
-      let { name, value } = attr;
-
-      let propName;
-      if (['aria-', 'data-'].includes(name.substr(0, 5))) {
-        propName = name;
-      } else if ('style' === name) {
-        propName = 'style';
-        value = cssToStyle(value);
-      } else {
-        propName = attrToPropName(name) || name;
+    .map(({ name, value }) => {
+      // Don't modify aria-* or data-* attributes
+      if (startsWith(name, 'aria-') || startsWith(name, 'data-')) {
+        return [name, value];
       }
 
-      props[propName] = value === '' ? true : value;
+      // Handle style attribute
+      if (name === 'style') {
+        return [name, cssToStyle(value)];
+      }
 
-      return props;
+      return [attrToPropName(name) || name, value === '' ? true : value];
+    })
+    // Convert pairs to object
+    .reduce((acc, [key, value]) => {
+      acc[key] = value;
+      return acc;
     }, {});
 
 export default attrsToProps;
