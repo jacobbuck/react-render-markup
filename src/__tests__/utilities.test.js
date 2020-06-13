@@ -1,41 +1,11 @@
-import { always, cond, has, isNil, toArray } from '../utilities';
-
-describe('always', () => {
-  test('returns a function', () => {
-    expect(typeof always(true)).toBe('function');
-  });
-
-  test('returns a function that always returns the given value ', () => {
-    [null, true, 42, 'foo', [], {}, () => {}].forEach((value) => {
-      expect(always(value)()).toBe(value);
-    });
-  });
-});
-
-describe('cond', () => {
-  test('returns a function', () => {
-    expect(typeof cond([])).toBe('function');
-  });
-
-  test('returns a conditional function', function () {
-    const fn = cond([
-      [(value) => value === 0, () => 'water freezes at 0°C'],
-      [(value) => value === 100, () => 'water boils at 100°C'],
-      [() => true, (value) => `nothing special happens at ${value}°C`],
-    ]);
-
-    expect(fn(0)).toBe('water freezes at 0°C');
-    expect(fn(100)).toBe('water boils at 100°C');
-    expect(fn(50)).toBe('nothing special happens at 50°C');
-  });
-});
+import { has, isNil, includes, startsWith, toArray } from '../utilities';
 
 describe('has', () => {
   test('checks if an object has an own property with the specified name', () => {
     const obj = { foo: 'bar' };
-    expect(has('foo')(obj)).toBe(true);
-    expect(has('bar')(obj)).toBe(false);
-    expect(has('toString')(obj)).toBe(false);
+    expect(has(obj, 'foo')).toBe(true);
+    expect(has(obj, 'bar')).toBe(false);
+    expect(has(obj, 'toString')).toBe(false);
   });
 });
 
@@ -49,6 +19,20 @@ describe('isNil', () => {
     [false, NaN, 0, '', [], {}, () => {}].forEach((value) => {
       expect(isNil(value)).toBe(false);
     });
+  });
+});
+
+describe('includes', () => {
+  test('checks if an array contains a value', () => {
+    expect(includes(['foo', 'bar'], 'foo')).toBe(true);
+    expect(includes(['foo', 'bar'], 'baz')).toBe(false);
+  });
+});
+
+describe('startsWith', () => {
+  test('checks if a string starts with the characters of a specified string', () => {
+    expect(startsWith('foobar', 'foo')).toBe(true);
+    expect(startsWith('foobar', 'bar')).toBe(false);
   });
 });
 
