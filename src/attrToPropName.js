@@ -6,7 +6,7 @@ const htmlAndSvgProps = [].concat(htmlProps, svgProps);
 const attrToPropName = (attr) => {
   const lowerAttr = attr.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-  // Handle special exceptions
+  // Handle special exceptions.
   if (lowerAttr === 'class') {
     return 'className';
   }

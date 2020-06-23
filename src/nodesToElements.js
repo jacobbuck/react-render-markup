@@ -6,10 +6,14 @@ import { has, isNil, toArray } from './utilities';
 const nodesToElements = (nodeList, options) => {
   const tree = toArray(nodeList)
     .filter(
-      // Only render element and text nodes, except script elements
-      ({ nodeName, nodeType }) =>
-        (nodeType === ELEMENT_NODE && nodeName.toLowerCase() !== 'script') ||
-        nodeType === TEXT_NODE
+      (node) =>
+        // Only render element and text nodes.
+        (node.nodeType === ELEMENT_NODE &&
+          // Never render <script> elements.
+          node.nodeName.toLowerCase() !== 'script') ||
+        (node.nodeType === TEXT_NODE &&
+          // Handle trim option to remove whitespace text nodes.
+          (options.trim !== true || node.textContent.trim() !== ''))
     )
     .map((node, i) => {
       // Handle text nodes.
