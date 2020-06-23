@@ -27,6 +27,8 @@ renderMarkup(markup[, options])
 
   The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
 
+- `options.trim` optional boolean removes whitespace text nodes when `true`.
+
 ### Return value
 
 An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
