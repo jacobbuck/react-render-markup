@@ -8,7 +8,7 @@ const nodesToElements = (nodeList, options) => {
     .filter(
       // Only render element and text nodes, except script elements
       ({ nodeName, nodeType }) =>
-        (nodeType === ELEMENT_NODE && !nodeName.toLowerCase() !== 'script') ||
+        (nodeType === ELEMENT_NODE && nodeName.toLowerCase() !== 'script') ||
         nodeType === TEXT_NODE
     )
     .map((node, i) => {
@@ -46,7 +46,7 @@ const nodesToElements = (nodeList, options) => {
     })
     .filter((node) => !isNil(node));
 
-  return tree.length > 0 ? tree : null; 
+  return tree.length > 0 ? tree : null;
 };
 
 export default nodesToElements;
