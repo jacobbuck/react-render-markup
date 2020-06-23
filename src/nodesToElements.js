@@ -12,7 +12,7 @@ const nodesToElements = (nodeList, options) => {
         nodeType === TEXT_NODE
     )
     .map((node, i) => {
-      // Handle text nodes
+      // Handle text nodes.
       if (node.nodeType === TEXT_NODE) {
         return node.textContent;
       }
@@ -21,15 +21,15 @@ const nodesToElements = (nodeList, options) => {
 
       // Handle allowed option.
       if (!isNil(options.allowed) && !includes(options.allowed, type)) {
-        // Don't render elements that aren't allowed
+        // Don't render elements that aren't allowed.
         return null;
       }
 
-      // Handle replace option
+      // Handle replace option.
       if (!isNil(options.replace) && has(options.replace, type)) {
         type = options.replace[type];
 
-        // Don't render falsey replacements
+        // Don't render falsey replacements.
         if (!type) {
           return null;
         }
