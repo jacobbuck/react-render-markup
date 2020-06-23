@@ -36,16 +36,16 @@
     "dom-parse": "^2.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "babel-jest": "^26.0.1",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
-    "lint-staged": "^10.2.10",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "rollup": "^2.16.0",
+    "rollup": "^2.18.0",
     "rollup-plugin-babel": "^4.4.0"
   },
   "peerDependencies": {
