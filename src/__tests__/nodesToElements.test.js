@@ -111,7 +111,7 @@ test('handles allowed option', () => {
     )
   ).toEqual([
     React.createElement('div', { key: 0 }, null),
-    React.createElement('hr', { key: 2 }, null),
+    React.createElement('hr', { key: 1 }, null),
   ]);
 });
 

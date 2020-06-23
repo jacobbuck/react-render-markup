@@ -10,7 +10,10 @@ const nodesToElements = (nodeList, options) => {
         // Only render element and text nodes.
         (node.nodeType === ELEMENT_NODE &&
           // Never render <script> elements.
-          node.nodeName.toLowerCase() !== 'script') ||
+          node.nodeName.toLowerCase() !== 'script' &&
+          // Handle allowed option to only render elements that are allowed.
+          (isNil(options.allowed) ||
+            includes(options.allowed, node.nodeName.toLowerCase()))) ||
         (node.nodeType === TEXT_NODE &&
           // Handle trim option to remove whitespace text nodes.
           (options.trim !== true || node.textContent.trim() !== ''))
@@ -22,12 +25,6 @@ const nodesToElements = (nodeList, options) => {
       }
 
       let type = node.nodeName.toLowerCase();
-
-      // Handle allowed option.
-      if (!isNil(options.allowed) && !includes(options.allowed, type)) {
-        // Don't render elements that aren't allowed.
-        return null;
-      }
 
       // Handle replace option.
       if (!isNil(options.replace) && has(options.replace, type)) {
