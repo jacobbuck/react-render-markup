@@ -3,8 +3,8 @@ import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
 import { has, isNil, toArray } from './utilities';
 
-const nodesToElements = (nodeList, options) =>
-  toArray(nodeList)
+const nodesToElements = (nodeList, options) => {
+  const tree = toArray(nodeList)
     .filter(
       // Only render element and text nodes, except script elements
       ({ nodeName, nodeType }) =>
@@ -45,5 +45,8 @@ const nodesToElements = (nodeList, options) =>
       );
     })
     .filter((node) => !isNil(node));
+
+  return tree.length > 0 ? tree : null; 
+};
 
 export default nodesToElements;
