@@ -63,6 +63,7 @@ const MyComponent = (props) => (
         a: Link, // replace <a> elements with <Link> component
         em: 'strong', // replace <em> elements with <strong> elements
         img: null, // doesn’t render <img> elements
+        span: React.Fragment, // unwraps contents of <span> elements
       },
     })}
   </div>
