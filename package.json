@@ -38,6 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
+    "@rollup/plugin-babel": "^5.0.4",
     "babel-jest": "^26.0.1",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
@@ -45,8 +46,7 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "rollup": "^2.18.0",
-    "rollup-plugin-babel": "^4.4.0"
+    "rollup": "^2.18.0"
   },
   "peerDependencies": {
     "react": ">=15.3.0"
