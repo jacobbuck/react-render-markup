@@ -1,31 +1,35 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
 import attrToPropName from './attrToPropName';
-import { includes, startsWith, toArray } from './utilities';
+import { includes, startsWith } from './utilities';
 
-const attrsToProps = (attrs) =>
-  toArray(attrs)
-    .filter(
-      // Disallow event attributes and react props.
-      ({ name }) => !startsWith(name, 'on') && !includes(reactProps, name)
-    )
-    .map(({ name, value }) => {
-      // Don't modify aria-* or data-* attributes.
-      if (startsWith(name, 'aria-') || startsWith(name, 'data-')) {
-        return [name, value];
-      }
+const attrsToProps = (attrs) => {
+  const props = {};
 
-      // Handle style attribute.
-      if (name === 'style') {
-        return [name, cssToStyle(value)];
-      }
+  for (let i = 0; i < attrs.length; i++) {
+    const { name, value } = attrs[i];
 
-      return [attrToPropName(name) || name, value === '' ? true : value];
-    })
-    // Convert pairs to object.
-    .reduce((acc, [key, value]) => {
-      acc[key] = value;
-      return acc;
-    }, {});
+    // Disallow event attributes and react props.
+    if (startsWith(name, 'on') || includes(reactProps, name)) {
+      continue;
+    }
+
+    // Don't modify aria-* or data-* attributes.
+    if (startsWith(name, 'aria-') || startsWith(name, 'data-')) {
+      props[name] = value;
+      continue;
+    }
+
+    // Handle style attribute.
+    if (name === 'style') {
+      props[name] = cssToStyle(value);
+      continue;
+    }
+
+    props[attrToPropName(name) || name] = value === '' ? true : value;
+  }
+
+  return props;
+};
 
 export default attrsToProps;

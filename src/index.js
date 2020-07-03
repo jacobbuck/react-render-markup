@@ -11,6 +11,7 @@ const renderMarkup = (markup, options = {}) => {
       throw new TypeError('Expected parameter "options" to be an object.');
     }
   }
+
   return isNil(markup) ? null : nodesToElements(parseDom(markup), options);
 };
 
