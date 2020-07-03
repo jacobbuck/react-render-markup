@@ -1,20 +1,23 @@
 import htmlProps from './constants/htmlProps';
 import svgProps from './constants/svgProps';
 
-const htmlAndSvgProps = [].concat(htmlProps, svgProps);
+const propsLookup = [].concat(htmlProps, svgProps).reduce((acc, value) => {
+  acc[value.toLowerCase()] = value;
+  return acc;
+}, {});
 
-const attrToPropName = (attr) => {
-  const lowerAttr = attr.toLowerCase().replace(/[^a-z0-9]/g, '');
+const attrToPropName = (attrName) => {
+  const lowerAttrName = attrName.toLowerCase().replace(/[^a-z0-9]/g, '');
 
   // Handle special exceptions.
-  if (lowerAttr === 'class') {
+  if (lowerAttrName === 'class') {
     return 'className';
   }
-  if (lowerAttr === 'for') {
+  if (lowerAttrName === 'for') {
     return 'htmlFor';
   }
 
-  return htmlAndSvgProps.find((value) => value.toLowerCase() === lowerAttr);
+  return propsLookup[lowerAttrName];
 };
 
 export default attrToPropName;
