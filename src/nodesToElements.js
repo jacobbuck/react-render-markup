@@ -4,48 +4,55 @@ import attrsToProps from './attrsToProps';
 import { has, includes, isNil, toArray } from './utilities';
 
 const nodesToElements = (nodeList, options) => {
-  const tree = toArray(nodeList)
-    .filter(
-      (node) =>
-        // Only render element and text nodes.
-        (node.nodeType === ELEMENT_NODE &&
-          // Never render <script> elements.
-          node.nodeName.toLowerCase() !== 'script' &&
-          // Handle allowed option to only render elements that are allowed.
-          (isNil(options.allowed) ||
-            includes(options.allowed, node.nodeName.toLowerCase()))) ||
-        (node.nodeType === TEXT_NODE &&
-          // Handle trim option to remove whitespace text nodes.
-          (options.trim !== true || node.textContent.trim() !== ''))
-    )
-    .map((node, i) => {
-      // Handle text nodes.
-      if (node.nodeType === TEXT_NODE) {
-        return node.textContent;
+  const tree = [];
+
+  for (let i = 0; i < nodeList.length; i++) {
+    const node = nodeList[i];
+
+    // Handle text nodes.
+    if (node.nodeType === TEXT_NODE) {
+      // Handle trim option to remove whitespace text nodes.
+      if (options.trim !== true || node.textContent.trim() !== '') {
+        tree.push(node.textContent);
       }
+      continue;
+    }
 
-      let type = node.nodeName.toLowerCase();
+    // Only render element (and text) nodes.
+    if (
+      node.nodeType !== ELEMENT_NODE ||
+      // Never render <script> elements.
+      node.nodeName.toLowerCase() === 'script' ||
+      // Handle allowed option to only render elements that are allowed.
+      (!isNil(options.allowed) &&
+        !includes(options.allowed, node.nodeName.toLowerCase()))
+    ) {
+      continue;
+    }
 
-      // Handle replace option.
-      if (!isNil(options.replace) && has(options.replace, type)) {
-        type = options.replace[type];
+    let type = node.nodeName.toLowerCase();
 
-        // Don't render falsey replacements.
-        if (!type) {
-          return null;
-        }
+    // Handle replace option.
+    if (!isNil(options.replace) && has(options.replace, type)) {
+      type = options.replace[type];
+
+      // Don't render falsey replacements.
+      if (!type) {
+        continue;
       }
+    }
 
-      const props = attrsToProps(node.attributes);
-      props.key = i;
+    const props = attrsToProps(node.attributes);
+    props.key = i;
 
-      return React.createElement(
+    tree.push(
+      React.createElement(
         type,
         props,
         nodesToElements(node.childNodes, options)
-      );
-    })
-    .filter((node) => !isNil(node));
+      )
+    );
+  }
 
   return tree.length > 0 ? tree : null;
 };
