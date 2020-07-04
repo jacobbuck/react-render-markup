@@ -116,6 +116,10 @@ test('handles allowed option', () => {
 });
 
 test('handles replace option', () => {
+  const TestComponent = (props) => {
+    return 'Hello!';
+  };
+
   expect(
     nodesToElements(
       [
@@ -138,6 +142,12 @@ test('handles replace option', () => {
         },
         {
           nodeType: 1,
+          nodeName: 'P',
+          attributes: [],
+          childNodes: [],
+        },
+        {
+          nodeType: 1,
           nodeName: 'HR',
           attributes: [],
           childNodes: [],
@@ -147,6 +157,7 @@ test('handles replace option', () => {
         replace: {
           div: 'span',
           span: React.Fragment,
+          p: TestComponent,
           hr: false,
         },
       }
@@ -154,6 +165,7 @@ test('handles replace option', () => {
   ).toEqual([
     React.createElement('span', { key: 0 }, null),
     React.createElement(React.Fragment, { key: 1 }, ['Hello!']),
+    React.createElement(TestComponent, { key: 2 }, null),
   ]);
 });
 
