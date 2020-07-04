@@ -71,8 +71,8 @@ test('renders element nodes', () => {
       {}
     )
   ).toEqual([
-    React.createElement('div', { key: 0, id: 'foo' }, [
-      React.createElement('p', { key: 0 }, ['Hello!']),
+    React.createElement('div', { key: 'div-0', id: 'foo' }, [
+      React.createElement('p', { key: 'p-0' }, ['Hello!']),
     ]),
   ]);
 });
@@ -110,8 +110,8 @@ test('handles allowed option', () => {
       }
     )
   ).toEqual([
-    React.createElement('div', { key: 0 }, null),
-    React.createElement('hr', { key: 2 }, null),
+    React.createElement('div', { key: 'div-0' }, null),
+    React.createElement('hr', { key: 'hr-2' }, null),
   ]);
 });
 
@@ -163,9 +163,9 @@ test('handles replace option', () => {
       }
     )
   ).toEqual([
-    React.createElement('span', { key: 0 }, null),
-    React.createElement(React.Fragment, { key: 1 }, ['Hello!']),
-    React.createElement(TestComponent, { key: 2 }, null),
+    React.createElement('span', { key: 'span-0' }, null),
+    React.createElement(React.Fragment, { key: 'Unknown-1' }, ['Hello!']),
+    React.createElement(TestComponent, { key: 'TestComponent-2' }, null),
   ]);
 });
 
