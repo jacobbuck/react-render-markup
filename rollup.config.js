@@ -7,5 +7,5 @@ export default {
     { file: 'lib/index.esm.js', format: 'esm' },
   ],
   external: ['css-to-style', 'dom-parse', 'react', 'react-display-name'],
-  plugins: [babel()],
+  plugins: [babel({ babelHelpers: 'bundled' })],
 };
