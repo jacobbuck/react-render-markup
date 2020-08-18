@@ -88,11 +88,13 @@ const MyComponent = (props) => {
 or
 
 ```jsx
+const allowed = ['strong', 'em'];
+
 const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      <Markup allowed={['strong', 'em']} markup={content} />
+      <Markup allowed={allowed} markup={content} />
     </div>
   );
 };
@@ -125,19 +127,18 @@ or
 ```jsx
 import { Link } from 'some-router-library';
 
+const replace = {
+  a: Link,
+  em: 'strong',
+  img: null,
+  span: React.Fragment,
+};
+
 const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      <Markup
-        markup={props.content}
-        replace={{
-          a: Link,
-          em: 'strong',
-          img: null,
-          span: React.Fragment,
-        }}
-      />
+      <Markup markup={props.content} replace={replace} />
     </div>
   );
 };
