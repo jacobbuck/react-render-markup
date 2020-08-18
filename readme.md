@@ -41,7 +41,7 @@ An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
 ```js
 import { Markup } from 'react-render-markup';
 
-<Markup [...props] />
+<Markup {...props} />
 ```
 
 #### Props
