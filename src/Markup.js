@@ -2,10 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import renderMarkup from './renderMarkup';
 
-const memo =
-  typeof React.memo === 'function' ? React.memo : (component) => component;
-
-const Markup = memo((props) => {
+const Markup = React.memo((props) => {
   const { allowed, markup, replace, trim } = props;
   return renderMarkup(markup, { allowed, replace, trim });
 });
