@@ -10,7 +10,7 @@ Safely parse HTML, SVG and MathML into React elements.
 ## Usage
 
 ```js
-import renderMarkup from 'react-render-markup';
+import { renderMarkup } from 'react-render-markup';
 
 renderMarkup(markup[, options])
 ```
@@ -18,39 +18,84 @@ renderMarkup(markup[, options])
 ### Parameters
 
 - `markup` string of HTML you’d like to parse.
-- `options` optional object of the following options:
-- `options.allowed` optional array of tag names to allow rendering.
+- `options` _optional_ object of the following options:
 
-  > :warning: Setting this option will strip all other elements from output.
+  - `allowed` _optional_ array of tag names to allow rendering.
 
-- `options.replace` optional object of elements to replace.
+    > :warning: Setting this option will strip all other elements from output.
 
-  The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
+  - `replace` _optional_ object of elements to replace.
 
-- `options.trim` optional boolean removes whitespace text nodes when `true`.
+    The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
+
+  - `trim` _optional_ boolean removes whitespace text nodes when `true`.
 
 ### Return value
 
 An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
+
+## Component
+
+```js
+import { Markup } from 'react-render-markup';
+
+<Markup [...props] />
+```
+
+### Props
+
+Same as `renderMarkup` parameters, i.e. `allowed`, `markup`, `replace` and `trim`.
 
 ## Examples
 
 ### Basic
 
 ```jsx
-const MyComponent = (props) => <div>{renderMarkup(props.content)}</div>;
+const MyComponent = (props) => {
+  const { content } = props;
+  return <div>{renderMarkup(content)}</div>;
+};
+```
+
+or
+
+```jsx
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      <Markup markup={content} />
+    </div>
+  );
+};
 ```
 
 ### With `allowed` option
 
 ```jsx
-const MyComponent = (props) => (
-  <div>
-    {renderMarkup(props.content, {
-      allowed: ['strong', 'em'], // strips all other elements
-    })}
-  </div>
-);
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      {renderMarkup(props.content, {
+        allowed: ['strong', 'em'], // strips all other elements
+      })}
+    </div>
+  );
+};
+```
+
+or
+
+```jsx
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      <Markup allowed={['strong', 'em']} markup={content} />
+    </div>
+  );
+};
 ```
 
 ### With `replace` option
@@ -58,18 +103,44 @@ const MyComponent = (props) => (
 ```jsx
 import { Link } from 'some-router-library';
 
-const MyComponent = (props) => (
-  <div>
-    {renderMarkup(props.content, {
-      replace: {
-        a: Link, // replace <a> elements with <Link> component
-        em: 'strong', // replace <em> elements with <strong> elements
-        img: null, // doesn’t render <img> elements
-        span: React.Fragment, // unwraps contents of <span> elements
-      },
-    })}
-  </div>
-);
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      {renderMarkup(props.content, {
+        replace: {
+          a: Link, // replace <a> elements with <Link> component
+          em: 'strong', // replace <em> elements with <strong> elements
+          img: null, // doesn’t render <img> elements
+          span: React.Fragment, // unwraps contents of <span> elements
+        },
+      })}
+    </div>
+  );
+};
+```
+
+or
+
+```jsx
+import { Link } from 'some-router-library';
+
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      <Markup
+        markup={props.content}
+        replace={{
+          a: Link,
+          em: 'strong',
+          img: null,
+          span: React.Fragment,
+        }}
+      />
+    </div>
+  );
+};
 ```
 
 ## Cross Site Scripting (XSS)
