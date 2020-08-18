@@ -6,6 +6,12 @@ export default {
     { file: 'lib/index.cjs.js', format: 'cjs' },
     { file: 'lib/index.esm.js', format: 'esm' },
   ],
-  external: ['css-to-style', 'dom-parse', 'react', 'react-display-name'],
+  external: [
+    'css-to-style',
+    'dom-parse',
+    'prop-types',
+    'react',
+    'react-display-name',
+  ],
   plugins: [babel({ babelHelpers: 'bundled' })],
 };
