@@ -1,4 +1,4 @@
-import { has, isNil, includes, startsWith, toArray } from '../utilities';
+import { has, isNil, includes, startsWith } from '../utilities';
 
 describe('has', () => {
   test('checks if an object has an own property with the specified name', () => {
