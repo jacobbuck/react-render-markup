@@ -46,7 +46,7 @@ import { Markup } from 'react-render-markup';
 
 #### Props
 
-Same as `renderMarkup` parameters, i.e. `allowed`, `markup`, `replace` and `trim`.
+Same as [`renderMarkup` parameters](#parameters), i.e. `allowed`, `markup`, `replace` and `trim`.
 
 ## Examples
 
