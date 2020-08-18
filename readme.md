@@ -9,13 +9,15 @@ Safely parse HTML, SVG and MathML into React elements.
 
 ## Usage
 
+### `renderMarkup` function
+
 ```js
 import { renderMarkup } from 'react-render-markup';
 
 renderMarkup(markup[, options])
 ```
 
-### Parameters
+#### Parameters
 
 - `markup` string of HTML you’d like to parse.
 - `options` _optional_ object of the following options:
@@ -30,11 +32,11 @@ renderMarkup(markup[, options])
 
   - `trim` _optional_ boolean removes whitespace text nodes when `true`.
 
-### Return value
+#### Return value
 
 An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
 
-## Component
+### `Markup` component
 
 ```js
 import { Markup } from 'react-render-markup';
@@ -42,7 +44,7 @@ import { Markup } from 'react-render-markup';
 <Markup [...props] />
 ```
 
-### Props
+#### Props
 
 Same as `renderMarkup` parameters, i.e. `allowed`, `markup`, `replace` and `trim`.
 
