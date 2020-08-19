@@ -9,6 +9,27 @@ Safely parse HTML, SVG and MathML into React elements.
 
 ## Usage
 
+### `Markup` component
+
+```js
+import { Markup } from 'react-render-markup';
+
+<Markup [...props] />
+```
+
+#### Props
+
+- `allowed` array of tag names to allow rendering.
+
+  > :warning: Setting this option will strip all other elements from output.
+
+- `markup` string of HTML you’d like to parse.
+- `replace` object of elements to replace.
+
+  The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
+
+- `trim` boolean removes whitespace text nodes when `true`.
+
 ### `renderMarkup` function
 
 ```js
@@ -20,33 +41,21 @@ renderMarkup(markup[, options])
 #### Parameters
 
 - `markup` string of HTML you’d like to parse.
-- `options` _optional_ object of the following options:
+- `options` optional object of the following options:
 
-  - `allowed` _optional_ array of tag names to allow rendering.
+  - `allowed` array of tag names to allow rendering.
 
     > :warning: Setting this option will strip all other elements from output.
 
-  - `replace` _optional_ object of elements to replace.
+  - `replace` object of elements to replace.
 
     The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
 
-  - `trim` _optional_ boolean removes whitespace text nodes when `true`.
+  - `trim` boolean removes whitespace text nodes when `true`.
 
 #### Return value
 
 An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
-
-### `Markup` component
-
-```js
-import { Markup } from 'react-render-markup';
-
-<Markup [...props] />
-```
-
-#### Props
-
-Same as [`renderMarkup` parameters](#parameters), i.e. `allowed`, `markup`, `replace` and `trim`.
 
 ## Examples
 
