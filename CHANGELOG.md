@@ -104,7 +104,7 @@
 
 ### Added
 
-- Added `allowed` option. 
+- Added `allowed` option.
 - Updated `markup` parameter to now handle `null` and `undefined`.
 
 ### Changed
@@ -129,7 +129,7 @@
 
 ## v1.2.1 - 2020-01-14
 
-¯\\\_(ツ)_/¯
+¯\\\_(ツ)\_/¯
 
 ## v1.2.0 - 2020-01-13
 
