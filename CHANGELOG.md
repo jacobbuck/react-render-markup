@@ -15,7 +15,7 @@
 
 ### Removed
 
-- **BREAKING** `renderMarkup` as default export.
+- **BREAKING** removed `renderMarkup` as default export.
 
 ## v2.1.3 - 2020-07-04
 
