@@ -17,13 +17,13 @@
 
 - **BREAKING** `renderMarkup` as default export.
 
-## [v2.1.3] - 2020-07-04
+## v2.1.3 - 2020-07-04
 
 ### Changed
 
 - Improved generation of keys with [react-display-name](http://npmjs.com/package/react-display-name).
 
-## [v2.1.2] - 2020-07-03
+## v2.1.2 - 2020-07-03
 
 ### Changed
 
@@ -31,7 +31,7 @@
 - Bumped up version of [css-to-style](http://npmjs.com/package/css-to-style) to v1.3.3.
 - Updated devDependencies.
 
-## [v2.1.1] - 2020-07-03
+## v2.1.1 - 2020-07-03
 
 ### Added
 
@@ -43,7 +43,7 @@
 - Bumped up version of [dom-parse](http://npmjs.com/package/dom-parse) to v2.0.2.
 - Updated devDependencies.
 
-## [v2.1.0] - 2020-06-23
+## v2.1.0 - 2020-06-23
 
 ### Added
 
@@ -53,7 +53,7 @@
 
 - Refactored internals to filter allowed elements earlier.
 
-## [v2.0.5] - 2020-06-23
+## v2.0.5 - 2020-06-23
 
 ### Changed
 
@@ -63,13 +63,13 @@
 
 - Fixed a bug where ReactDOM will throw an exception on void element tags.
 
-## [v2.0.4] - 2020-06-13
+## v2.0.4 - 2020-06-13
 
 ### Fixed
 
 - Updated `allowed` option logic to work.
 
-## [v2.0.3] - 2020-06-13
+## v2.0.3 - 2020-06-13
 
 ### Added
 
@@ -80,7 +80,7 @@
 - Refactored internals.
 - Updated devDependencies.
 
-## [v2.0.2] - 2020-06-09
+## v2.0.2 - 2020-06-09
 
 ### Added
 
@@ -93,14 +93,14 @@
 - Bumped up version of [dom-parse](http://npmjs.com/package/dom-parse) to v2.0.1.
 - Updated devDependencies.
 
-## [v2.0.1] - 2020-06-09
+## v2.0.1 - 2020-06-09
 
 ### Changed
 
 - Improved type-checking of `markup` parameter.
 - Refactored internals.
 
-## [v2.0.0] - 2020-06-09
+## v2.0.0 - 2020-06-09
 
 ### Added
 
@@ -119,7 +119,7 @@
 
 - Removed explicit check for void elements with [html-void-elements](http://npmjs.com/package/html-void-elements).
 
-## [v1.2.2] - 2020-04-27
+## v1.2.2 - 2020-04-27
 
 ### Changed
 
@@ -127,11 +127,11 @@
 - Bumped up version of [jsdom](http://npmjs.com/package/jsdom) to v16.2.2.
 - Updated devDependencies.
 
-## [v1.2.1] - 2020-01-14
+## v1.2.1 - 2020-01-14
 
 ¯\\\_(ツ)_/¯
 
-## [v1.2.0] - 2020-01-13
+## v1.2.0 - 2020-01-13
 
 ### Added
 
@@ -141,20 +141,20 @@
 
 - Upgraded [jsdom](http://npmjs.com/package/html-void-elements) to v16.0.0.
 
-## [v1.1.2] - 2020-01-13
+## v1.1.2 - 2020-01-13
 
 ### Changed
 
 - Updated devDependencies.
 
-## [v1.1.1] - 2020-01-13
+## v1.1.1 - 2020-01-13
 
 ### Changed
 
 - Changed `main` property in [package.json](./package.json) to browser build.
 - Updated devDependencies.
 
-## [v1.1.0] - 2020-01-11
+## v1.1.0 - 2020-01-11
 
 ### Added
 
@@ -171,20 +171,20 @@
 
 - Removed SSR section of [readme.md](./readme.md).
 
-## [v1.0.4] - 2019-06-15
+## v1.0.4 - 2019-06-15
 
 ### Changed
 
 - Bumped up version of [html-void-elements](http://npmjs.com/package/html-void-elements) to v1.0.4.
 - Updated devDependencies.
 
-## [v1.0.3] - 2019-02-24
+## v1.0.3 - 2019-02-24
 
 ### Removed
 
 - Removed dead code.
 
-## [v1.0.2] - 2019-02-24
+## v1.0.2 - 2019-02-24
 
 ### Added
 
@@ -200,7 +200,7 @@
 - Removed explicit check for valid HTML, MathML and SVG element tags.
 - Removed [html-tag-names](http://npmjs.com/package/html-tag-names), [mathml-tag-names](http://npmjs.com/package/mathml-tag-names) and [svg-tag-names](http://npmjs.com/package/svg-tag-names).
 
-## [v1.0.1] - 2019-02-23
+## v1.0.1 - 2019-02-23
 
 ### Added
 
@@ -210,7 +210,7 @@
 
 - Removed [jsdom](http://npmjs.com/package/jsdom), due to it inflating bundle size.
 
-## [v1.0.0] - 2019-02-23
+## v1.0.0 - 2019-02-23
 
 ### Added
 
@@ -226,7 +226,7 @@
 - Replaced [xmldom](http://npmjs.com/package/xmldom) with [jsdom](http://npmjs.com/package/jsdom).
 - Updated devDependencies.
 
-## [v0.2.0] - 2018-09-27
+## v0.2.0 - 2018-09-27
 
 ### Added
 
