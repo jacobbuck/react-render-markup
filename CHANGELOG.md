@@ -5,11 +5,11 @@
 ### Added
 
 - Add `Markup` component.
-- [prop-types](http://npmjs.com/package/prop-types) dependency for `Markup` component.
+- [prop-types](https://www.npmjs.com/package/prop-types) dependency for `Markup` component.
 
 ### Changed
 
-- **BREAKING** Requires [react](http://npmjs.com/package/react) peer-dependency to be v16.6.0 or newer.
+- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peer-dependency to be v16.6.0 or newer.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
 
@@ -21,14 +21,14 @@
 
 ### Changed
 
-- Improved generation of keys with [react-display-name](http://npmjs.com/package/react-display-name).
+- Improved generation of keys with [react-display-name](https://www.npmjs.com/package/react-display-name).
 
 ## v2.1.2 - 2020-07-03
 
 ### Changed
 
 - Improved performance of prop names lookup.
-- Bumped up version of [css-to-style](http://npmjs.com/package/css-to-style) to v1.3.3.
+- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.3.
 - Updated devDependencies.
 
 ## v2.1.1 - 2020-07-03
@@ -40,7 +40,7 @@
 ### Changed
 
 - Refactored internals to use for loops, for lighter code and better performance.
-- Bumped up version of [dom-parse](http://npmjs.com/package/dom-parse) to v2.0.2.
+- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.2.
 - Updated devDependencies.
 
 ## v2.1.0 - 2020-06-23
@@ -89,8 +89,8 @@
 
 ### Changed
 
-- Bumped up version of [css-to-style](http://npmjs.com/package/css-to-style) to v1.3.1.
-- Bumped up version of [dom-parse](http://npmjs.com/package/dom-parse) to v2.0.1.
+- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.1.
+- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.1.
 - Updated devDependencies.
 
 ## v2.0.1 - 2020-06-09
@@ -112,19 +112,19 @@
 - **BREAKING** CommonJS build has been replaced with ES Module build.
 - Improved type-checking of `markup` parameter.
 - Refactored internals.
-- Replaced internal DOM parser and [jsdom](http://npmjs.com/package/jsdom) with [dom-parse](http://npmjs.com/package/dom-parse).
+- Replaced internal DOM parser and [jsdom](https://www.npmjs.com/package/jsdom) with [dom-parse](https://www.npmjs.com/package/dom-parse).
 - Updated devDependencies.
 
 ### Removed
 
-- Removed explicit check for void elements with [html-void-elements](http://npmjs.com/package/html-void-elements).
+- Removed explicit check for void elements with [html-void-elements](https://www.npmjs.com/package/html-void-elements).
 
 ## v1.2.2 - 2020-04-27
 
 ### Changed
 
-- Bumped up version of [html-void-elements](http://npmjs.com/package/html-void-elements) to v1.0.5.
-- Bumped up version of [jsdom](http://npmjs.com/package/jsdom) to v16.2.2.
+- Bumped up version of [html-void-elements](https://www.npmjs.com/package/html-void-elements) to v1.0.5.
+- Bumped up version of [jsdom](https://www.npmjs.com/package/jsdom) to v16.2.2.
 - Updated devDependencies.
 
 ## v1.2.1 - 2020-01-14
@@ -139,7 +139,7 @@
 
 ### Changed
 
-- Upgraded [jsdom](http://npmjs.com/package/html-void-elements) to v16.0.0.
+- Upgraded [jsdom](https://www.npmjs.com/package/html-void-elements) to v16.0.0.
 
 ## v1.1.2 - 2020-01-13
 
@@ -159,12 +159,12 @@
 ### Added
 
 - Added built-in support for server-side rendering—again.
-- Added [jsdom](http://npmjs.com/package/jsdom) for parsing DOM on Node.js.
+- Added [jsdom](https://www.npmjs.com/package/jsdom) for parsing DOM on Node.js.
 - Added browser and server builds.
 
 ### Changed
 
-- Bumped up version of [css-to-style](http://npmjs.com/package/css-to-style) to v1.3.0.
+- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.0.
 - Updated devDependencies.
 
 ### Removed
@@ -175,7 +175,7 @@
 
 ### Changed
 
-- Bumped up version of [html-void-elements](http://npmjs.com/package/html-void-elements) to v1.0.4.
+- Bumped up version of [html-void-elements](https://www.npmjs.com/package/html-void-elements) to v1.0.4.
 - Updated devDependencies.
 
 ## v1.0.3 - 2019-02-24
@@ -198,7 +198,7 @@
 ### Removed
 
 - Removed explicit check for valid HTML, MathML and SVG element tags.
-- Removed [html-tag-names](http://npmjs.com/package/html-tag-names), [mathml-tag-names](http://npmjs.com/package/mathml-tag-names) and [svg-tag-names](http://npmjs.com/package/svg-tag-names).
+- Removed [html-tag-names](https://www.npmjs.com/package/html-tag-names), [mathml-tag-names](https://www.npmjs.com/package/mathml-tag-names) and [svg-tag-names](https://www.npmjs.com/package/svg-tag-names).
 
 ## v1.0.1 - 2019-02-23
 
@@ -208,7 +208,7 @@
 
 ### Removed
 
-- Removed [jsdom](http://npmjs.com/package/jsdom), due to it inflating bundle size.
+- Removed [jsdom](https://www.npmjs.com/package/jsdom), due to it inflating bundle size.
 
 ## v1.0.0 - 2019-02-23
 
@@ -221,9 +221,9 @@
 - **BREAKING** Changed DOM parser from XHTML to HTML document type.
 - **BREAKING** `markup` parameter must always be a string.
 - Builds are now done with [Rollup](http://rollupjs.org)!
-- Bumped up version of [css-to-style](http://npmjs.com/package/css-to-style) to v1.2.1.
+- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.2.1.
 - Refactored internals.
-- Replaced [xmldom](http://npmjs.com/package/xmldom) with [jsdom](http://npmjs.com/package/jsdom).
+- Replaced [xmldom](https://www.npmjs.com/package/xmldom) with [jsdom](https://www.npmjs.com/package/jsdom).
 - Updated devDependencies.
 
 ## v0.2.0 - 2018-09-27
