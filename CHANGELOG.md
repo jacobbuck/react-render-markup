@@ -15,7 +15,7 @@
 
 ### Removed
 
-- **BREAKING** removed `renderMarkup` as default export.
+- **BREAKING** Removed `renderMarkup` as default export.
 
 ## v2.1.3 - 2020-07-04
 
@@ -219,7 +219,7 @@
 ### Changed
 
 - **BREAKING** Changed DOM parser from XHTML to HTML document type.
-- **BREAKING** `markup` parameter must always be a string.
+- **BREAKING** Updated `markup` parameter to require a string.
 - Builds are now done with [Rollup](http://rollupjs.org)!
 - Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.2.1.
 - Refactored internals.
