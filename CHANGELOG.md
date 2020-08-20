@@ -9,7 +9,7 @@
 
 ### Changed
 
-- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peer-dependency to be v16.6.0 or newer.
+- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.6.0 or newer.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
 
