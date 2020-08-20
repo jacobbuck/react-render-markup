@@ -220,7 +220,7 @@
 
 - **BREAKING** Changed DOM parser from XHTML to HTML document type.
 - **BREAKING** Updated `markup` parameter to require a string.
-- Builds are now done with [Rollup](http://rollupjs.org)!
+- Builds are now done with [Rollup](http://rollupjs.org).
 - Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.2.1.
 - Refactored internals.
 - Replaced [xmldom](https://www.npmjs.com/package/xmldom) with [jsdom](https://www.npmjs.com/package/jsdom).
