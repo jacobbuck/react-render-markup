@@ -10,8 +10,10 @@
 ### Changed
 
 - **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.6.0 or newer.
+- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.3.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
+- Updated devDependencies.
 
 ### Removed
 
