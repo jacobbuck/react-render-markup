@@ -64,15 +64,6 @@ An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
 ```jsx
 const MyComponent = (props) => {
   const { content } = props;
-  return <div>{renderMarkup(content)}</div>;
-};
-```
-
-or
-
-```jsx
-const MyComponent = (props) => {
-  const { content } = props;
   return (
     <div>
       <Markup markup={content} />
@@ -81,25 +72,19 @@ const MyComponent = (props) => {
 };
 ```
 
-### With `allowed` option
+or
 
 ```jsx
 const MyComponent = (props) => {
   const { content } = props;
-  return (
-    <div>
-      {renderMarkup(props.content, {
-        allowed: ['strong', 'em'], // strips all other elements
-      })}
-    </div>
-  );
+  return <div>{renderMarkup(content)}</div>;
 };
 ```
 
-or
+### With `allowed` option
 
 ```jsx
-const allowed = ['strong', 'em'];
+const allowed = ['strong', 'em']; // strips all other elements
 
 const MyComponent = (props) => {
   const { content } = props;
@@ -111,23 +96,38 @@ const MyComponent = (props) => {
 };
 ```
 
-### With `replace` option
+or
 
 ```jsx
-import { Link } from 'some-router-library';
-
 const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
       {renderMarkup(props.content, {
-        replace: {
-          a: Link, // replace <a> elements with <Link> component
-          em: 'strong', // replace <em> elements with <strong> elements
-          img: null, // doesn’t render <img> elements
-          span: React.Fragment, // unwraps contents of <span> elements
-        },
+        allowed: ['strong', 'em'],
       })}
+    </div>
+  );
+};
+```
+
+### With `replace` option
+
+```jsx
+import { Link } from 'some-router-library';
+
+const replace = {
+  a: Link, // replace <a> elements with <Link> component
+  em: 'strong', // replace <em> elements with <strong> elements
+  img: null, // doesn’t render <img> elements
+  span: React.Fragment, // unwraps contents of <span> elements
+};
+
+const MyComponent = (props) => {
+  const { content } = props;
+  return (
+    <div>
+      <Markup markup={props.content} replace={replace} />
     </div>
   );
 };
@@ -138,18 +138,18 @@ or
 ```jsx
 import { Link } from 'some-router-library';
 
-const replace = {
-  a: Link,
-  em: 'strong',
-  img: null,
-  span: React.Fragment,
-};
-
 const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      <Markup markup={props.content} replace={replace} />
+      {renderMarkup(props.content, {
+        replace: {
+          a: Link,
+          em: 'strong',
+          img: null,
+          span: React.Fragment,
+        },
+      })}
     </div>
   );
 };
