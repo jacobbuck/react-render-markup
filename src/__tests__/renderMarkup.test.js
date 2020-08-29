@@ -1,7 +1,7 @@
 import TestRenderer from 'react-test-renderer';
 import htmlKitchenSink from './__fixtures__/htmlKitchenSink';
 import svgScimitar from './__fixtures__/svgScimitar';
-import renderMarkup from '..';
+import renderMarkup from '../renderMarkup';
 
 test('renders HTML from a string', () => {
   const testRenderer = TestRenderer.create(renderMarkup(htmlKitchenSink));
