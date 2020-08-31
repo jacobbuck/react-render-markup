@@ -14,11 +14,13 @@ Markup.defaultProps = {
   trim: null,
 };
 
-Markup.propTypes = {
-  allowed: PropTypes.arrayOf(PropTypes.string),
-  markup: PropTypes.string,
-  replace: PropTypes.objectOf(PropTypes.elementType),
-  trim: PropTypes.bool,
-};
+if (process.env.NODE_ENV !== 'production') {
+  Markup.propTypes = {
+    allowed: PropTypes.arrayOf(PropTypes.string),
+    markup: PropTypes.string,
+    replace: PropTypes.objectOf(PropTypes.elementType),
+    trim: PropTypes.bool,
+  };
+}
 
 export default Markup;
