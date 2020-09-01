@@ -13,6 +13,7 @@
 - Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.3.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
+- Updated `propTypes` to only be defined in non-production environments.
 - Updated devDependencies.
 
 ### Removed
