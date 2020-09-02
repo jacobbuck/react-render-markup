@@ -9,7 +9,7 @@
     "eslint:recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
+    "plugin:react/recommended"
   ],
   "parser": "babel-eslint",
   "plugins": ["jest", "prettier", "react"],
