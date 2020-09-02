@@ -116,9 +116,7 @@ test('handles allowed option', () => {
 });
 
 test('handles replace option', () => {
-  const TestComponent = (props) => {
-    return 'Hello!';
-  };
+  const TestComponent = () => 'Hello!';
 
   expect(
     nodesToElements(

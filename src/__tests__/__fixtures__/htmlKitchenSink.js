@@ -93,7 +93,7 @@ overridden.</bdo></p>
     </p>
     <p><code>q</code>: The W3C page <cite>About W3C</cite> says the W3C’s mission is <q cite="https://www.w3.org/Consortium/">To lead the World Wide Web to its full potential by developing protocols and guidelines that ensure long-term growth for the Web</q>.</p>
     <p><code>kbd</code> and <code>samp</code>: I did this:</p>
-    <pre><samp>c:\&gt;<kbd>format c: /yes</kbd></samp></pre>
+    <pre><samp>c:\\&gt;<kbd>format c: /yes</kbd></samp></pre>
     <p>Is that bad? Press <kbd><kbd>Ctrl</kbd></kbd>+<kbd><kbd>F5</kbd></kbd> for a hard reload.</p>
     <p><code>var</code>: To log in, type <kbd>ssh <var>user</var>@example.com</kbd>, where <var>user</var> is your user ID.</p>
     <p><code>meter</code> and <code>progress</code>: Storage space usage:
