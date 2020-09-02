@@ -2,7 +2,7 @@
 
 Safely parse HTML, SVG and MathML into React elements.
 
-- :gift: Lightweight—![npm bundle size](https://badgen.net/bundlephobia/minzip/react-render-markup)
+- :gift: Lightweight ![npm bundle size](https://badgen.net/bundlephobia/minzip/react-render-markup)
 - :smile: Easy to use with simple API
 - :printer: Server-side rendering out of the box
 - :dolphin: Runs on Internet Explorer
