@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["jest", "prettier", "react"],
+  "settings": {
+    "react": {
+      "version": "16.6.0"
+    }
+  }
+}
