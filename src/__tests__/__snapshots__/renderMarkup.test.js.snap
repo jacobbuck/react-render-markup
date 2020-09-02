@@ -855,7 +855,7 @@ overridden.
     
       <pre>
         <samp>
-          c:&gt;
+          c:\\&gt;
           <kbd>
             format c: /yes
           </kbd>
