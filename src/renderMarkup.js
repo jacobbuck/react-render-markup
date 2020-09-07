@@ -5,10 +5,10 @@ import { isNil } from './utilities';
 const renderMarkup = (markup, options = {}) => {
   if (process.env.NODE_ENV !== 'production') {
     if (typeof markup !== 'string' && !isNil(markup)) {
-      throw new TypeError('Expected parameter "markup" to be a string.');
+      throw new TypeError(`Expected "markup" to be a string, not ${typeof markup}.`);
     }
     if (typeof options !== 'object') {
-      throw new TypeError('Expected parameter "options" to be an object.');
+      throw new TypeError(`Expected "options" to be an object, not ${typeof object}.`);
     }
   }
   return markup ? nodesToElements(parseDom(markup), options) : null;
