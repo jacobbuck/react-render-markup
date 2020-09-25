@@ -103,7 +103,7 @@ const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      {renderMarkup(props.content, {
+      {renderMarkup(content, {
         allowed: ['strong', 'em'],
       })}
     </div>
@@ -127,7 +127,7 @@ const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      <Markup markup={props.content} replace={replace} />
+      <Markup markup={content} replace={replace} />
     </div>
   );
 };
@@ -142,7 +142,7 @@ const MyComponent = (props) => {
   const { content } = props;
   return (
     <div>
-      {renderMarkup(props.content, {
+      {renderMarkup(content, {
         replace: {
           a: Link,
           em: 'strong',
