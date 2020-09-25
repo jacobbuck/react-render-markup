@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import renderMarkup from './renderMarkup';
 
 const Markup = React.memo(function Markup(props) {
