@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import renderMarkup from './renderMarkup';
 
-const Markup = React.memo(function Markup(props) {
-  const { allowed, markup, replace, trim } = props;
+const Markup = React.memo(function Markup({ allowed, markup, replace, trim }) {
   return renderMarkup(markup, { allowed, replace, trim });
 });
 
