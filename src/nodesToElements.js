@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createElement } from 'react';
 import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
@@ -47,7 +47,7 @@ const nodesToElements = (nodeList, options) => {
     props.key = `${getDisplayName(type)}-${i}`;
 
     tree.push(
-      React.createElement(
+      createElement(
         type,
         props,
         nodesToElements(node.childNodes, options)
