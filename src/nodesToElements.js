@@ -47,11 +47,7 @@ const nodesToElements = (nodeList, options) => {
     props.key = `${getDisplayName(type)}-${i}`;
 
     tree.push(
-      createElement(
-        type,
-        props,
-        nodesToElements(node.childNodes, options)
-      )
+      createElement(type, props, nodesToElements(node.childNodes, options))
     );
   }
 
