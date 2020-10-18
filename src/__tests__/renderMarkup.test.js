@@ -20,13 +20,17 @@ test('returns null when markup is null or undefined', () => {
 
 test("throws an error when markup isn't a string", () => {
   expect(() => renderMarkup(false)).toThrow(
-    TypeError('Expected "markup" to be a string, not boolean.')
+    new TypeError(
+      'Expected `markup` to be of type `string`, but received type `boolean`'
+    )
   );
 });
 
 test("throws an error when options isn't an object", () => {
   expect(() => renderMarkup(null, () => {})).toThrow(
-    new TypeError('Expected "options" to be an object, not function.')
+    new TypeError(
+      'Expected `options` to be of type `object`, but received type `function`'
+    )
   );
 });
 
@@ -35,10 +39,14 @@ test("doesn't throw an error in production mode", () => {
   process.env = { ...previousEnv, NODE_ENV: 'production' };
 
   expect(() => renderMarkup(false)).not.toThrow(
-    TypeError('Expected parameter "markup" to be a string.')
+    new TypeError(
+      'Expected `markup` to be of type `string`, but received type `boolean`'
+    )
   );
   expect(() => renderMarkup(null, () => {})).not.toThrow(
-    new TypeError('Expected parameter "options" to be an object.')
+    new TypeError(
+      'Expected `options` to be of type `object`, but received type `function`'
+    )
   );
 
   process.env = previousEnv;
