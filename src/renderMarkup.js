@@ -14,6 +14,21 @@ const renderMarkup = (markup, options = {}) => {
         `Expected \`options\` to be of type \`object\`, but received type \`${typeof options}\``
       );
     }
+    if (!Array.isArray(options.allowed) && !isNil(options.allowed)) {
+      throw new TypeError(
+        `Expected property \`allowed\` to be of type \`array\` but received type \`${typeof options.allowed}\` in object \`options\``
+      );
+    }
+    if (typeof options.replace !== 'object' && !isNil(options.replace)) {
+      throw new TypeError(
+        `Expected property \`replace\` to be of type \`object\` but received type \`${typeof options.replace}\` in object \`options\``
+      );
+    }
+    if (typeof options.trim !== 'boolean' && !isNil(options.trim)) {
+      throw new TypeError(
+        `Expected property \`trim\` to be of type \`boolean\` but received type \`${typeof options.trim}\` in object \`options\``
+      );
+    }
   }
   return markup ? nodesToElements(parseDom(markup), options) : null;
 };
