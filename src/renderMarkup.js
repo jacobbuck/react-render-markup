@@ -1,32 +1,43 @@
 import parseDom from 'dom-parse';
+import kindOf from 'kind-of';
 import nodesToElements from './nodesToElements';
 import { isNil } from './utilities';
 
 const renderMarkup = (markup, options = {}) => {
   if (process.env.NODE_ENV !== 'production') {
-    if (typeof markup !== 'string' && !isNil(markup)) {
+    if (!isNil(markup) && kindOf(markup) !== 'string') {
       throw new TypeError(
-        `Expected \`markup\` to be of type \`string\`, but received type \`${typeof markup}\``
+        `Expected \`markup\` to be of type \`string\`, but received type \`${kindOf(
+          markup
+        )}\``
       );
     }
-    if (typeof options !== 'object') {
+    if (kindOf(options) !== 'object') {
       throw new TypeError(
-        `Expected \`options\` to be of type \`object\`, but received type \`${typeof options}\``
+        `Expected \`options\` to be of type \`object\`, but received type \`${kindOf(
+          options
+        )}\``
       );
     }
-    if (!Array.isArray(options.allowed) && !isNil(options.allowed)) {
+    if (!isNil(options.allowed) && kindOf(options.allowed) !== 'array') {
       throw new TypeError(
-        `Expected property \`allowed\` to be of type \`array\` but received type \`${typeof options.allowed}\` in object \`options\``
+        `Expected property \`allowed\` to be of type \`array\` but received type \`${kindOf(
+          options.allowed
+        )}\` in object \`options\``
       );
     }
-    if (typeof options.replace !== 'object' && !isNil(options.replace)) {
+    if (!isNil(options.replace) && kindOf(options.replace) !== 'object') {
       throw new TypeError(
-        `Expected property \`replace\` to be of type \`object\` but received type \`${typeof options.replace}\` in object \`options\``
+        `Expected property \`replace\` to be of type \`object\` but received type \`${kindOf(
+          options.replace
+        )}\` in object \`options\``
       );
     }
-    if (typeof options.trim !== 'boolean' && !isNil(options.trim)) {
+    if (!isNil(options.trim) && kindOf(options.trim) !== 'boolean') {
       throw new TypeError(
-        `Expected property \`trim\` to be of type \`boolean\` but received type \`${typeof options.trim}\` in object \`options\``
+        `Expected property \`trim\` to be of type \`boolean\` but received type \`${kindOf(
+          options.trim
+        )}\` in object \`options\``
       );
     }
   }
