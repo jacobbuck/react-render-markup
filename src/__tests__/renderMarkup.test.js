@@ -34,6 +34,30 @@ test('throws TypeError if options is not an object', () => {
   );
 });
 
+test('throws TypeError if allowed property is not an array in object options', () => {
+  expect(() => renderMarkup(null, { allowed: 'div' })).toThrow(
+    new TypeError(
+      'Expected property `allowed` to be of type `array` but received type `string` in object `options`'
+    )
+  );
+});
+
+test('throws TypeError if replace property is not an object in object options', () => {
+  expect(() => renderMarkup(null, { replace: ['div'] })).toThrow(
+    new TypeError(
+      'Expected property `replace` to be of type `object` but received type `array` in object `options`'
+    )
+  );
+});
+
+test('throws TypeError if trim property is not an array in object options', () => {
+  expect(() => renderMarkup(null, { trim: 1 })).toThrow(
+    new TypeError(
+      'Expected property `trim` to be of type `boolean` but received type `number` in object `options`'
+    )
+  );
+});
+
 test('doesn’t typecheck in production', () => {
   const previousEnv = process.env;
   process.env = { ...previousEnv, NODE_ENV: 'production' };
