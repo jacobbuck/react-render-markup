@@ -2,7 +2,7 @@ import * as React from 'react';
 import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
-import { has, includes } from './utilities';
+import { includes } from './utilities';
 
 const nodesToElements = (nodeList, options) => {
   const tree = [];
@@ -34,7 +34,10 @@ const nodesToElements = (nodeList, options) => {
     let type = node.nodeName.toLowerCase();
 
     // Handle replace option.
-    if (options.replace && has(options.replace, type)) {
+    if (
+      options.replace &&
+      Object.prototype.hasOwnProperty.call(options.replace, type)
+    ) {
       type = options.replace[type];
 
       // Don't render falsey replacements.

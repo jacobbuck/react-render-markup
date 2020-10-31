@@ -1,7 +1,3 @@
-// Checks if an object has an own property with the specified name.
-export const has = (obj, name) =>
-  Object.prototype.hasOwnProperty.call(obj, name);
-
 // Checks if an array contains a value.
 export const includes = (arr, search) =>
   Array.prototype.indexOf.call(arr, search) !== -1;
