@@ -1,4 +1,4 @@
-import { has, isNil, includes, startsWith } from '../utilities';
+import { has, includes, startsWith } from '../utilities';
 
 describe('has', () => {
   test('checks if an object has an own property with the specified name', () => {
@@ -6,19 +6,6 @@ describe('has', () => {
     expect(has(obj, 'foo')).toBe(true);
     expect(has(obj, 'bar')).toBe(false);
     expect(has(obj, 'toString')).toBe(false);
-  });
-});
-
-describe('isNil', () => {
-  test('returns true if the given value is `null` or `undefined`', () => {
-    expect(isNil(null)).toBe(true);
-    expect(isNil(undefined)).toBe(true);
-  });
-
-  test('returns false if the given value is not `null` or `undefined`', () => {
-    [false, NaN, 0, '', [], {}, () => {}].forEach((value) => {
-      expect(isNil(value)).toBe(false);
-    });
   });
 });
 

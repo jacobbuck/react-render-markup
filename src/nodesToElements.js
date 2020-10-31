@@ -1,8 +1,8 @@
-import { createElement } from 'react';
+import * as React from 'react';
 import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
-import { has, includes, isNil } from './utilities';
+import { has, includes } from './utilities';
 
 const nodesToElements = (nodeList, options) => {
   const tree = [];
@@ -13,7 +13,7 @@ const nodesToElements = (nodeList, options) => {
     // Handle text nodes.
     if (node.nodeType === TEXT_NODE) {
       // Handle trim option to remove whitespace text nodes.
-      if (options.trim !== true || node.textContent.trim() !== '') {
+      if (!options.trim || node.textContent.trim() !== '') {
         tree.push(node.textContent);
       }
       continue;
@@ -25,7 +25,7 @@ const nodesToElements = (nodeList, options) => {
       // Never render <script> elements.
       node.nodeName.toLowerCase() === 'script' ||
       // Handle allowed option to only render elements that are allowed.
-      (!isNil(options.allowed) &&
+      (options.allowed &&
         !includes(options.allowed, node.nodeName.toLowerCase()))
     ) {
       continue;
@@ -34,7 +34,7 @@ const nodesToElements = (nodeList, options) => {
     let type = node.nodeName.toLowerCase();
 
     // Handle replace option.
-    if (!isNil(options.replace) && has(options.replace, type)) {
+    if (options.replace && has(options.replace, type)) {
       type = options.replace[type];
 
       // Don't render falsey replacements.
@@ -47,7 +47,11 @@ const nodesToElements = (nodeList, options) => {
     props.key = `${getDisplayName(type)}-${i}`;
 
     tree.push(
-      createElement(type, props, nodesToElements(node.childNodes, options))
+      React.createElement(
+        type,
+        props,
+        nodesToElements(node.childNodes, options)
+      )
     );
   }
 
