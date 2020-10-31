@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import * as React from 'react';
 import renderMarkup from './renderMarkup';
 
@@ -11,7 +12,6 @@ const Markup = React.memo(function Markup({
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  const PropTypes = require('prop-types');
   Markup.propTypes = {
     allowed: PropTypes.arrayOf(PropTypes.string),
     markup: PropTypes.string,
