@@ -1,11 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Conditionally import [kind-of](https://www.npmjs.com/package/kind-of) dependency.
+
 ## v3.1.0 - 2020-10-31
 
 ### Added
 
 - Added type checking of properties in `options` parameter.
-- Added [kind-op](https://www.npmjs.com/package/kind-op) dependency.
+- Added [kind-of](https://www.npmjs.com/package/kind-of) dependency.
 
 ### Changed
 
