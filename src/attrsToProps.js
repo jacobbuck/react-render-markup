@@ -25,7 +25,7 @@ const attrsToProps = (attrs) => {
       continue;
     }
 
-    props[attrToPropName(name) || name] = value === '' ? true : value;
+    props[attrToPropName(name)] = value === '' ? true : value;
   }
 
   return props;
