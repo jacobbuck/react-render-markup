@@ -1,11 +1,29 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added type checking of properties in `options` parameter.
+- Added [kind-op](https://www.npmjs.com/package/kind-op) dependency.
+
+### Changed
+
+- Improved type checking of `markup` and `options` parameters.
+- Refactored `attrToPropName` for more robust prop-name lookup.
+- Updated devDependencies.
+- Updated [react](https://www.npmjs.com/package/react) peerDependency to also support v17.
+
+### Removed
+
+- Removed `defaultProps` in favour of default values in object destructuring.
+
 ## v3.0.0 - 2020-09-02
 
 ### Added
 
 - Add `Markup` component.
-- [prop-types](https://www.npmjs.com/package/prop-types) dependency for `Markup` component.
+- Added [prop-types](https://www.npmjs.com/package/prop-types) dependency for `Markup` component.
 
 ### Changed
 
