@@ -7,11 +7,11 @@ const propsLookup = new Map(
   .set('class', 'className')
   .set('for', 'htmlFor');
 
-const attrToPropName = (attrName) => {
+const attrNameToPropName = (attrName) => {
   const lowerAttrName = attrName.toLowerCase().replace(/[^a-z0-9]/g, '');
   return propsLookup.has(lowerAttrName)
     ? propsLookup.get(lowerAttrName)
     : attrName;
 };
 
-export default attrToPropName;
+export default attrNameToPropName;

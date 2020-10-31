@@ -1,6 +1,6 @@
 import cssToStyle from 'css-to-style';
 import reactProps from './constants/reactProps';
-import attrToPropName from './attrToPropName';
+import attrNameToPropName from './attrNameToPropName';
 
 const attrsToProps = (attrs) => {
   const props = {};
@@ -25,7 +25,7 @@ const attrsToProps = (attrs) => {
       continue;
     }
 
-    props[attrToPropName(name)] = value === '' ? true : value;
+    props[attrNameToPropName(name)] = value === '' ? true : value;
   }
 
   return props;
