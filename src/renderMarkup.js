@@ -1,6 +1,7 @@
 import parseDom from 'dom-parse';
-import kindOf from 'kind-of';
 import nodesToElements from './nodesToElements';
+
+const kindOf = process.env.NODE_ENV !== 'production' && require('kind-of');
 
 const renderMarkup = (markup, options = {}) => {
   if (process.env.NODE_ENV !== 'production') {
