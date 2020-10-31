@@ -2,7 +2,6 @@ import * as React from 'react';
 import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
-import { includes } from './utilities';
 
 const nodesToElements = (nodeList, options) => {
   const tree = [];
@@ -26,7 +25,7 @@ const nodesToElements = (nodeList, options) => {
       node.nodeName.toLowerCase() === 'script' ||
       // Handle allowed option to only render elements that are allowed.
       (options.allowed &&
-        !includes(options.allowed, node.nodeName.toLowerCase()))
+        !options.allowed.includes(node.nodeName.toLowerCase()))
     ) {
       continue;
     }
