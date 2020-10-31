@@ -1,10 +1,6 @@
 import attrsToProps from '../attrsToProps';
 
 test('converts attributes to props', () => {
-  console.log(
-    Object.prototype.toString.call(document.createElement('p').ownerDocument)
-  );
-
   const attrs = [
     { name: 'class', value: 'foo bar' },
     { name: 'id', value: 'baz' },
