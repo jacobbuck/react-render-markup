@@ -9,6 +9,7 @@ export default {
   external: [
     'css-to-style',
     'dom-parse',
+    'kind-of',
     'prop-types',
     'react',
     'react-display-name',
