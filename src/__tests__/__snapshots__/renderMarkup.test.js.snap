@@ -3349,7 +3349,7 @@ Array [
     >
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient2361"
       >
         
@@ -3378,10 +3378,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         gradientUnits="userSpaceOnUse"
         id="linearGradient11240"
         x1="394.93762"
@@ -3392,7 +3392,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient14086"
       >
         
@@ -3433,10 +3433,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <radialgradient
+      <radialGradient
         cx="82.129753"
         cy="294.44315"
         fx="82.129753"
@@ -3454,7 +3454,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur11075"
           inkscape:collect="always"
           stdDeviation="1.3157986"
@@ -3464,7 +3464,7 @@ Array [
       </filter>
       
     
-      <clippath
+      <clipPath
         id="clipPath11111"
       >
         
@@ -3491,7 +3491,7 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
       <filter
@@ -3499,7 +3499,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur11107"
           inkscape:collect="always"
           stdDeviation="1.4170139"
@@ -3509,7 +3509,7 @@ Array [
       </filter>
       
     
-      <clippath
+      <clipPath
         id="clipPath11115"
       >
         
@@ -3536,10 +3536,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <clippath
+      <clipPath
         id="clipPath11119"
       >
         
@@ -3566,7 +3566,7 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
       <filter
@@ -3574,7 +3574,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur6543"
           inkscape:collect="always"
           stdDeviation="3.1069038"
@@ -3584,7 +3584,7 @@ Array [
       </filter>
       
     
-      <clippath
+      <clipPath
         id="clipPath4786"
       >
         
@@ -3609,7 +3609,7 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
       <filter
@@ -3617,7 +3617,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur3323"
           inkscape:collect="always"
           stdDeviation="3.84278"
@@ -3627,7 +3627,7 @@ Array [
       </filter>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient5355"
       >
         
@@ -3656,10 +3656,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <radialgradient
+      <radialGradient
         cx="243.79347"
         cy="348.81863"
         fx="243.79347"
@@ -3672,7 +3672,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11234"
@@ -3684,7 +3684,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11232"
@@ -3696,7 +3696,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11230"
@@ -3708,7 +3708,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11228"
@@ -3720,7 +3720,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11226"
@@ -3732,7 +3732,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11224"
@@ -3744,7 +3744,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11222"
@@ -3756,7 +3756,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11220"
@@ -3768,7 +3768,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11218"
@@ -3780,7 +3780,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11216"
@@ -3792,7 +3792,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11214"
@@ -3804,7 +3804,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11212"
@@ -3816,7 +3816,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11210"
@@ -3828,7 +3828,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11208"
@@ -3840,7 +3840,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11206"
@@ -3852,7 +3852,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11204"
@@ -3864,7 +3864,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11202"
@@ -3876,7 +3876,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11200"
@@ -3888,7 +3888,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11198"
@@ -3900,7 +3900,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11196"
@@ -3912,7 +3912,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11194"
@@ -3924,7 +3924,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11192"
@@ -3936,7 +3936,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11190"
@@ -3948,7 +3948,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient14971"
       >
         
@@ -3977,10 +3977,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11188"
@@ -3992,7 +3992,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient13025"
       >
         
@@ -4033,10 +4033,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <radialgradient
+      <radialGradient
         cx="142.22385"
         cy="348.25116"
         fx="142.22385"
@@ -4058,7 +4058,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur6452"
           inkscape:collect="always"
           stdDeviation="10.629343"
@@ -4068,7 +4068,7 @@ Array [
       </filter>
       
     
-      <clippath
+      <clipPath
         id="clipPath6461"
       >
         
@@ -4104,10 +4104,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <clippath
+      <clipPath
         id="clipPath6467"
       >
         
@@ -4143,10 +4143,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient6110"
       >
         
@@ -4187,10 +4187,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient11184"
@@ -4208,7 +4208,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur6428"
           inkscape:collect="always"
           stdDeviation="3.1054595"
@@ -4218,7 +4218,7 @@ Array [
       </filter>
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="translate(175.1391,-133.34455)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient32082"
@@ -4230,7 +4230,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1,0,0,-1,305.83002,878.54986)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient32079"
@@ -4243,7 +4243,7 @@ Array [
       />
       
     
-      <clippath
+      <clipPath
         id="clipPath32069"
       >
         
@@ -4269,10 +4269,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <clippath
+      <clipPath
         id="clipPath32065"
       >
         
@@ -4298,10 +4298,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <clippath
+      <clipPath
         id="clipPath32061"
       >
         
@@ -4327,10 +4327,10 @@ Array [
         />
         
     
-      </clippath>
+      </clipPath>
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1,0,0,-1,130.69092,1011.231)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient24247"
@@ -4343,7 +4343,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="translate(0,-0.6634057)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient24245"
@@ -4355,7 +4355,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientUnits="userSpaceOnUse"
         id="linearGradient16306"
         x1="92.881538"
@@ -4366,7 +4366,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1,0,0,-1,-3.6556914,976.10042)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient16967"
@@ -4378,7 +4378,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientUnits="userSpaceOnUse"
         id="linearGradient6126"
         spreadMethod="reflect"
@@ -4390,7 +4390,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient5113"
       >
         
@@ -4431,10 +4431,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient2449"
       >
         
@@ -4475,10 +4475,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient2441"
       >
         
@@ -4519,10 +4519,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient2435"
       >
         
@@ -4551,10 +4551,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient9477"
       >
         
@@ -4583,10 +4583,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient10458"
       >
         
@@ -4615,10 +4615,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient12396"
       >
         
@@ -4647,10 +4647,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient14344"
       >
         
@@ -4679,10 +4679,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient19225"
       >
         
@@ -4711,10 +4711,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient3473"
       >
         
@@ -4743,10 +4743,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         id="linearGradient4450"
       >
         
@@ -4775,10 +4775,10 @@ Array [
         />
         
     
-      </lineargradient>
+      </linearGradient>
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient2774"
@@ -4791,7 +4791,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient2877"
@@ -4804,7 +4804,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient3123"
@@ -4817,7 +4817,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient3306"
@@ -4835,7 +4835,7 @@ Array [
       >
         
       
-        <fegaussianblur
+        <feGaussianBlur
           id="feGaussianBlur4335"
           inkscape:collect="always"
           stdDeviation="4.5952988"
@@ -4845,7 +4845,7 @@ Array [
       </filter>
       
     
-      <radialgradient
+      <radialGradient
         cx="254.82332"
         cy="253.04457"
         fx="254.82332"
@@ -4858,7 +4858,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientUnits="userSpaceOnUse"
         id="linearGradient4425"
         spreadMethod="reflect"
@@ -4870,7 +4870,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4427"
@@ -4883,7 +4883,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(0.9061819,1.3321141,-1.3321141,0.9061819,401.82647,-748.87542)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4429"
@@ -4896,7 +4896,7 @@ Array [
       />
       
     
-      <radialgradient
+      <radialGradient
         cx="142.22385"
         cy="348.25116"
         fx="142.22385"
@@ -4909,7 +4909,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4433"
@@ -4921,7 +4921,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4435"
@@ -4933,7 +4933,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4437"
@@ -4945,7 +4945,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4439"
@@ -4957,7 +4957,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4441"
@@ -4969,7 +4969,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4443"
@@ -4981,7 +4981,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4445"
@@ -4993,7 +4993,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4447"
@@ -5005,7 +5005,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4449"
@@ -5017,7 +5017,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4451"
@@ -5029,7 +5029,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4453"
@@ -5041,7 +5041,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4455"
@@ -5053,7 +5053,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4457"
@@ -5065,7 +5065,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4459"
@@ -5077,7 +5077,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4461"
@@ -5089,7 +5089,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4463"
@@ -5101,7 +5101,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4465"
@@ -5113,7 +5113,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4467"
@@ -5125,7 +5125,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4469"
@@ -5137,7 +5137,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4471"
@@ -5149,7 +5149,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4473"
@@ -5161,7 +5161,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4475"
@@ -5173,7 +5173,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4477"
@@ -5185,7 +5185,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientTransform="matrix(1.1799262,1.0970267,-1.0970267,1.1799262,507.31085,-881.90205)"
         gradientUnits="userSpaceOnUse"
         id="linearGradient4479"
@@ -5197,7 +5197,7 @@ Array [
       />
       
     
-      <radialgradient
+      <radialGradient
         cx="243.79347"
         cy="348.81863"
         fx="243.79347"
@@ -5210,7 +5210,7 @@ Array [
       />
       
     
-      <radialgradient
+      <radialGradient
         cx="82.129753"
         cy="294.44315"
         fx="82.129753"
@@ -5223,7 +5223,7 @@ Array [
       />
       
     
-      <lineargradient
+      <linearGradient
         gradientUnits="userSpaceOnUse"
         id="linearGradient4485"
         x1="394.93762"

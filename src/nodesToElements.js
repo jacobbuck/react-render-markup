@@ -2,6 +2,7 @@ import * as React from 'react';
 import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
+import nodeNameToType from './nodeNameToType';
 
 const nodesToElements = (nodeList, options) => {
   const tree = [];
@@ -18,19 +19,18 @@ const nodesToElements = (nodeList, options) => {
       continue;
     }
 
+    let type = nodeNameToType(node.nodeName);
+
     // Only render element (and text) nodes.
     if (
       node.nodeType !== ELEMENT_NODE ||
       // Never render <script> elements.
-      node.nodeName.toLowerCase() === 'script' ||
+      type === 'script' ||
       // Handle allowed option to only render elements that are allowed.
-      (options.allowed &&
-        !options.allowed.includes(node.nodeName.toLowerCase()))
+      (options.allowed && !options.allowed.includes(type))
     ) {
       continue;
     }
-
-    let type = node.nodeName.toLowerCase();
 
     // Handle replace option.
     if (
