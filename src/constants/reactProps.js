@@ -1,4 +1,4 @@
-export default [
+export default new Set([
   'children',
   'dangerouslySetInnerHTML',
   'key',
@@ -10,4 +10,4 @@ export default [
   'suppressHydrationWarning',
   // deprecated
   'valueLink',
-];
+]);

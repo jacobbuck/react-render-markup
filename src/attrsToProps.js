@@ -9,7 +9,7 @@ const attrsToProps = (attrs) => {
     const { name, value } = attrs[i];
 
     // Disallow event attributes and react props.
-    if (name.startsWith('on') || reactProps.includes(name)) {
+    if (name.startsWith('on') || reactProps.has(name)) {
       continue;
     }
 
