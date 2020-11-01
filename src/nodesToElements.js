@@ -15,18 +15,28 @@ const nodesToElements = (nodeList, options) => {
         // Never render <script> elements.
         type === 'script' ||
         // Handle allowed option to only render elements that are allowed.
-        (options.allowed && options.allowed.includes(type))
+        (options.allowed &&
+          (typeof options.allowed === 'function'
+            ? !options.allowed(node)
+            : !options.allowed.includes(type)))
       ) {
         continue;
       }
       // Handle replace option.
-      if (
-        options.replace &&
-        Object.prototype.hasOwnProperty.call(options.replace, type)
-      ) {
-        type = options.replace[type];
-        // Don't render falsey replacements.
-        if (!type) {
+      if (options.replace) {
+        if (typeof options.replace === 'function') {
+          const returnType = options.replace(node);
+          // Returning undefined won't replace the type.
+          if (returnType !== void 0) {
+            type = returnType;
+          }
+        } else if (
+          Object.prototype.hasOwnProperty.call(options.replace, type)
+        ) {
+          type = options.replace[type];
+        }
+        // Don't render nullish replacements.
+        if (type == null) {
           continue;
         }
       }
