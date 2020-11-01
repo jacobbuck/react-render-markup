@@ -18,16 +18,22 @@ const renderMarkup = (markup, options = {}) => {
         )}\``
       );
     }
-    if (options.allowed != null && kindOf(options.allowed) !== 'array') {
+    if (
+      options.allowed != null &&
+      !['array', 'function'].includes(kindOf(options.allowed))
+    ) {
       throw new TypeError(
-        `Expected property \`allowed\` to be of type \`array\` but received type \`${kindOf(
+        `Expected property \`allowed\` to be of type \`array\` or \`function\` but received type \`${kindOf(
           options.allowed
         )}\` in object \`options\``
       );
     }
-    if (options.replace != null && kindOf(options.replace) !== 'object') {
+    if (
+      options.replace != null &&
+      !['function', 'object'].includes(kindOf(options.replace))
+    ) {
       throw new TypeError(
-        `Expected property \`replace\` to be of type \`object\` but received type \`${kindOf(
+        `Expected property \`replace\` to be of type \`function\` or \`object\` but received type \`${kindOf(
           options.replace
         )}\` in object \`options\``
       );
