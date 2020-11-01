@@ -5,11 +5,11 @@
 ### Changed
 
 - Refactored internals to handle more attribute names.
-- Updated options `allowed` and `replace` to treat tag names as case-sensitive.
 
 ### Fixed
 
 - Fixed an issue where camelCased elements (i.e. `<linearGradient>`) would be incorrectly lowercased.
+- Fixed `allowed` and `replace` options to correctly treat tag names as case-sensitive.
 
 ## v3.1.0 - 2020-10-31
 
