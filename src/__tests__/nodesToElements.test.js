@@ -156,7 +156,7 @@ test('handles replace option', () => {
           div: 'span',
           span: React.Fragment,
           p: TestComponent,
-          hr: false,
+          hr: null,
         },
       }
     )
