@@ -1,6 +1,7 @@
+import parseDom from 'dom-parse';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import renderMarkup from './renderMarkup';
+import nodesToElements from './nodesToElements';
 
 const Markup = React.memo(function Markup({
   allowed = null,
@@ -8,7 +9,9 @@ const Markup = React.memo(function Markup({
   replace = null,
   trim = null,
 }) {
-  return renderMarkup(markup, { allowed, replace, trim });
+  return markup
+    ? nodesToElements(parseDom(markup), { allowed, replace, trim })
+    : null;
 });
 
 if (process.env.NODE_ENV !== 'production') {
