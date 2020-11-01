@@ -4,8 +4,11 @@
 
 ### Changed
 
-- Conditionally import [kind-of](https://www.npmjs.com/package/kind-of) dependency.
-- Renamed internal `attrToPropName` function to `attrNameToPropName` for consistency.
+- Tag names in `allowed` and `replace` options now (properly) case-sensitive.
+
+### Fixed
+
+- Fixed an issue where camelCased elements (i.e. `<linearGradient>`) would be incorrectly lowercased.
 
 ## v3.1.0 - 2020-10-31
 
