@@ -13,9 +13,15 @@ const Markup = React.memo(function Markup({
 
 if (process.env.NODE_ENV !== 'production') {
   Markup.propTypes = {
-    allowed: PropTypes.arrayOf(PropTypes.string),
+    allowed: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.func,
+    ]),
     markup: PropTypes.string,
-    replace: PropTypes.objectOf(PropTypes.elementType),
+    replace: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.objectOf(PropTypes.elementType),
+    ]),
     trim: PropTypes.bool,
   };
 }
