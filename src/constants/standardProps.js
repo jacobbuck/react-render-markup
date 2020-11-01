@@ -1,5 +1,6 @@
-// Copied from https://github.com/facebook/react/blob/feb134c30d20ef332771d71d8d1cb66d34311637/packages/react-dom/src/shared/possibleStandardNames.js
-
+// Mapping of standard attribute names to prop names.
+// Attribute names with the same prop name been removed (i.e. 'src' === 'src')
+// Based off https://github.com/facebook/react/blob/feb134c30d20ef332771d71d8d1cb66d34311637/packages/react-dom/src/shared/possibleStandardNames.js
 export default new Map([
   // HTML
   ['acceptcharset', 'acceptCharset'],
