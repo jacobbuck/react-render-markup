@@ -4,7 +4,8 @@
 
 ### Changed
 
-- Tag names in `allowed` and `replace` options now (properly) case-sensitive.
+- Refactored internal attribute name to prop name converter to handle more attributes.
+- Updated options `allowed` and `replace` to handle tag names as case-sensitive.
 
 ### Fixed
 
