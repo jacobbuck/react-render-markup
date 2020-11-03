@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added source maps to build output.
+
+### Changed
+
+- Updated `allowed` option to allow callback function passed to conditionally filter elements.
+- Updated `replace` option to allow callback function passed to conditionally replace elements.
+- Updated `Markup` component to use internal functions directly instead of `renderMarkup`.
+
 ## v3.2.0 - 2020-11-01
 
 ### Changed
