@@ -31,7 +31,8 @@ const nodesToElements = (nodeList, options) => {
             type = returnType;
           }
         } else if (
-          Object.prototype.hasOwnProperty.call(options.replace, type)
+          Object.prototype.hasOwnProperty.call(options.replace, type) &&
+          options.replace[type] !== void 0
         ) {
           type = options.replace[type];
         }
