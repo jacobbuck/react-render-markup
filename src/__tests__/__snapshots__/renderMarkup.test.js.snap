@@ -2,8 +2,6 @@
 
 exports[`renders HTML from a string 1`] = `
 Array [
-  "
-",
   <header
     role="banner"
   >

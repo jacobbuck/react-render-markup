@@ -1,7 +1,6 @@
 // html5-kitchen-sink by dbox
 // https://github.com/dbox/html5-kitchen-sink
-const htmlKitchenSink = `
-<header role="banner">
+const htmlKitchenSink = `<header role="banner">
   <h1>HTML5 Kitchen Sink</h1>
   <small>Jump to: <a href="#headings">Headings</a> | <a href="#sections">Sections</a> | <a href="#phrasing">Phrasing</a> | <a href="#palpable">Palpable Content</a> | <a href="#embeds">Embeds</a> | <a href="#forms">Forms</a> | <a href="#tables">Tables</a> </small>    <br><br>
   <p>This section seves as the <code>header</code>.</p>
