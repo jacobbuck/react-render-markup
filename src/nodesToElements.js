@@ -24,21 +24,19 @@ const nodesToElements = (nodeList, options) => {
       }
       // Handle replace option.
       if (options.replace) {
-        if (typeof options.replace === 'function') {
-          const returnType = options.replace(node);
-          // Returning undefined won't replace the type.
-          if (returnType !== void 0) {
-            type = returnType;
-          }
-        } else if (
-          Object.prototype.hasOwnProperty.call(options.replace, type) &&
-          options.replace[type] !== void 0
-        ) {
-          type = options.replace[type];
-        }
-        // Don't render nullish replacements.
-        if (type == null) {
+        const replacement =
+          typeof options.replace === 'function'
+            ? options.replace(node)
+            : Object.prototype.hasOwnProperty.call(options.replace, type)
+            ? options.replace[type]
+            : undefined;
+        // Don't render element if replacement is null.
+        if (replacement === null) {
           continue;
+        }
+        // Replace element replacement (if not undefined).
+        if (replacement !== undefined) {
+          type = replacement;
         }
       }
       const props = attrsToProps(node.attributes);
