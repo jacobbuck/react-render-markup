@@ -10,7 +10,12 @@
 
 - Updated `allowed` option to allow callback function passed to conditionally filter elements.
 - Updated `replace` option to allow callback function passed to conditionally replace elements.
+- Updated `replace` option to skip element if replacement is `undefined`.
 - Updated `Markup` component to use internal functions directly instead of `renderMarkup`.
+
+### Removed
+
+- Removed invalid items from list of attributes/property names.
 
 ## v3.2.0 - 2020-11-01
 
