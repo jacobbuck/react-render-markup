@@ -41,12 +41,11 @@ const nodesToElements = (nodeList, options) => {
       }
       const props = attrsToProps(node.attributes);
       props.key = `${getDisplayName(type)}-${i}`;
+      const children = nodesToElements(node.childNodes, options);
       tree.push(
-        React.createElement(
-          type,
-          props,
-          nodesToElements(node.childNodes, options)
-        )
+        React.isValidElement(type)
+          ? React.cloneElement(type, props, children)
+          : React.createElement(type, props, children)
       );
     } else if (node.nodeType === TEXT_NODE) {
       // Handle trim option to remove whitespace text nodes.
