@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
-import { JSDOM } from 'jsdom';
 import * as React from 'react';
 import nodesToElements from '../nodesToElements';
 
-const parseHTML = (html) => JSDOM.fragment(html).childNodes;
+const parseHTML = (html) => {
+  const el = document.createElement('template');
+  el.innerHTML = html;
+  return el.content.childNodes;
+};
 
 test('renders a tree of element and text nodes', () => {
   const nodeList = parseHTML('<div id="foo"><p>Hello!</p></div>');
