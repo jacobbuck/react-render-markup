@@ -34,7 +34,7 @@ const nodesToElements = (nodeList, options) => {
         if (replacement === null) {
           continue;
         }
-        // Replace element replacement (if not undefined).
+        // Replace element replacement—if not undefined.
         if (replacement !== undefined) {
           type = replacement;
         }
