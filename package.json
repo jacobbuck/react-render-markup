@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run test",
+    "preversion": "npm run lint && npm run test",
     "test": "jest",
     "test:watch": "jest --watch"
   },
