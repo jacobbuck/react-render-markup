@@ -14,19 +14,17 @@ const Markup = React.memo(function Markup({
     : null;
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  Markup.propTypes = {
-    allowed: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.string),
-      PropTypes.func,
-    ]),
-    markup: PropTypes.string,
-    replace: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.objectOf(PropTypes.elementType),
-    ]),
-    trim: PropTypes.bool,
-  };
-}
+Markup.propTypes /* remove-proptypes */ = {
+  allowed: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.func,
+  ]),
+  markup: PropTypes.string,
+  replace: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.objectOf(PropTypes.elementType),
+  ]),
+  trim: PropTypes.bool,
+};
 
 export default Markup;
