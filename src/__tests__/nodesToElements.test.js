@@ -9,12 +9,19 @@ const parseHTML = (html) => {
 };
 
 test('renders a tree of element and text nodes', () => {
-  const nodeList = parseHTML('<div id="foo"><p>Hello!</p></div>');
-  expect(nodesToElements(nodeList, {})).toEqual([
-    React.createElement('div', { key: 'div-0', id: 'foo' }, [
-      React.createElement('p', { key: 'p-0' }, ['Hello!']),
-    ]),
-  ]);
+  const nodeList = parseHTML('<p id="foo">Hello <strong>World!</strong></p>');
+  expect(nodesToElements(nodeList, {})).toMatchInlineSnapshot(`
+    Array [
+      <p
+        id="foo"
+      >
+        Hello 
+        <strong>
+          World!
+        </strong>
+      </p>,
+    ]
+  `);
 });
 
 describe('doesn’t render unwanted nodes', () => {
@@ -41,78 +48,155 @@ describe('handles `allowed` property on `options`', () => {
 
   test('only renders elements of type in array', () => {
     const allowed = ['div', 'hr'];
-    expect(nodesToElements(nodeList, { allowed })).toEqual([
-      React.createElement('div', { key: 'div-0' }, null),
-      React.createElement('hr', { key: 'hr-2' }, null),
-    ]);
+    expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
+      Array [
+        <div />,
+        <hr />,
+      ]
+    `);
   });
 
   test('only renders elements when function returns true', () => {
     const allowed = (node) => node.nodeType !== 1 || node.childNodes.length > 0;
-    expect(nodesToElements(nodeList, { allowed })).toEqual([
-      React.createElement('span', { key: 'span-1' }, ['Hello!']),
-    ]);
+    expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
+      Array [
+        <span>
+          Hello!
+        </span>,
+      ]
+    `);
   });
 });
 
 describe('handles `replace` property on `options`', () => {
-  const nodeList = parseHTML(
-    '<div><h1>Hello!</h1></div><p>This is a <strong>test</strong></p><hr><figure><img src="test.png"></figure>'
-  );
+  const nodeList = parseHTML('<p id="foo">Hello <strong>World!</strong></p>');
 
-  const TestComponent = ({ children }) =>
-    React.createElement('p', { className: 'fancy styles' }, children);
-  TestComponent.propTypes = { children: PropTypes.node };
-
-  test('replaces type with replacement defined in object', () => {
-    const replace = {
-      div: 'header',
-      h1: undefined,
-      p: TestComponent,
-      strong: React.Fragment,
-      hr: null,
-    };
-    expect(nodesToElements(nodeList, { replace })).toEqual([
-      React.createElement('header', { key: 'header-0' }, [
-        React.createElement('h1', { key: 'h1-0' }, ['Hello!']),
-      ]),
-      React.createElement(TestComponent, { key: 'TestComponent-1' }, [
-        'This is a ',
-        React.createElement(React.Fragment, { key: 'Unknown-1' }, ['test']),
-      ]),
-      React.createElement('figure', { key: 'figure-3' }, [
-        React.createElement('img', { key: 'img-0', src: 'test.png' }, null),
-      ]),
-    ]);
+  test('replaces element type with element type as replacement', () => {
+    const replace = { strong: 'em' };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+          <em>
+            World!
+          </em>
+        </p>,
+      ]
+    `);
   });
 
-  test('replaces type with replacement returns from function', () => {
+  test('replaces element type with React Component as replacement', () => {
+    const Example = ({ children }) => children;
+    Example.propTypes = { children: PropTypes.node };
+
+    const replace = { strong: Example };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+          <Example>
+            World!
+          </Example>
+        </p>,
+      ]
+    `);
+  });
+
+  test('replaces element type with React Fragment as replacement', () => {
+    const replace = { strong: React.Fragment };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+          <React.Fragment>
+            World!
+          </React.Fragment>
+        </p>,
+      ]
+    `);
+  });
+
+  test('removes element with null as replacement', () => {
+    const replace = { strong: null };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+        </p>,
+      ]
+    `);
+  });
+
+  test('doesn’t replace element with undefined as replacement', () => {
+    const replace = { strong: undefined };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+          <strong>
+            World!
+          </strong>
+        </p>,
+      ]
+    `);
+  });
+
+  test('merges element with clone of React Element as replacement', () => {
+    const replace = { strong: React.createElement('em') };
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <p
+          id="foo"
+        >
+          Hello 
+          <em>
+            World!
+          </em>
+        </p>,
+      ]
+    `);
+  });
+
+  test('replaces type with replacement returned from function', () => {
     const replace = (node) => {
-      if (node.nodeName.toLowerCase() === 'div') {
-        return TestComponent;
+      if (node.nodeName.toLowerCase() === 'p') {
+        return 'div';
       }
     };
-    expect(nodesToElements(nodeList, { replace })).toEqual([
-      React.createElement(TestComponent, { key: 'TestComponent-0' }, [
-        React.createElement('h1', { key: 'h1-0' }, ['Hello!']),
-      ]),
-      React.createElement('p', { key: 'p-1' }, [
-        'This is a ',
-        React.createElement('strong', { key: 'strong-1' }, ['test']),
-      ]),
-      React.createElement('hr', { key: 'hr-2' }, null),
-      React.createElement('figure', { key: 'figure-3' }, [
-        React.createElement('img', { key: 'img-0', src: 'test.png' }, null),
-      ]),
-    ]);
+    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+      Array [
+        <div
+          id="foo"
+        >
+          Hello 
+          <strong>
+            World!
+          </strong>
+        </div>,
+      ]
+    `);
   });
 });
 
 describe('handles `trim` property on `options`', () => {
   test('removes whitespace text nodes when `true`', () => {
     const nodeList = parseHTML('   <h1> Hello! </h1>   ');
-    expect(nodesToElements(nodeList, { trim: true })).toEqual([
-      React.createElement('h1', { key: 'h1-1' }, [' Hello! ']),
-    ]);
+    expect(nodesToElements(nodeList, { trim: true })).toMatchInlineSnapshot(`
+      Array [
+        <h1>
+           Hello! 
+        </h1>,
+      ]
+    `);
   });
 });
