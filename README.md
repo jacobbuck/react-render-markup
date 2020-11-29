@@ -19,14 +19,8 @@ import { Markup } from 'react-render-markup';
 #### Props
 
 - `allowed` array of tag names to allow rendering.
-
-  > :warning: Setting this option will strip all other elements from output.
-
 - `markup` string of HTML you’d like to parse.
 - `replace` object of elements to replace.
-
-  The keys are tag names to replace and values are the type to replace with (either tag name string or a [React component](https://reactjs.org/docs/components-and-props.html) type.)
-
 - `trim` boolean removes whitespace text nodes when `true`.
 
 ### `renderMarkup` function
@@ -56,61 +50,49 @@ renderMarkup(markup[, options])
 
 An array of [React elements](https://reactjs.org/docs/rendering-elements.html).
 
-## Examples
+## API
 
-### Basic
+### `Markup` component
 
-```jsx
-const MyComponent = (props) => {
-  const { content } = props;
-  return (
-    <div>
-      <Markup markup={content} />
-    </div>
-  );
-};
-```
+### `renderMarkup` function
 
-or
+### Options
 
-```jsx
-const MyComponent = (props) => {
-  const { content } = props;
-  return <div>{renderMarkup(content)}</div>;
-};
-```
+#### `allowed`
 
-### With `allowed` option
+Filters elements to render. Can either be:
 
-```jsx
-const allowed = ['strong', 'em']; // strips all other elements
+1. An array of allowed element names:
 
-const MyComponent = (props) => {
-  const { content } = props;
-  return (
-    <div>
-      <Markup allowed={allowed} markup={content} />
-    </div>
-  );
-};
-```
+   ```jsx
+   const allowed = ['strong', 'em'];
 
-or
+   const MyComponent = ({ content }) => (
+     <Markup allowed={allowed} markup={content} />
+   );
+   ```
 
-```jsx
-const MyComponent = (props) => {
-  const { content } = props;
-  return (
-    <div>
-      {renderMarkup(content, {
-        allowed: ['strong', 'em'],
-      })}
-    </div>
-  );
-};
-```
+   > :warning: Setting this will strip all other elements from output.
 
-### With `replace` option
+2. A function which returns a truthy value if the element is allowed:
+
+   ```jsx
+   const allowed = (element) => element.tagName.startsWith('H');
+
+   const MyComponent = ({ content }) => (
+     <Markup allowed={allowed} markup={content} />
+   );
+   ```
+
+   It accepts one argument:
+
+   - `element` The current [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) being processed.
+
+#### `replace`
+
+Replaces elements in-place. Can be either:
+
+1. An object with key-value pair of tag name to replace (key)
 
 ```jsx
 import { Link } from 'some-router-library';
@@ -132,27 +114,7 @@ const MyComponent = (props) => {
 };
 ```
 
-or
-
-```jsx
-import { Link } from 'some-router-library';
-
-const MyComponent = (props) => {
-  const { content } = props;
-  return (
-    <div>
-      {renderMarkup(content, {
-        replace: {
-          a: Link,
-          em: 'strong',
-          img: null,
-          span: React.Fragment,
-        },
-      })}
-    </div>
-  );
-};
-```
+#### `trim`
 
 ## Cross Site Scripting (XSS)
 
