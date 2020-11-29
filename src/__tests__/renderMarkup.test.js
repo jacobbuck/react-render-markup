@@ -13,7 +13,8 @@ test('renders SVG from a string', () => {
   expect(testRenderer.toJSON()).toMatchSnapshot();
 });
 
-test('returns null when markup is null or undefined', () => {
+test('returns null when markup is an empty string, null or undefined', () => {
+  expect(renderMarkup('')).toBe(null);
   expect(renderMarkup(null)).toBe(null);
   expect(renderMarkup()).toBe(null);
 });
