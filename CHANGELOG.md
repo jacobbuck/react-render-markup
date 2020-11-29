@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Updated `replace` option to handle React elements.
+- Updated `replace` option to handle React elements as replacement.
 
 ## v3.3.0 - 2020-11-07
 
