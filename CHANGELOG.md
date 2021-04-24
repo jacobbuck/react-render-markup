@@ -2,9 +2,21 @@
 
 ## Unreleased
 
+### Added
+
+- Added [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency.
+
 ### Changed
 
+- Changed type checking in `renderMarkup` function to use `invariant` function.
+- Updated `options` parameter in `renderMarkup` to handle `null`.
+- Updated `Markup.propTypes` to only be defined in non-production environments.
 - Updated `replace` option to handle React elements as replacement.
+- Updated devDependencies.
+
+### Removed
+
+- Removed [kind-of](https://www.npmjs.com/package/kind-of) dependency.
 
 ## v3.3.0 - 2020-11-07
 
