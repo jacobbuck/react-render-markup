@@ -9,6 +9,8 @@
 ### Changed
 
 - Changed type checking in `renderMarkup` function to use `invariant` function.
+- Updated [css-to-style](https://www.npmjs.com/package/css-to-style) dependency to v1.4.0.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v2.1.0.
 - Updated `options` parameter in `renderMarkup` to handle `null`.
 - Updated `Markup.propTypes` to only be defined in non-production environments.
 - Updated `replace` option to handle React elements as replacement.
