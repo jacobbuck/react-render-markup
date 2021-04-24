@@ -12,6 +12,7 @@ export default {
     'prop-types',
     'react',
     'react-display-name',
+    'tiny-invariant',
   ],
   plugins: [babel({ babelHelpers: 'bundled' })],
 };
