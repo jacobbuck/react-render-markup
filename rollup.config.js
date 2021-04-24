@@ -1,18 +1,15 @@
 import babel from '@rollup/plugin-babel';
+import pkg from './package.json';
 
 export default {
   input: 'src/index.js',
   output: [
-    { file: 'lib/index.cjs.js', format: 'cjs', sourcemap: true },
-    { file: 'lib/index.esm.js', format: 'esm', sourcemap: true },
+    { file: pkg.main, format: 'cjs', sourcemap: true },
+    { file: pkg.module, format: 'esm', sourcemap: true },
   ],
   external: [
-    'css-to-style',
-    'dom-parse',
-    'prop-types',
-    'react',
-    'react-display-name',
-    'tiny-invariant',
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies),
   ],
   plugins: [babel({ babelHelpers: 'bundled' })],
 };
