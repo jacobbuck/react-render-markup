@@ -14,7 +14,6 @@
 - Updated `options` parameter in `renderMarkup` to handle `null`.
 - Updated `Markup.propTypes` to only be defined in non-production environments.
 - Updated `replace` option to handle React elements as replacement.
-- Updated devDependencies.
 
 ### Removed
 
@@ -59,7 +58,6 @@
 
 - Improved type checking of `markup` and `options` parameters.
 - Refactored `attrToPropName` for more robust prop-name lookup.
-- Updated devDependencies.
 - Updated [react](https://www.npmjs.com/package/react) peerDependency to also support v17.
 
 ### Removed
@@ -70,17 +68,16 @@
 
 ### Added
 
-- Add `Markup` component.
-- Added [prop-types](https://www.npmjs.com/package/prop-types) dependency for `Markup` component.
+- Added `Markup` component.
+- Added [prop-types](https://www.npmjs.com/package/prop-types) dependency.
 
 ### Changed
 
 - **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.6.0 or newer.
-- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.3.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v2.0.3.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
 - Updated `propTypes` to only be defined in non-production environments.
-- Updated devDependencies.
 
 ### Removed
 
@@ -97,8 +94,7 @@
 ### Changed
 
 - Improved performance of prop names lookup.
-- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.3.
-- Updated devDependencies.
+- Updated [css-to-style](https://www.npmjs.com/package/css-to-style) dependency to v1.3.3.
 
 ## v2.1.1 - 2020-07-03
 
@@ -108,9 +104,8 @@
 
 ### Changed
 
-- Refactored internals to use for loops, for lighter code and better performance.
-- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.2.
-- Updated devDependencies.
+- Refactored internals for lighter code and better performance.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v2.0.2.
 
 ## v2.1.0 - 2020-06-23
 
@@ -123,10 +118,6 @@
 - Refactored internals to filter allowed elements earlier.
 
 ## v2.0.5 - 2020-06-23
-
-### Changed
-
-- Updated devDependencies.
 
 ### Fixed
 
@@ -147,7 +138,6 @@
 ### Changed
 
 - Refactored internals.
-- Updated devDependencies.
 
 ## v2.0.2 - 2020-06-09
 
@@ -158,9 +148,8 @@
 
 ### Changed
 
-- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.1.
-- Bumped up version of [dom-parse](https://www.npmjs.com/package/dom-parse) to v2.0.1.
-- Updated devDependencies.
+- Updated [css-to-style](https://www.npmjs.com/package/css-to-style) dependency to v1.3.1.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v2.0.1.
 
 ## v2.0.1 - 2020-06-09
 
@@ -182,7 +171,6 @@
 - Improved type-checking of `markup` parameter.
 - Refactored internals.
 - Replaced internal DOM parser and [jsdom](https://www.npmjs.com/package/jsdom) with [dom-parse](https://www.npmjs.com/package/dom-parse).
-- Updated devDependencies.
 
 ### Removed
 
@@ -192,13 +180,10 @@
 
 ### Changed
 
-- Bumped up version of [html-void-elements](https://www.npmjs.com/package/html-void-elements) to v1.0.5.
-- Bumped up version of [jsdom](https://www.npmjs.com/package/jsdom) to v16.2.2.
-- Updated devDependencies.
+- Updated [html-void-elements](https://www.npmjs.com/package/html-void-elements) dependency to v1.0.5.
+- Updated [jsdom](https://www.npmjs.com/package/jsdom) dependency to v16.2.2.
 
 ## v1.2.1 - 2020-01-14
-
-¯\\\_(ツ)\_/¯
 
 ## v1.2.0 - 2020-01-13
 
@@ -212,16 +197,11 @@
 
 ## v1.1.2 - 2020-01-13
 
-### Changed
-
-- Updated devDependencies.
-
 ## v1.1.1 - 2020-01-13
 
 ### Changed
 
 - Changed `main` property in [package.json](./package.json) to browser build.
-- Updated devDependencies.
 
 ## v1.1.0 - 2020-01-11
 
@@ -233,8 +213,7 @@
 
 ### Changed
 
-- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.3.0.
-- Updated devDependencies.
+- Updated [css-to-style](https://www.npmjs.com/package/css-to-style) dependency to v1.3.0.
 
 ### Removed
 
@@ -244,8 +223,7 @@
 
 ### Changed
 
-- Bumped up version of [html-void-elements](https://www.npmjs.com/package/html-void-elements) to v1.0.4.
-- Updated devDependencies.
+- Updated [html-void-elements](https://www.npmjs.com/package/html-void-elements) dependency to v1.0.4.
 
 ## v1.0.3 - 2019-02-24
 
@@ -260,10 +238,6 @@
 - Added check for reserved react prop names (i.e. `key`, `dangerouslySetInnerHTML`, etc.)
 - Added type-checking for `options` parameter.
 
-### Changed
-
-- Updated devDependencies.
-
 ### Removed
 
 - Removed explicit check for valid HTML, MathML and SVG element tags.
@@ -273,11 +247,11 @@
 
 ### Added
 
-- Added SSR section of [readme.md](./readme.md).
+- Added SSR section to [readme.md](./readme.md).
 
 ### Removed
 
-- Removed [jsdom](https://www.npmjs.com/package/jsdom), due to it inflating bundle size.
+- Removed [jsdom](https://www.npmjs.com/package/jsdom) dependency, due to it inflating bundle size.
 
 ## v1.0.0 - 2019-02-23
 
@@ -290,20 +264,15 @@
 - **BREAKING** Changed DOM parser from XHTML to HTML document type.
 - **BREAKING** Updated `markup` parameter to require a string.
 - Builds are now done with [Rollup](http://rollupjs.org).
-- Bumped up version of [css-to-style](https://www.npmjs.com/package/css-to-style) to v1.2.1.
+- Updated [css-to-style](https://www.npmjs.com/package/css-to-style) dependency to v1.2.1.
 - Refactored internals.
 - Replaced [xmldom](https://www.npmjs.com/package/xmldom) with [jsdom](https://www.npmjs.com/package/jsdom).
-- Updated devDependencies.
 
 ## v0.2.0 - 2018-09-27
 
 ### Added
 
 - Returns `null` if `markup` parameter is falsey or not a string.
-
-### Changed
-
-- Updated devDependencies.
 
 ## v0.1.0 - 2018-08-06
 
