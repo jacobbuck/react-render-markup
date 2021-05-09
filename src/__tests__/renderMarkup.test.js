@@ -14,9 +14,9 @@ test('renders SVG from a string', () => {
 });
 
 test('returns null when markup is an empty string, null or undefined', () => {
-  expect(renderMarkup('')).toBe(null);
-  expect(renderMarkup(null)).toBe(null);
-  expect(renderMarkup()).toBe(null);
+  ['', null, undefined].forEach((value) => {
+    expect(renderMarkup(value)).toBe(null);
+  });
 });
 
 test('throws if markup is not a string', () => {
