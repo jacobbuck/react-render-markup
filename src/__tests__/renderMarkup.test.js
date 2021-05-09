@@ -21,7 +21,7 @@ test('returns null when markup is an empty string, null or undefined', () => {
 
 test('throws if markup is not a string', () => {
   expect(() => renderMarkup(false)).toThrow(
-    'Invariant failed: Expected `markup` to be a string'
+    new Error('Invariant failed: Expected `markup` to be a string')
   );
 });
 
