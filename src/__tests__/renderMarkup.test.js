@@ -19,32 +19,30 @@ test('returns null when markup is an empty string, null or undefined', () => {
   expect(renderMarkup()).toBe(null);
 });
 
-test('throws TypeError if markup is not a string', () => {
+test('throws if markup is not a string', () => {
   expect(() => renderMarkup(false)).toThrow(
     'Invariant failed: Expected `markup` to be a string'
   );
 });
 
-test('throws TypeError if options is not an object', () => {
-  expect(() => renderMarkup(null, () => {})).toThrow(
-    'Invariant failed: Expected `options` to be an object'
-  );
-});
-
-test('throws TypeError if allowed property is not an array in object options', () => {
+test('throws if allowed property is not an array in object options', () => {
   expect(() => renderMarkup(null, { allowed: 'div' })).toThrow(
-    'Invariant failed: Expected `options.allowed` to be an array or function'
+    new Error(
+      'Invariant failed: Expected `options.allowed` to be an array or function'
+    )
   );
 });
 
-test('throws TypeError if replace property is not an object in object options', () => {
+test('throws if replace property is not an object in object options', () => {
   expect(() => renderMarkup(null, { replace: 'div' })).toThrow(
-    'Invariant failed: Expected `options.replace` to be a function or object'
+    new Error(
+      'Invariant failed: Expected `options.replace` to be a function or object'
+    )
   );
 });
 
-test('throws TypeError if trim property is not an array in object options', () => {
+test('throws if trim property is not an array in object options', () => {
   expect(() => renderMarkup(null, { trim: 1 })).toThrow(
-    'Invariant failed: Expected `options.trim` to be a boolean'
+    new Error('Invariant failed: Expected `options.trim` to be a boolean')
   );
 });
