@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency.
+
 ## v3.4.0 - 2021-04-24
 
 ### Added
