@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import * as React from 'react';
 import nodesToElements from './nodesToElements';
 
-const Markup = React.memo(function Markup({ allowed, markup, replace, trim }) {
-  return markup
-    ? nodesToElements(parseDom(markup), { allowed, replace, trim })
-    : null;
-});
+const Markup = React.memo(({ allowed, markup, replace, trim }) =>
+  markup ? nodesToElements(parseDom(markup), { allowed, replace, trim }) : null
+);
 
 Markup.propTypes /* remove-proptypes */ = {
   allowed: PropTypes.oneOfType([
