@@ -1,52 +1,29 @@
 import parseDom from 'dom-parse';
-import kindOf from 'kind-of';
+import invariant from 'tiny-invariant';
 import nodesToElements from './nodesToElements';
 
-const renderMarkup = (markup, options = {}) => {
-  if (process.env.NODE_ENV !== 'production') {
-    if (markup != null && kindOf(markup) !== 'string') {
-      throw new TypeError(
-        `Expected \`markup\` to be of type \`string\`, but received type \`${kindOf(
-          markup
-        )}\``
-      );
-    }
-    if (kindOf(options) !== 'object') {
-      throw new TypeError(
-        `Expected \`options\` to be of type \`object\`, but received type \`${kindOf(
-          options
-        )}\``
-      );
-    }
-    if (
-      options.allowed != null &&
-      !['array', 'function'].includes(kindOf(options.allowed))
-    ) {
-      throw new TypeError(
-        `Expected property \`allowed\` to be of type \`array\` or \`function\` but received type \`${kindOf(
-          options.allowed
-        )}\` in object \`options\``
-      );
-    }
-    if (
-      options.replace != null &&
-      !['function', 'object'].includes(kindOf(options.replace))
-    ) {
-      throw new TypeError(
-        `Expected property \`replace\` to be of type \`function\` or \`object\` but received type \`${kindOf(
-          options.replace
-        )}\` in object \`options\``
-      );
-    }
-    if (options.trim != null && kindOf(options.trim) !== 'boolean') {
-      throw new TypeError(
-        `Expected property \`trim\` to be of type \`boolean\` but received type \`${kindOf(
-          options.trim
-        )}\` in object \`options\``
-      );
-    }
-  }
-  return markup ? nodesToElements(parseDom(markup), options) : null;
+const renderMarkup = (markup, { allowed, replace, trim } = {}) => {
+  invariant(
+    markup == null || typeof markup === 'string',
+    'Expected `markup` to be a string'
+  );
+  invariant(
+    allowed == null || Array.isArray(allowed) || typeof allowed === 'function',
+    'Expected `options.allowed` to be an array or function'
+  );
+  invariant(
+    replace == null ||
+      typeof replace === 'function' ||
+      typeof replace === 'object',
+    'Expected `options.replace` to be a function or object'
+  );
+  invariant(
+    trim == null || typeof trim === 'boolean',
+    'Expected `options.trim` to be a boolean'
+  );
+  return markup
+    ? nodesToElements(parseDom(markup), { allowed, replace, trim })
+    : null;
 };
 
 export default renderMarkup;
