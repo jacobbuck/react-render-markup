@@ -11,10 +11,5 @@ export default {
     ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies),
   ],
-  plugins: [
-    babel({
-      babelHelpers: 'runtime',
-      plugins: ['@babel/plugin-transform-runtime'],
-    }),
-  ],
+  plugins: [babel({ babelHelpers: 'bundled' })],
 };
