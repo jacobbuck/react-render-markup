@@ -2,9 +2,12 @@
 
 ## Unreleased
 
-### Added
+### Changed
 
-- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency.
+- Updated [prop-types](https://www.npmjs.com/package/prop-types) dependency to v15.8.1.
+- Updated [tiny-invariant](https://www.npmjs.com/package/css-to-style) dependency to v1.2.0.
+- Updated [react](https://www.npmjs.com/package/react) peer-dependency to also support v18.
+- Updated `replace` option to also allow `false` to skip rendering replacement.
 
 ## v3.4.0 - 2021-04-24
 
@@ -35,7 +38,7 @@
 
 - Updated `allowed` option to allow callback function passed to conditionally filter elements.
 - Updated `replace` option to allow callback function passed to conditionally replace elements.
-- Updated `replace` option to skip element if replacement is `undefined`.
+- Updated `replace` option to skip replacing element if replacement is `undefined`.
 - Updated `Markup` component to use internal functions directly instead of `renderMarkup`.
 
 ### Removed
@@ -64,7 +67,7 @@
 
 - Improved type checking of `markup` and `options` parameters.
 - Refactored `attrToPropName` for more robust prop-name lookup.
-- Updated [react](https://www.npmjs.com/package/react) peerDependency to also support v17.
+- Updated [react](https://www.npmjs.com/package/react) peer-dependency to also support v17.
 
 ### Removed
 
@@ -79,7 +82,7 @@
 
 ### Changed
 
-- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peerDependency to be v16.6.0 or newer.
+- **BREAKING** Requires [react](https://www.npmjs.com/package/react) peer-dependency to be v16.6.0 or newer.
 - Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v2.0.3.
 - `renderMarkup` is now a named export.
 - `renderMarkup` returns `null` early if passed an empty string.
