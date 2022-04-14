@@ -11,11 +11,19 @@
     "plugin:prettier/recommended",
     "plugin:react/recommended"
   ],
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "plugins": ["jest", "prettier", "react"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "react/display-name": "off"
+  },
   "settings": {
     "react": {
-      "version": "16.6.0"
+      "version": "detect"
     }
   }
 }
