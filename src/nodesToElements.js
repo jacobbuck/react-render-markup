@@ -30,8 +30,8 @@ const nodesToElements = (nodeList, options) => {
             : Object.hasOwn(options.replace, type)
             ? options.replace[type]
             : undefined;
-        // Don't render element if replacement is null.
-        if (replacement === null) {
+        // Don't render element if replacement is false or null.
+        if (replacement === false || replacement === null) {
           continue;
         }
         // Replace element replacement—if not undefined.
