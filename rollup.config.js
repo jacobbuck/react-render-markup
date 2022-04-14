@@ -8,7 +8,6 @@ export default {
     { file: pkg.module, format: 'esm', sourcemap: true },
   ],
   external: [
-    /@babel\/runtime/,
     ...Object.keys(pkg.dependencies),
     ...Object.keys(pkg.peerDependencies),
   ],
