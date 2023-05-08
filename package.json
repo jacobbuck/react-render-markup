@@ -1,14 +1,22 @@
 {
   "name": "react-render-markup",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Safely parse HTML, SVG and MathML into React elements.",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
+  "type": "module",
   "files": [
     "lib"
   ],
+  "main": "./lib/index.cjs.js",
+  "module": "./lib/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.esm.js",
+      "require": "./lib/index.cjs.js"
+    }
+  },
   "sideEffects": false,
   "scripts": {
+    "benchmark": "node benchmark",
     "build": "rollup -c",
     "coverage": "jest --coverage",
     "lint": "eslint .",
@@ -60,7 +68,8 @@
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "rollup": "^3.21.0"
+    "rollup": "^3.21.0",
+    "tinybench": "^2.5.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || 17 || 18"
