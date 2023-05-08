@@ -1,5 +1,5 @@
+import { createElement, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import * as React from 'react';
 import { nodesToElements } from '../nodesToElements';
 
 const parseHTML = (html) => {
@@ -11,7 +11,7 @@ const parseHTML = (html) => {
 test('renders a tree of element and text nodes', () => {
   const nodeList = parseHTML('<p id="foo">Hello <strong>World!</strong></p>');
   expect(nodesToElements(nodeList, {})).toMatchInlineSnapshot(`
-    Array [
+    [
       <p
         id="foo"
       >
@@ -49,7 +49,7 @@ describe('handles `allowed` property on `options`', () => {
   test('only renders elements of type in array', () => {
     const allowed = ['div', 'hr'];
     expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
-      Array [
+      [
         <div />,
         <hr />,
       ]
@@ -59,7 +59,7 @@ describe('handles `allowed` property on `options`', () => {
   test('only renders elements when function returns true', () => {
     const allowed = (node) => node.nodeType !== 1 || node.childNodes.length > 0;
     expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
-      Array [
+      [
         <span>
           Hello!
         </span>,
@@ -74,7 +74,7 @@ describe('handles `replace` property on `options`', () => {
   test('replaces element type with element type as replacement', () => {
     const replace = { strong: 'em' };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -93,7 +93,7 @@ describe('handles `replace` property on `options`', () => {
 
     const replace = { strong: Example };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -107,9 +107,9 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('replaces element type with React Fragment as replacement', () => {
-    const replace = { strong: React.Fragment };
+    const replace = { strong: Fragment };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -125,7 +125,7 @@ describe('handles `replace` property on `options`', () => {
   test('removes element with null as replacement', () => {
     const replace = { strong: null };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -138,7 +138,7 @@ describe('handles `replace` property on `options`', () => {
   test('doesn’t replace element with undefined as replacement', () => {
     const replace = { strong: undefined };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -152,9 +152,9 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('merges element with clone of React Element as replacement', () => {
-    const replace = { strong: React.createElement('em') };
+    const replace = { strong: createElement('em') };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <p
           id="foo"
         >
@@ -174,7 +174,7 @@ describe('handles `replace` property on `options`', () => {
       }
     };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      Array [
+      [
         <div
           id="foo"
         >
@@ -192,7 +192,7 @@ describe('handles `trim` property on `options`', () => {
   test('removes whitespace text nodes when `true`', () => {
     const nodeList = parseHTML('   <h1> Hello! </h1>   ');
     expect(nodesToElements(nodeList, { trim: true })).toMatchInlineSnapshot(`
-      Array [
+      [
         <h1>
            Hello! 
         </h1>,

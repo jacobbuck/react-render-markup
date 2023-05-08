@@ -1,11 +1,11 @@
-import { attributesToProps } from '../attrsToProps';
+import { attributesToProps } from '../attributesToProps';
 
 test('converts attributes to props', () => {
   const attrs = [
     { name: 'class', value: 'foo bar' },
     { name: 'id', value: 'baz' },
   ];
-  expect(attrsToProps(attrs)).toEqual({
+  expect(attributesToProps(attrs)).toEqual({
     className: 'foo bar',
     id: 'baz',
   });
@@ -16,7 +16,7 @@ test('handles aria and data attributes', () => {
     { name: 'aria-role', value: 'presentation' },
     { name: 'data-class', value: 'foo' },
   ];
-  expect(attrsToProps(attrs)).toEqual({
+  expect(attributesToProps(attrs)).toEqual({
     'aria-role': 'presentation',
     'data-class': 'foo',
   });
@@ -24,7 +24,7 @@ test('handles aria and data attributes', () => {
 
 test('handles style attribute', () => {
   const attrs = [{ name: 'style', value: 'color: red; float: left' }];
-  expect(attrsToProps(attrs)).toEqual({
+  expect(attributesToProps(attrs)).toEqual({
     style: {
       color: 'red',
       cssFloat: 'left',
@@ -37,7 +37,7 @@ test('handles boolean attributes', () => {
     { name: 'checked', value: '' },
     { name: 'readonly', value: '' },
   ];
-  expect(attrsToProps(attrs)).toEqual({
+  expect(attributesToProps(attrs)).toEqual({
     checked: true,
     readOnly: true,
   });
@@ -49,7 +49,7 @@ test('filters react props', () => {
     { name: 'key', value: 'bar' },
     { name: 'ref', value: 'baz' },
   ];
-  expect(attrsToProps(attrs)).toEqual({});
+  expect(attributesToProps(attrs)).toEqual({});
 });
 
 test('filters event attributes', () => {
@@ -57,5 +57,5 @@ test('filters event attributes', () => {
     { name: 'onclick', value: 'void 0' },
     { name: 'onError', value: 'alert("xss")' },
   ];
-  expect(attrsToProps(attrs)).toEqual({});
+  expect(attributesToProps(attrs)).toEqual({});
 });

@@ -1,9 +1,9 @@
 import parseDom from 'dom-parse';
 import PropTypes from 'prop-types';
-import * as React from 'react';
-import nodesToElements from './nodesToElements';
+import { memo } from 'react';
+import { nodesToElements } from './logic/nodesToElements';
 
-const Markup = React.memo(function Markup({ allowed, markup, replace, trim }) {
+export const Markup = memo(function Markup({ allowed, markup, replace, trim }) {
   return markup
     ? nodesToElements(parseDom(markup), { allowed, replace, trim })
     : null;
@@ -21,5 +21,3 @@ Markup.propTypes /* remove-proptypes */ = {
   ]),
   trim: PropTypes.bool,
 };
-
-export { Markup };

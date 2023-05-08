@@ -2,7 +2,7 @@ import cssToStyle from 'css-to-style';
 import { standardProps } from '../constants/standardProps';
 import { reactProps } from '../constants/reactProps';
 
-export const attrsToProps = (attrs) => {
+export const attributesToProps = (attrs) => {
   const props = {};
   for (let i = 0; i < attrs.length; i++) {
     const { name, value } = attrs[i];
