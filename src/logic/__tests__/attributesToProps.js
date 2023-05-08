@@ -1,4 +1,4 @@
-import attrsToProps from '../attrsToProps';
+import { attributesToProps } from '../attrsToProps';
 
 test('converts attributes to props', () => {
   const attrs = [

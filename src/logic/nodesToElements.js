@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { cloneElement, createElement, isValidElement } from 'react';
 import getDisplayName from 'react-display-name';
-import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
-import attrsToProps from './attrsToProps';
-import nodeNameToType from './nodeNameToType';
+import { elementNode, textNode } from '../constants/nodeElements';
+import { nodeNameToType } from '../utils/nodeNameToType';
+import { attributesToProps } from './attributesToProps';
 
-const nodesToElements = (nodeList, options) => {
+export const nodesToElements = (nodeList, options) => {
   const tree = [];
   for (let i = 0; i < nodeList.length; i++) {
     const node = nodeList[i];
     // Only render element nodes and text nodes.
-    if (node.nodeType === ELEMENT_NODE) {
+    if (node.nodeType === elementNode) {
       let type = nodeNameToType(node.nodeName);
       if (
         // Never render <script> elements.
@@ -39,15 +39,15 @@ const nodesToElements = (nodeList, options) => {
           type = replacement;
         }
       }
-      const props = attrsToProps(node.attributes);
+      const props = attributesToProps(node.attributes);
       props.key = `${getDisplayName(type)}-${i}`;
       const children = nodesToElements(node.childNodes, options);
       tree.push(
-        React.isValidElement(type)
-          ? React.cloneElement(type, props, children)
-          : React.createElement(type, props, children)
+        isValidElement(type)
+          ? cloneElement(type, props, children)
+          : createElement(type, props, children)
       );
-    } else if (node.nodeType === TEXT_NODE) {
+    } else if (node.nodeType === textNode) {
       // Handle trim option to remove whitespace text nodes.
       if (!options.trim || node.textContent.trim() !== '') {
         tree.push(node.textContent);
@@ -56,5 +56,3 @@ const nodesToElements = (nodeList, options) => {
   }
   return tree.length > 0 ? tree : null;
 };
-
-export default nodesToElements;

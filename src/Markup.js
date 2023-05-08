@@ -22,4 +22,4 @@ Markup.propTypes /* remove-proptypes */ = {
   trim: PropTypes.bool,
 };
 
-export default Markup;
+export { Markup };

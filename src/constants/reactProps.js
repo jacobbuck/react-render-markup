@@ -1,13 +1,12 @@
-export default new Set([
+export const reactProps = [
   'children',
   'dangerouslySetInnerHTML',
+  'defaultChecked',
+  'defaultValue',
+  'innerHTML',
   'key',
   'ref',
-  'defaultValue',
-  'defaultChecked',
-  'innerHTML',
   'suppressContentEditableWarning',
   'suppressHydrationWarning',
-  // deprecated
   'valueLink',
-]);
+];

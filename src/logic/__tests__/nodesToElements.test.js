@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import nodesToElements from '../nodesToElements';
+import { nodesToElements } from '../nodesToElements';
 
 const parseHTML = (html) => {
   const el = document.createElement('template');

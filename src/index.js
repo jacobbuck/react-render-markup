@@ -1,2 +1,2 @@
-export { default as Markup } from './Markup';
-export { default as renderMarkup } from './renderMarkup';
+export { Markup } from './Markup';
+export { parse } from './parse';

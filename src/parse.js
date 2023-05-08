@@ -1,8 +1,8 @@
 import parseDom from 'dom-parse';
 import invariant from 'tiny-invariant';
-import nodesToElements from './nodesToElements';
+import { nodesToElements } from './logic/nodesToElements';
 
-const renderMarkup = (markup, { allowed, replace, trim } = {}) => {
+export const parse = (markup, { allowed, replace, trim } = {}) => {
   invariant(
     markup == null || typeof markup === 'string',
     'Expected `markup` to be a string'
@@ -25,5 +25,3 @@ const renderMarkup = (markup, { allowed, replace, trim } = {}) => {
     ? nodesToElements(parseDom(markup), { allowed, replace, trim })
     : null;
 };
-
-export default renderMarkup;
