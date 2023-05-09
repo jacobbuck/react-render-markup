@@ -1,15 +1,11 @@
-import parseDom from 'dom-parse';
 import PropTypes from 'prop-types';
-import { memo } from 'react';
-import { nodesToElements } from './logic/nodesToElements';
+import { useMemo } from 'react';
+import { parse } from './parse';
 
-export const Markup = memo(function Markup({ allowed, markup, replace, trim }) {
-  return markup
-    ? nodesToElements(parseDom(markup), { allowed, replace, trim })
-    : null;
-});
+export const Markup = ({ markup, ...options }) =>
+  useMemo(() => parse(markup, options), [markup]);
 
-Markup.propTypes /* remove-proptypes */ = {
+Markup.propTypes = {
   allowed: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.func,
