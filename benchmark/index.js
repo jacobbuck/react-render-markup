@@ -44,19 +44,19 @@ const replace = {
 
 bench
   .add('simple markup', () => {
-    renderMarkup('Hello <a href="/">world</a>');
+    parse('Hello <a href="/">world</a>');
   })
   .add('nested markup', () => {
-    renderMarkup(markup);
+    parse(markup);
   })
   .add('nested markup with allowed option', async () => {
-    renderMarkup(markup, { allowed });
+    parse(markup, { allowed });
   })
   .add('nested markup with replace option', async () => {
-    renderMarkup(markup, { replace });
+    parse(markup, { replace });
   })
   .add('nested markup with trim option', async () => {
-    renderMarkup(markup, { trim: true });
+    parse(markup, { trim: true });
   });
 
 // await bench.warmup();
