@@ -14,7 +14,6 @@ export default defineConfig({
         'dom-parse',
         'prop-types',
         'react',
-        'react-display-name',
         'tiny-invariant',
       ],
     },

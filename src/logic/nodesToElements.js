@@ -1,6 +1,6 @@
 import { cloneElement, createElement, isValidElement } from 'react';
-import getDisplayName from 'react-display-name';
 import { elementNode, textNode } from '../constants/nodeTypes';
+import { getDisplayName } from '../utils/getDisplayName';
 import { nodeNameToType } from '../utils/nodeNameToType';
 import { attributesToProps } from './attributesToProps';
 
