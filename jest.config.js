@@ -3,6 +3,6 @@ export default {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/__fixtures__/'],
   transform: {
-    '^.+\\.jsx?$': 'esbuild-jest',
+    '^.+\\.jsx?$': ['esbuild-jest', { sourcemap: true }],
   },
 };
