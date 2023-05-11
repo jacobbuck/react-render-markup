@@ -38,6 +38,7 @@ export const standardProps = {
   htmlfor: 'htmlFor',
   'http-equiv': 'httpEquiv',
   inputmode: 'inputMode',
+  ismap: 'isMap',
   itemid: 'itemID',
   itemprop: 'itemProp',
   itemref: 'itemRef',
