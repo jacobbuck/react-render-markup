@@ -1,10 +1,11 @@
+import { parse as parseDom } from 'dom-parse';
 import { createElement, Fragment } from 'react';
 import { Bench } from 'tinybench';
-import { parse } from '../dist/react-render-markup.js';
+import { nodesToElements } from '../dist/react-render-markup.js';
 
-const bench = new Bench();
+const simple = parseDom('Hello <a href="/">world</a>').childNodes;
 
-const markup = `
+const nested = parseDom(`
   <h1>Lorem Ipsum</h1>
   <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
   <h2>Header Level 2</h2>
@@ -18,7 +19,7 @@ const markup = `
      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
      <li>Aliquam tincidunt mauris eu risus.</li>
   </ul>
-`;
+`).childNodes;
 
 const allowed = [
   'h1',
@@ -42,21 +43,23 @@ const replace = {
   strong: 'b',
 };
 
+const bench = new Bench();
+
 bench
   .add('simple markup', () => {
-    parse('Hello <a href="/">world</a>');
+    nodesToElements(simple, {});
   })
   .add('nested markup', () => {
-    parse(markup);
+    nodesToElements(nested, {});
   })
   .add('nested markup with allowed option', async () => {
-    parse(markup, { allowed });
+    nodesToElements(nested, { allowed });
   })
   .add('nested markup with replace option', async () => {
-    parse(markup, { replace });
+    nodesToElements(nested, { replace });
   })
   .add('nested markup with trim option', async () => {
-    parse(markup, { trim: true });
+    nodesToElements(nested, { trim: true });
   });
 
 // await bench.warmup();
