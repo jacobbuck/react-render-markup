@@ -3038,7 +3038,7 @@ Content spec.
         </code>
         : 
         <iframe
-          sandbox={true}
+          sandbox=""
           srcDoc="<h1>Sample Document</h1><p>This
 is a sample content.</p>"
         />
