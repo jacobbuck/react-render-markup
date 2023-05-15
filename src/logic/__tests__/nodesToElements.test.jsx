@@ -1,4 +1,4 @@
-import { createElement, Fragment } from 'react';
+// @jsxRuntime automatic
 import PropTypes from 'prop-types';
 import { nodesToElements } from '../nodesToElements';
 
@@ -44,25 +44,35 @@ describe('doesn’t render unwanted nodes', () => {
 });
 
 describe('handles `allowed` property on `options`', () => {
-  const nodeList = parseHTML('<div></div><span>Hello!</span><hr>');
+  const nodeList = parseHTML('<b>Hello</b><hr><i>world<s>!</s></i>');
 
   test('only renders elements of type in array', () => {
-    const allowed = ['div', 'hr'];
+    const allowed = ['b', 'i'];
     expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
       [
-        <div />,
-        <hr />,
+        <b>
+          Hello
+        </b>,
+        <i>
+          world
+        </i>,
       ]
     `);
   });
 
   test('only renders elements when function returns true', () => {
-    const allowed = (node) => node.nodeType !== 1 || node.childNodes.length > 0;
+    const allowed = ({ ref }) => ref.textContent;
     expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
       [
-        <span>
-          Hello!
-        </span>,
+        <b>
+          Hello
+        </b>,
+        <i>
+          world
+          <s>
+            !
+          </s>
+        </i>,
       ]
     `);
   });
@@ -107,7 +117,7 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('replaces element type with React Fragment as replacement', () => {
-    const replace = { strong: Fragment };
+    const replace = { strong: <></> };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
       [
         <p
@@ -152,7 +162,7 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('merges element with clone of React Element as replacement', () => {
-    const replace = { strong: createElement('em') };
+    const replace = { strong: <em /> };
     expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
       [
         <p
@@ -168,8 +178,8 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('replaces type with replacement returned from function', () => {
-    const replace = (node) => {
-      if (node.nodeName.toLowerCase() === 'p') {
+    const replace = ({ type }) => {
+      if (type === 'p') {
         return 'div';
       }
     };
