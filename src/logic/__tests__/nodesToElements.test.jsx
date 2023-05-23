@@ -34,56 +34,40 @@ describe('doesn’t render unwanted nodes', () => {
       { nodeType: 10 }, // DOCUMENT_TYPE_NODE
       { nodeType: 11 }, // DOCUMENT_FRAGMENT_NODE
     ];
-    expect(nodesToElements(nodeList, {})).toBeNull();
+    expect(nodesToElements(nodeList, {})).toEqual([]);
   });
 
   test('script elements', () => {
     const nodeList = parseHTML('<script>alert("XSS!")</script>');
-    expect(nodesToElements(nodeList, {})).toBeNull();
+    expect(nodesToElements(nodeList, {})).toEqual([]);
   });
 });
 
-describe('handles `allowed` property on `options`', () => {
+describe('handles `allowElements` property on `options`', () => {
   const nodeList = parseHTML('<b>Hello</b><hr><i>world<s>!</s></i>');
 
   test('only renders elements of type in array', () => {
-    const allowed = ['b', 'i'];
-    expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
+    const allowElements = ['b', 'i'];
+    expect(nodesToElements(nodeList, { allowElements })).toMatchInlineSnapshot(`
       [
         <b>
           Hello
         </b>,
         <i>
           world
-        </i>,
-      ]
-    `);
-  });
-
-  test('only renders elements when function returns true', () => {
-    const allowed = ({ ref }) => ref.textContent;
-    expect(nodesToElements(nodeList, { allowed })).toMatchInlineSnapshot(`
-      [
-        <b>
-          Hello
-        </b>,
-        <i>
-          world
-          <s>
-            !
-          </s>
         </i>,
       ]
     `);
   });
 });
 
-describe('handles `replace` property on `options`', () => {
+describe('handles `replaceElements` property on `options`', () => {
   const nodeList = parseHTML('<p id="foo">Hello <strong>World!</strong></p>');
 
   test('replaces element type with element type as replacement', () => {
-    const replace = { strong: 'em' };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    const replaceElements = { strong: 'em' };
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <p
           id="foo"
@@ -101,8 +85,9 @@ describe('handles `replace` property on `options`', () => {
     const Example = ({ children }) => children;
     Example.propTypes = { children: PropTypes.node };
 
-    const replace = { strong: Example };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    const replaceElements = { strong: <Example /> };
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <p
           id="foo"
@@ -117,8 +102,9 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('replaces element type with React Fragment as replacement', () => {
-    const replace = { strong: <></> };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    const replaceElements = { strong: <></> };
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <p
           id="foo"
@@ -132,22 +118,10 @@ describe('handles `replace` property on `options`', () => {
     `);
   });
 
-  test('removes element with null as replacement', () => {
-    const replace = { strong: null };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
-      [
-        <p
-          id="foo"
-        >
-          Hello 
-        </p>,
-      ]
-    `);
-  });
-
   test('doesn’t replace element with undefined as replacement', () => {
-    const replace = { strong: undefined };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    const replaceElements = { strong: undefined };
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <p
           id="foo"
@@ -162,8 +136,9 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('merges element with clone of React Element as replacement', () => {
-    const replace = { strong: <em /> };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    const replaceElements = { strong: <em /> };
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <p
           id="foo"
@@ -178,12 +153,15 @@ describe('handles `replace` property on `options`', () => {
   });
 
   test('replaces type with replacement returned from function', () => {
-    const replace = ({ type }) => {
-      if (type === 'p') {
-        return 'div';
-      }
+    const replaceElements = {
+      '*': ({ children, props, type }) => {
+        if (type === 'p') {
+          return <div {...props}>{children}</div>;
+        }
+      },
     };
-    expect(nodesToElements(nodeList, { replace })).toMatchInlineSnapshot(`
+    expect(nodesToElements(nodeList, { replaceElements }))
+      .toMatchInlineSnapshot(`
       [
         <div
           id="foo"
