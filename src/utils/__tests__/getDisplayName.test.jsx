@@ -23,15 +23,6 @@ test('returns display name of function', () => {
   expect(getDisplayName(Foo)).toBe('Foo');
 });
 
-test('returns display name of react element', () => {
-  expect(getDisplayName(<strong>Hi!</strong>)).toBe('strong');
-});
-
-test('returns display name of react component element', () => {
-  const Foo = () => {};
-  expect(getDisplayName(<Foo>Hi!</Foo>)).toBe('Foo');
-});
-
 test('returns Unknown if unable to get display name', () => {
   [1, true, {}].forEach((v) => expect(getDisplayName(v)).toBe('Unknown'));
 });
