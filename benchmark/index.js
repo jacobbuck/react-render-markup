@@ -21,7 +21,7 @@ const nested = parseDom(`
   </ul>
 `).childNodes;
 
-const allowed = [
+const allowedElements = [
   'h1',
   'h2',
   'h3',
@@ -36,10 +36,10 @@ const allowed = [
   'a',
 ];
 
-const replace = {
-  a: (props) => createElement('a', { ...props }),
+const replaceElements = {
+  a: ({ children, props }) => createElement('a', props, children),
   em: createElement('i', { className: 'code' }),
-  code: Fragment,
+  code: createElement(Fragment),
   strong: 'b',
 };
 
@@ -52,11 +52,11 @@ bench
   .add('nested markup', () => {
     nodesToElements(nested, {});
   })
-  .add('nested markup with allowed option', async () => {
-    nodesToElements(nested, { allowed });
+  .add('nested markup with allowedElements option', async () => {
+    nodesToElements(nested, { allowedElements });
   })
-  .add('nested markup with replace option', async () => {
-    nodesToElements(nested, { replace });
+  .add('nested markup with replaceElements option', async () => {
+    nodesToElements(nested, { replaceElements });
   })
   .add('nested markup with trim option', async () => {
     nodesToElements(nested, { trim: true });
