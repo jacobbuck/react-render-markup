@@ -1,10 +1,12 @@
-import parseDom from 'dom-parse';
+import { parse } from 'dom-parse';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import nodesToElements from './nodesToElements';
 
 const Markup = React.memo(({ allowed, markup, replace, trim }) =>
-  markup ? nodesToElements(parseDom(markup), { allowed, replace, trim }) : null
+  markup
+    ? nodesToElements(parse(markup).childNodes, { allowed, replace, trim })
+    : null
 );
 
 Markup.propTypes /* remove-proptypes */ = {
