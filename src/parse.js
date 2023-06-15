@@ -1,4 +1,4 @@
-import parseDom from 'dom-parse';
+import { parse } from 'dom-parse';
 import invariant from 'tiny-invariant';
 import { nodesToElements } from './logic/nodesToElements';
 
@@ -22,6 +22,6 @@ export const parse = (markup, { allowed, replace, trim } = {}) => {
     'Expected `options.trim` to be a boolean'
   );
   return markup
-    ? nodesToElements(parseDom(markup), { allowed, replace, trim })
+    ? nodesToElements(parse(markup).childNodes, { allowed, replace, trim })
     : null;
 };

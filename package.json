@@ -1,6 +1,6 @@
 {
   "name": "react-render-markup",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Safely parse HTML, SVG and MathML into React elements.",
   "type": "module",
   "files": [
@@ -44,7 +44,7 @@
   "homepage": "https://github.com/jacobbuck/react-render-markup#readme",
   "dependencies": {
     "css-to-style": "^1.4.0",
-    "dom-parse": "^2.1.0",
+    "dom-parse": "^3.0.0",
     "prop-types": "^15.8.1",
     "tiny-invariant": "^1.3.1"
   },
