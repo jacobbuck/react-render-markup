@@ -1,11 +1,17 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v3.0.0.
+
 ## v3.5.0 - 2022-04-14
 
 ### Changed
 
 - Updated [prop-types](https://www.npmjs.com/package/prop-types) dependency to v15.8.1.
-- Updated [tiny-invariant](https://www.npmjs.com/package/css-to-style) dependency to v1.2.0.
+- Updated [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency to v1.2.0.
 - Updated [react](https://www.npmjs.com/package/react) peer-dependency to also support v18.
 - Updated `replace` option to also allow `false` to skip rendering replacement.
 
