@@ -1,7 +1,7 @@
 import * as React from 'react';
-import getDisplayName from 'react-display-name';
 import { ELEMENT_NODE, TEXT_NODE } from './constants/nodeTypes';
 import attrsToProps from './attrsToProps';
+import getDisplayName from './getDisplayName';
 import nodeNameToType from './nodeNameToType';
 
 const nodesToElements = (nodeList, options) => {

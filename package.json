@@ -46,7 +46,6 @@
     "css-to-style": "^1.4.0",
     "dom-parse": "^3.0.0",
     "prop-types": "^15.8.1",
-    "react-display-name": "^0.2.5",
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
