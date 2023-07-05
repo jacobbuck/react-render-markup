@@ -1,4 +1,4 @@
-import { getDisplayName } from '../getDisplayName';
+import getDisplayName from '../getDisplayName';
 
 test('returns value if string', () => {
   expect(getDisplayName('div')).toBe('div');
