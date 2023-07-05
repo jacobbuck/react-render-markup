@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Replaced [react-display-name](https://www.npmjs.com/package/react-display-name) with internal implementation.
+
+### Removed
+
+- Removed [react-display-name](https://www.npmjs.com/package/react-display-name) dependency.
+
 ## v3.6.0 - 2023-06-15
 
 ### Changed
