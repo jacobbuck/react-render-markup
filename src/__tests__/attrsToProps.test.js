@@ -1,3 +1,4 @@
+import { expect, test } from '@jest/globals';
 import attrsToProps from '../attrsToProps';
 
 test('converts attributes to props', () => {

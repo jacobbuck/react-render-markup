@@ -28,8 +28,8 @@ const nodesToElements = (nodeList, options) => {
           typeof options.replace === 'function'
             ? options.replace(node)
             : Object.hasOwn(options.replace, type)
-            ? options.replace[type]
-            : undefined;
+              ? options.replace[type]
+              : undefined;
         // Don't render element if replacement is false or null.
         if (replacement === false || replacement === null) {
           continue;
@@ -45,7 +45,7 @@ const nodesToElements = (nodeList, options) => {
       tree.push(
         React.isValidElement(type)
           ? React.cloneElement(type, props, children)
-          : React.createElement(type, props, children)
+          : React.createElement(type, props, children),
       );
     } else if (node.nodeType === TEXT_NODE) {
       // Handle trim option to remove whitespace text nodes.

@@ -6,10 +6,10 @@ import nodesToElements from './nodesToElements';
 const Markup = React.memo(({ allowed, markup, replace, trim }) =>
   markup
     ? nodesToElements(parse(markup).childNodes, { allowed, replace, trim })
-    : null
+    : null,
 );
 
-Markup.propTypes /* remove-proptypes */ = {
+Markup.propTypes = {
   allowed: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.func,

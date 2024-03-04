@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Renamed output filenames, use `cjs` extension for CommonJS build.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v3.1.0.
+
 ## v3.6.1 - 2023-07-05
 
 ### Changed
