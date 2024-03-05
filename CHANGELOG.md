@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v3.2.1.
+
 ## v3.6.2 - 2024-03-05
 
 ### Changed
