@@ -1,4 +1,4 @@
-import { expect, test } from '@jest/globals';
+import { expect, test } from 'vitest';
 import TestRenderer from 'react-test-renderer';
 import htmlKitchenSink from './__fixtures__/htmlKitchenSink';
 import svgScimitar from './__fixtures__/svgScimitar';

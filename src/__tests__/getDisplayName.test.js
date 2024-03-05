@@ -1,4 +1,4 @@
-import { expect, test } from '@jest/globals';
+import { expect, test } from 'vitest';
 import getDisplayName from '../getDisplayName';
 
 test('returns value if string', () => {

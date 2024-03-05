@@ -1,4 +1,4 @@
-import { expect, test } from '@jest/globals';
+import { expect, test } from 'vitest';
 import attrsToProps from '../attrsToProps';
 
 test('converts attributes to props', () => {
