@@ -1,6 +1,6 @@
 import { createElement, Fragment } from 'react';
 import { Bench } from 'tinybench';
-import { renderMarkup } from '../lib/index.esm.js';
+import { renderMarkup } from '../dist/react-render-markup.js';
 
 const bench = new Bench();
 
