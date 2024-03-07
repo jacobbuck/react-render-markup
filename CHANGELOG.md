@@ -1,5 +1,28 @@
 # Changelog
 
+## v3.6.3 - 2024-03-05
+
+### Changed
+
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v3.2.1.
+
+## v3.6.2 - 2024-03-05
+
+### Changed
+
+- Renamed output filenames, use `cjs` extension for CommonJS build.
+- Updated [dom-parse](https://www.npmjs.com/package/dom-parse) dependency to v3.1.0.
+
+## v3.6.1 - 2023-07-05
+
+### Changed
+
+- Replaced [react-display-name](https://www.npmjs.com/package/react-display-name) with internal implementation.
+
+### Removed
+
+- Removed [react-display-name](https://www.npmjs.com/package/react-display-name) dependency.
+
 ## v3.6.0 - 2023-06-15
 
 ### Changed

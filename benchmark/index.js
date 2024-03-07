@@ -1,7 +1,7 @@
 import { parse as parseDom } from 'dom-parse';
 import { createElement, Fragment } from 'react';
 import { Bench } from 'tinybench';
-import { nodesToElements } from '../dist/react-render-markup.js';
+import { renderMarkup } from '../dist/react-render-markup.js';
 
 const simple = parseDom('Hello <a href="/">world</a>').childNodes;
 

@@ -1,3 +1,4 @@
+import { expect, test } from 'vitest';
 import { attributesToProps } from '../attributesToProps';
 
 test('converts attributes to props', () => {
