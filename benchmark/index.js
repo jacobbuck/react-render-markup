@@ -59,7 +59,7 @@ bench
     renderMarkup(markup, { trim: true });
   });
 
-// await bench.warmup();
+await bench.warmup();
 await bench.run();
 
 console.table(bench.table());
