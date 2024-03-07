@@ -1,11 +1,10 @@
-import { parse as parseDom } from 'dom-parse';
 import { createElement, Fragment } from 'react';
 import { Bench } from 'tinybench';
-import { renderMarkup } from '../dist/react-render-markup.js';
+import { parse } from '../dist/react-render-markup.js';
 
-const simple = parseDom('Hello <a href="/">world</a>').childNodes;
+const simple = 'Hello <a href="/">world</a>';
 
-const nested = parseDom(`
+const nested = `
   <h1>Lorem Ipsum</h1>
   <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
   <h2>Header Level 2</h2>
@@ -19,7 +18,7 @@ const nested = parseDom(`
      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
      <li>Aliquam tincidunt mauris eu risus.</li>
   </ul>
-`).childNodes;
+`;
 
 const allowedElements = [
   'h1',
@@ -47,19 +46,19 @@ const bench = new Bench();
 
 bench
   .add('simple markup', () => {
-    nodesToElements(simple, {});
+    parse(simple);
   })
   .add('nested markup', () => {
-    nodesToElements(nested, {});
+    parse(nested);
   })
   .add('nested markup with allowedElements option', async () => {
-    nodesToElements(nested, { allowedElements });
+    parse(nested, { allowedElements });
   })
   .add('nested markup with replaceElements option', async () => {
-    nodesToElements(nested, { replaceElements });
+    parse(nested, { replaceElements });
   })
   .add('nested markup with trim option', async () => {
-    nodesToElements(nested, { trim: true });
+    parse(nested, { trim: true });
   });
 
 // await bench.warmup();
